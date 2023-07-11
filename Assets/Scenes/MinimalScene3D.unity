@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoAttributePlayerIDs: 1
   PlayerPrefabs:
-  - {fileID: 114839196621103566, guid: 2513a92f10a3a1746bfe8e1034ae9f1a, type: 3}
+  - {fileID: 114839196621103566, guid: e3e3581ee9aa58347b53ed1853453d4f, type: 3}
   SceneCharacters: []
   InitialSpawnPoint: {fileID: 1618121293}
   CurrentCheckpoint: {fileID: 0}
@@ -1560,7 +1560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FacingDirection: 1
-  ForceAssignation: 0
+  ForceAssignation: 1
   CheckPointOrder: 0
 --- !u!1 &1666771291 stripped
 GameObject:
