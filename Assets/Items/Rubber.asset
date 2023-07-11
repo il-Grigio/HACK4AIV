@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6b6653b397f294cb2c984fc019d3bf, type: 3}
   m_Name: Rubber
   m_EditorClassIdentifier: 
-  ItemName: 
+  fullName: Rubber
   model3D: {fileID: 0}
   myIngredients: []
