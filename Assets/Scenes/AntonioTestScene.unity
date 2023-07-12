@@ -497,37 +497,6 @@ Transform:
   m_Father: {fileID: 139856175}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &336424035
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 336424036}
-  m_Layer: 0
-  m_Name: RecipeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &336424036
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336424035}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.346356, y: 13.052838, z: -22.71335}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1918232351}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &370392662
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2208,7 @@ GameObject:
   - component: {fileID: 1504873362}
   - component: {fileID: 1504873361}
   - component: {fileID: 1504873360}
-  - component: {fileID: 1504873364}
+  - component: {fileID: 1504873359}
   m_Layer: 24
   m_Name: Macine
   m_TagString: Untagged
@@ -2247,6 +2216,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1504873359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504873358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca504f2769f5f5c4d9eed6bbb8d0a1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &1504873360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2336,24 +2317,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1504873364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504873358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b2403227f835da438eb231f5eef7017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MachineType: 0
-  placeItemPositions:
-  - {fileID: 1274491444}
-  - {fileID: 93454093}
-  - {fileID: 1181630578}
-  decraftingTime: 0
 --- !u!1 &1618121291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,7 +2653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1734572836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2803,7 +2766,6 @@ Transform:
   - {fileID: 1747284129}
   - {fileID: 1919321264}
   - {fileID: 612343371}
-  - {fileID: 336424036}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

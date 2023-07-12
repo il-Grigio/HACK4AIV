@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: MonkeyWithPlates
   model3D: {fileID: 0}
-  myIngredients:
-  - {fileID: 11400000, guid: fd05215a69fc08a4891c358a12db7318, type: 2}
+  icon: {fileID: 0}
+  ingredients:
   - {fileID: 11400000, guid: 25410311cbf614b4293464a08aa71dc2, type: 2}
   - {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc, type: 2}
+  - {fileID: 11400000, guid: fd05215a69fc08a4891c358a12db7318, type: 2}

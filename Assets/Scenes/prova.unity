@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -222,21 +222,21 @@ MonoBehaviour:
       Data2: 1141517755
       Data3: -1352180289
       Data4: 956709888
-    Path: event:/IndustrialAmbiance
+    Path: event:/Ambiance/IndustrialAmbiance
   <musicMenu>k__BackingField:
     Guid:
       Data1: 690139820
       Data2: 1085815235
       Data3: -16881784
       Data4: -352075400
-    Path: event:/MainMenu
+    Path: event:/MusicEvents/MainMenu
   <ChainSawTable>k__BackingField:
     Guid:
       Data1: 361984373
       Data2: 1180717069
       Data3: -744626530
       Data4: 204451103
-    Path: event:/ChainSawTable
+    Path: event:/SFXEvents/ChainSawTable
 --- !u!1 &949254581
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
       Data2: 1180717069
       Data3: -744626530
       Data4: 204451103
-    Path: event:/ChainSawTable
+    Path: event:/SFXEvents/ChainSawTable
   Event: 
   PlayEvent: 0
   StopEvent: 0

@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Christmas Woolen Sweater
   model3D: {fileID: 0}
-  myIngredients:
+  icon: {fileID: 0}
+  ingredients:
   - {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc, type: 2}

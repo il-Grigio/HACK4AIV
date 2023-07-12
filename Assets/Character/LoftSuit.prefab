@@ -11054,8 +11054,10 @@ MonoBehaviour:
   itemStand: {fileID: 3257755609055371287}
   model: {fileID: 4122969310152496}
   sphereCastRadius: 1.5
-  PhysicsInteractionsRaycastLength: 5
+  PhysicsInteractionsRaycastLength: 2
   PhysicsInteractionsRaycastOffset: {x: 0, y: -0.3, z: -1.5}
+  _itemComponent: {fileID: 0}
+  hasItem: 0
 --- !u!1 &1414199094847710
 GameObject:
   m_ObjectHideFlags: 0

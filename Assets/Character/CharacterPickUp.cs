@@ -6,6 +6,7 @@ using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 using Unity.VisualScripting;
 using static UnityEngine.UI.Image;
+using static UnityEditor.Progress;
 
 [AddComponentMenu("TopDown Engine/Character/Abilities/PickUp")]
 public class CharacterPickUp : CharacterAbility
@@ -91,7 +92,11 @@ public class CharacterPickUp : CharacterAbility
             MachineScript machine = _hit.transform.GetComponent<MachineScript>();
             if (machine.CanPlaceItems()) {
                 machine.PlaceItem(_itemComponent);
-                DropItem(_itemComponent);
+                _itemComponent.transform.GetComponent<Rigidbody>().useGravity = false;
+                _itemComponent.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+                _itemComponent.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                _itemComponent.transform.GetComponent<Collider>().enabled = false;
+                _itemComponent = null;
                 hasItem = false;
             }
             return;
@@ -126,6 +131,7 @@ public class CharacterPickUp : CharacterAbility
 
             MachineScript machine = _hit.transform.GetComponent<MachineScript>();
             _itemComponent = machine.GetFirstItem();
+            machine.RemoveItem(_itemComponent);
             PutItemInArms(_itemComponent);
             return;
         }
