@@ -156,6 +156,7 @@ public class CharacterPickUp : CharacterAbility
         item.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         item.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         item.transform.GetComponent<Collider>().enabled = false;
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.pickUpItem, this.transform.position);
         item.transform.position = itemStand.transform.position;
     }
 

@@ -13,6 +13,13 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("ChainSawTable")]
     [field: SerializeField] public EventReference ChainSawTable { get; private set; }
+
+    [field: Header("pickUpItem")]
+    [field: SerializeField] public EventReference pickUpItem { get; private set;}
+
+    [field: Header("footsSteps")]
+
+    [field: SerializeField] public EventReference footsStep { get; private set; }
     public static FMODEvents instance { get; private set; }
     private void Awake()
     {

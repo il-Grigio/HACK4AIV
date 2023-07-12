@@ -4,7 +4,7 @@ using MoreMountains.Tools;
 using System.Collections.Generic;
 
 namespace MoreMountains.TopDownEngine
-{	
+{
 	/// <summary>
 	/// Add this ability to a Character to have it handle ground movement (walk, and potentially run, crawl, etc) in x and z direction for 3D, x and y for 2D
 	/// Animator parameters : Speed (float), Walking (bool)
@@ -457,7 +457,6 @@ namespace MoreMountains.TopDownEngine
 			{
 				_movementVector = Vector3.zero;
 			}
-            
 			_controller.SetMovement (_movementVector);
 		} 
 
