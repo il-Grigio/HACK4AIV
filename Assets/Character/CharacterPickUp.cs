@@ -5,6 +5,7 @@ using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 using Unity.VisualScripting;
+using static UnityEngine.UI.Image;
 
 [AddComponentMenu("TopDown Engine/Character/Abilities/PickUp")]
 public class CharacterPickUp : CharacterAbility
@@ -35,10 +36,10 @@ public class CharacterPickUp : CharacterAbility
 
 
     protected CharacterController _characterController;
-    protected ItemComponent _itemComponent;
 
-
-    private bool hasItem = false;
+    [Header("DEBUGGER")]
+    [SerializeField] protected ItemComponent _itemComponent;
+    [SerializeField] private bool hasItem = false;
 
 
     float hitDistance;
@@ -67,7 +68,7 @@ public class CharacterPickUp : CharacterAbility
 
         if (_inputManager.TimeControlButton.State.CurrentState == MMInput.ButtonStates.ButtonDown) {
             if(hasItem)
-                DropItem();
+                DropItemLogic();
             else
                 PickUpItem();
         }
@@ -77,75 +78,102 @@ public class CharacterPickUp : CharacterAbility
 
 
     }
-    public void DropItem() {
+    public void DropItemLogic() {
         if(!hasItem) { return; }
-        //TODO check if in front of a station
-        _itemComponent.transform.parent = null;
-        _itemComponent.transform.GetComponent<Rigidbody>().useGravity= true;
-        _itemComponent.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        _itemComponent.transform.GetComponent<Collider>().enabled= true;
 
+        Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
+        Vector3 direction = model.forward;
+        float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
         
+        
+        if (Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+                maxDistance, workStationLayerMask)) {
+            MachineScript machine = _hit.transform.GetComponent<MachineScript>();
+            if (machine.CanPlaceItems()) {
+                machine.PlaceItem(_itemComponent);
+                DropItem(_itemComponent);
+                hasItem = false;
+            }
+            return;
+        }
+
+
+
+        DropItem(_itemComponent);
         
         
         hasItem = false;
     }
 
+    private void DropItem(ItemComponent item) {
+        item.transform.parent = null;
+        item.transform.GetComponent<Rigidbody>().useGravity = true;
+        item.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        item.transform.GetComponent<Collider>().enabled = true;
+        _itemComponent = null;
+    }
+
     public void PickUpItem() {
+        if (hasItem) return;
+
+        Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
+        Vector3 direction = model.forward;
+        float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
+
+        //checkWorkStation
+        if(Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+                maxDistance, workStationLayerMask)) {
+
+            MachineScript machine = _hit.transform.GetComponent<MachineScript>();
+            _itemComponent = machine.GetFirstItem();
+            PutItemInArms(_itemComponent);
+            return;
+        }
+
+
+        Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+                maxDistance, pickuppableLayerMask);
+        hasItem = (_hit.collider != null);
+
+        if (hasItem) {
+            //TODO change arms animations
+            _itemComponent = _hit.transform.GetComponent<ItemComponent>();
+            PutItemInArms(_itemComponent);
+        }
+    }
+
+    private void PutItemInArms(ItemComponent item) {
+        if (item == null) return;
+        hasItem = true;
+        item.transform.parent = itemStand.transform;
+        item.transform.GetComponent<Rigidbody>().useGravity = false;
+        item.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        item.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        item.transform.GetComponent<Collider>().enabled = false;
+        item.transform.position = itemStand.transform.position;
+    }
+
+    private void OnDrawGizmos() {
+
         Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
         Vector3 direction = model.forward;
         float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
 
         Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
-                maxDistance, pickuppableLayerMask);
+                maxDistance, workStationLayerMask);
+        hitDistance = (_hit.collider != null) ? _hit.distance : -1;
 
-        
+        // Visualize the spherecast shape in the Scene View
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(origin, origin + direction * maxDistance);
 
-        hasItem = (_hit.collider != null);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(origin, sphereCastRadius);
+        Gizmos.DrawWireSphere(origin + direction * maxDistance, sphereCastRadius);
 
-
-        if (hasItem) {
-
-            //TODO change arms animations
-            //TODO place item in arms
-            _itemComponent = _hit.transform.GetComponent<ItemComponent>();
-            _itemComponent.transform.parent = itemStand.transform;
-            _itemComponent.transform.GetComponent<Rigidbody>().useGravity= false;
-            _itemComponent.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-            _itemComponent.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-            _itemComponent.transform.GetComponent<Collider>().enabled= false;
-            _itemComponent.transform.position = itemStand.transform.position;
-
-        }
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(origin + direction * hitDistance, sphereCastRadius);
     }
-
-    //private void OnDrawGizmos() {
-
-
-
-    //    Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
-
-    //    Vector3 direction = model.forward;
-    //    float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
-
-
-    //    Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
-    //            maxDistance, pickuppableLayerMask);
-
-
-    //    hitDistance = (_hit.collider != null) ? _hit.distance : -1;
-
-    //    // Visualize the spherecast shape in the Scene View
-    //    Gizmos.color = Color.green;
-    //    Gizmos.DrawLine(origin, origin + direction * maxDistance);
-
-    //        Gizmos.color = Color.red;
-    //        Gizmos.DrawWireSphere(origin, sphereCastRadius);
-    //        Gizmos.DrawWireSphere(origin + direction * maxDistance, sphereCastRadius);
-        
-    //    Gizmos.color = Color.black;
-    //        Gizmos.DrawWireSphere(origin + direction * hitDistance, sphereCastRadius);
-    //}
 
 
     /// <summary>

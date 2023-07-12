@@ -11050,7 +11050,7 @@ MonoBehaviour:
     m_Bits: 8388608
   workStationLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16777216
   itemStand: {fileID: 3257755609055371287}
   model: {fileID: 4122969310152496}
   sphereCastRadius: 1.5
