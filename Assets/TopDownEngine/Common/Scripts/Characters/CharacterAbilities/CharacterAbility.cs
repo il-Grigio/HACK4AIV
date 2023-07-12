@@ -112,7 +112,7 @@ namespace MoreMountains.TopDownEngine
 		protected Animator _animator = null;
 		protected CharacterStates _state;
 		protected SpriteRenderer _spriteRenderer;
-		protected MMStateMachine<CharacterStates.MovementStates> _movement;
+		public MMStateMachine<CharacterStates.MovementStates> _movement;
 		protected MMStateMachine<CharacterStates.CharacterConditions> _condition;
 		protected AudioSource _abilityInProgressSfx;
 		protected bool _abilityInitialized = false;

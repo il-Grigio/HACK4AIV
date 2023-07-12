@@ -10357,6 +10357,7 @@ GameObject:
   - component: {fileID: 8821616259050663653}
   - component: {fileID: 3966266932157926778}
   - component: {fileID: 7172939173928159800}
+  - component: {fileID: 8691261496855513606}
   m_Layer: 10
   m_Name: LoftSuit
   m_TagString: Player
@@ -11054,10 +11055,22 @@ MonoBehaviour:
   itemStand: {fileID: 3257755609055371287}
   model: {fileID: 4122969310152496}
   sphereCastRadius: 1.5
-  PhysicsInteractionsRaycastLength: 2
+  PhysicsInteractionsRaycastLength: 5
   PhysicsInteractionsRaycastOffset: {x: 0, y: -0.3, z: -1.5}
   _itemComponent: {fileID: 0}
   hasItem: 0
+--- !u!114 &8691261496855513606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414176428383784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba19af16bde931a44bfc687f7dcf1cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1414199094847710
 GameObject:
   m_ObjectHideFlags: 0
