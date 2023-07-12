@@ -15,6 +15,9 @@ namespace MoreMountains.TopDownEngine
 		/// if this is true, the controller will be able to apply forces to colliding rigidbodies
 		[Tooltip("if this is true, the controller will be able to apply forces to colliding rigidbodies")]
 		public bool AllowPhysicsInteractions = true;
+
+		[SerializeField] LayerMask pushableLayerMask;
+
 		/// the length of the ray to cast in front of the character to detect pushables
 		[Tooltip("the length of the ray to cast in front of the character to detect pushables")]
 		public float PhysicsInteractionsRaycastLength = 0.05f;
@@ -70,16 +73,21 @@ namespace MoreMountains.TopDownEngine
 			}
 
 			// we cast a ray towards our move direction to handle pushing objects
-			Physics.Raycast(_controller3D.transform.position + _characterController.center + PhysicsInteractionsRaycastOffset, _controller.CurrentMovement.normalized, out _raycastHit, 
-				_characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength, _controller3D.ObstaclesLayerMask);
-
-			_pushing = (_raycastHit.collider != null);
-            
-			if (_pushing)
-			{
-				HandlePush(_controller3D, _raycastHit, _raycastHit.point);
-			}
+			PhisichsRaycast(_controller.CurrentMovement.normalized);
+			PhisichsRaycast((_controller.CurrentMovement.normalized + _controller.transform.right).normalized);
+			PhisichsRaycast((_controller.CurrentMovement.normalized - _controller.transform.right).normalized);
+			
 		}
+		private void PhisichsRaycast(Vector3 direction) {
+            Physics.Raycast(_controller3D.transform.position + _characterController.center + PhysicsInteractionsRaycastOffset, direction, out _raycastHit,
+                _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength, pushableLayerMask);
+
+            _pushing = (_raycastHit.collider != null);
+
+            if (_pushing) {
+                HandlePush(_controller3D, _raycastHit, _raycastHit.point);
+            }
+        }
 
 		/// <summary>
 		/// Adds a force to the colliding object at the hit position, to interact with the physics world
