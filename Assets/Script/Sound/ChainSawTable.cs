@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMOD.Studio;
+using FMODUnity;
 
-
+[RequireComponent(typeof(StudioEventEmitter))]
 public class ChainSawTable : MonoBehaviour
 {
     [SerializeField]float timeToReach;
     [SerializeField]float speed;
     [SerializeField]float timer = 0;
-    EventInstance sound;
+    bool soundIsPlaying = false;
+    StudioEventEmitter emitter;
     void Start()
     {
-        
-         sound = AudioManager.instance.CreateInstance(FMODEvents.instance.ChainSawTable);
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.ChainSawTable, this.gameObject);
     }
 
     // Update is called once per frame
@@ -21,13 +21,24 @@ public class ChainSawTable : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.R) && timer <= timeToReach) 
         {
-            sound.start();
             timer += speed * Time.deltaTime;
+            if(soundIsPlaying == false) 
+            {
+                emitter.Play();
+                soundIsPlaying = true;
+            }
         }
         else 
         {
-            sound.stop(STOP_MODE.IMMEDIATE);
-
+            emitter.Stop();
+            if(timer < timeToReach) 
+            {
+                timer = 0;
+            }
+            soundIsPlaying = false;
         }
+
     }
+
+
 }

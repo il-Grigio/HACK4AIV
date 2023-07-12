@@ -25,7 +25,8 @@ public class AudioManager : MonoBehaviour
 
     private EventInstance ambienceEventInstance;
     private EventInstance musicMenuInstance;
-    private EventInstance chainSawInstance;
+
+
     void Awake()
     {
         if (instance != null)
@@ -49,6 +50,14 @@ public class AudioManager : MonoBehaviour
     {
         ambienceEventInstance = CreateInstance(ambienceEvent);
         ambienceEventInstance.start();
+    }
+
+
+    public StudioEventEmitter InitializeEventEmitter(EventReference eventReference, GameObject emitterGameObject)
+    {
+        StudioEventEmitter emitter = emitterGameObject.GetComponent<StudioEventEmitter>();
+        emitter.EventReference = eventReference;
+        return emitter;
     }
 
     private void InizializeMusicMenu(EventReference menuMusic)
