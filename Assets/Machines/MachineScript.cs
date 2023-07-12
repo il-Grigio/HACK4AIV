@@ -20,6 +20,7 @@ public abstract class MachineScript : MonoBehaviour
                 placedItems[i] = item;
                 placedItems[i].transform.parent = transform;
                 placedItems[i].transform.position = placeItemPositions[i].position;
+                return;
             }
         }
     }
