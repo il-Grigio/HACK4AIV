@@ -4,6 +4,7 @@ using UnityEngine;
 using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
+using Unity.VisualScripting;
 
 [AddComponentMenu("TopDown Engine/Character/Abilities/PickUp")]
 public class CharacterPickUp : CharacterAbility
@@ -15,7 +16,10 @@ public class CharacterPickUp : CharacterAbility
     [Header("TODO_HEADER")]
 
     [SerializeField] LayerMask pickuppableLayerMask;
-
+    [SerializeField] LayerMask workStationLayerMask;
+    [SerializeField] Transform itemStand;
+    [SerializeField] Transform model;
+    [SerializeField] float sphereCastRadius = 1.5f;
     /// the length of the ray to cast in front of the character to detect pushables
     [Tooltip("the length of the ray to cast in front of the character to detect pushables")]
     public float PhysicsInteractionsRaycastLength = 0.1f;
@@ -24,27 +28,26 @@ public class CharacterPickUp : CharacterAbility
     public Vector3 PhysicsInteractionsRaycastOffset = Vector3.zero;
 
 
-    protected RaycastHit _raycastHit;
-
-    /// declare your parameters here
-    public float randomParameter = 4f;
-    public bool randomBool;
+    protected RaycastHit _hit;
 
     protected const string _yourAbilityAnimationParameterName = "YourAnimationParameterName";
     protected int _yourAbilityAnimationParameter;
 
 
     protected CharacterController _characterController;
+    protected ItemComponent _itemComponent;
 
 
     private bool hasItem = false;
+
+
+    float hitDistance;
 
     /// <summary>
     /// Here you should initialize our parameters
     /// </summary>
     protected override void Initialization() {
         base.Initialization();
-        randomBool = false;
         _characterController = _controller.GetComponent<CharacterController>();
     }
 
@@ -77,20 +80,73 @@ public class CharacterPickUp : CharacterAbility
     public void DropItem() {
         if(!hasItem) { return; }
         //TODO check if in front of a station
+        _itemComponent.transform.parent = null;
+        _itemComponent.transform.GetComponent<Rigidbody>().useGravity= true;
+        _itemComponent.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        _itemComponent.transform.GetComponent<Collider>().enabled= true;
+
+        
+        
+        
+        hasItem = false;
     }
 
     public void PickUpItem() {
-        Physics.Raycast(_controller3D.transform.position + _characterController.center + PhysicsInteractionsRaycastOffset, _controller.CurrentMovement.normalized, out _raycastHit,
-                _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength, pickuppableLayerMask);
+        Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
+        Vector3 direction = model.forward;
+        float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
 
-        hasItem = (_raycastHit.collider != null);
+        Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+                maxDistance, pickuppableLayerMask);
+
+        
+
+        hasItem = (_hit.collider != null);
+
 
         if (hasItem) {
+
             //TODO change arms animations
             //TODO place item in arms
+            _itemComponent = _hit.transform.GetComponent<ItemComponent>();
+            _itemComponent.transform.parent = itemStand.transform;
+            _itemComponent.transform.GetComponent<Rigidbody>().useGravity= false;
+            _itemComponent.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            _itemComponent.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            _itemComponent.transform.GetComponent<Collider>().enabled= false;
+            _itemComponent.transform.position = itemStand.transform.position;
 
         }
     }
+
+    //private void OnDrawGizmos() {
+
+
+
+    //    Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
+
+    //    Vector3 direction = model.forward;
+    //    float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
+
+
+    //    Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+    //            maxDistance, pickuppableLayerMask);
+
+
+    //    hitDistance = (_hit.collider != null) ? _hit.distance : -1;
+
+    //    // Visualize the spherecast shape in the Scene View
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawLine(origin, origin + direction * maxDistance);
+
+    //        Gizmos.color = Color.red;
+    //        Gizmos.DrawWireSphere(origin, sphereCastRadius);
+    //        Gizmos.DrawWireSphere(origin + direction * maxDistance, sphereCastRadius);
+        
+    //    Gizmos.color = Color.black;
+    //        Gizmos.DrawWireSphere(origin + direction * hitDistance, sphereCastRadius);
+    //}
+
 
     /// <summary>
     /// Adds required animator parameters to the animator parameters list if they exist
