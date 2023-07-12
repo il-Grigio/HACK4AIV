@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a6b6653b397f294cb2c984fc019d3bf, type: 3}
-  m_Name: Carillion
+  m_Name: Carillon
   m_EditorClassIdentifier: 
-  fullName: Carillion
+  fullName: Carillon
   model3D: {fileID: 0}
+  icon: {fileID: 0}
   myIngredients:
   - {fileID: 11400000, guid: 4c63ce9a0301c084e9623b70ab9d0e4b, type: 2}
   - {fileID: 11400000, guid: 0855fbed8cd76524e8e51d11aea6b601, type: 2}

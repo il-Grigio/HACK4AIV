@@ -6,5 +6,7 @@ public class IngredientScriptable : ScriptableObject
 {
     [SerializeField] string fullName;
     [SerializeField] GameObject model3D;
+    [SerializeField] Sprite icon;
     [SerializeField] List<IngredientScriptable> myIngredients = new List<IngredientScriptable>();
+
 }

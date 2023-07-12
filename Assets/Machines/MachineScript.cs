@@ -5,6 +5,35 @@ public enum MachineType { }
 public class MachineScript : MonoBehaviour
 {
     [SerializeField] MachineType MachineType;
-    
-    //TODO check if player in range and looking at the machine to interract
+    [SerializeField] Transform[] placeItemPositions;
+    ItemComponent[] placedItems;
+    private void Awake() {
+        placedItems = new ItemComponent[placeItemPositions.Length];
+    }
+    public void PlaceItem(ItemComponent item) {
+        for (int i = 0; i < placeItemPositions.Length; i++) {
+            if (placedItems[i] == null) {
+                placedItems[i] = item;
+                placedItems[i].transform.parent = transform;
+                placedItems[i].transform.position = placeItemPositions[i].position;
+            }
+        }
+    }
+    public ItemComponent GetFirstItem() {
+        for (int i = 0;i < placedItems.Length;i++) { 
+            if (placedItems[i]) {
+                return placedItems[i];
+            } 
+        }
+        return null;
+    }
+
+    public bool CanPlaceItems() {
+        for (int i = 0; i < placeItemPositions.Length; i++) {
+            if (placedItems[i] == null) return true;
+        }
+        return false;
+    }
+
+
 }

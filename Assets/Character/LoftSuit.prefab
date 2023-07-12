@@ -11023,7 +11023,7 @@ MonoBehaviour:
     m_Bits: 8388608
   PhysicsInteractionsRaycastLength: 0.5
   PhysicsInteractionsRaycastOffset: {x: 0, y: -0.4, z: 0}
-  PushPower: 1850
+  PushPower: 462.5
 --- !u!114 &7172939173928159800
 MonoBehaviour:
   m_ObjectHideFlags: 0
