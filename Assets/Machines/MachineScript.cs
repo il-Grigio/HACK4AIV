@@ -4,7 +4,9 @@ using UnityEngine;
 public enum MachineType { 
     Decrafting,
     DecraftingSpam,
-    Crafting
+    Crafting,
+    Table,
+    Threadmill
 }
 public abstract class MachineScript : MonoBehaviour
 {
