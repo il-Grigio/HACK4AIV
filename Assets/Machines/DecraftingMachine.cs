@@ -5,10 +5,10 @@ using UnityEngine;
 public class DecraftingMachine : MachineScript
 {
     [SerializeField] private float decraftingTime;
-    [SerializeField] private ItemComponent[] compatibleItems;
     [SerializeField] private ItemComponent materialDrop;
     [SerializeField] private float currentDecraftingTime;
     private bool isStarted;
+    private float itemRotationSpeed;
 
     private void Update() {
         if (isStarted) {
@@ -16,13 +16,16 @@ public class DecraftingMachine : MachineScript
             if(currentDecraftingTime <= 0) {
                 isStarted = false;
                 SpawnMaterial();
+                Destroy(placedItems[0].gameObject);
                 placedItems[0] = null;
             }
         }
     }
+
+    //When the player interacts with the machine, use this function (Es. start crafting)
     public override bool Interact() {
-        if(placedItems.Length > 0) {
-            if (placedItems[0] && placedItems[0].ingredientScriptable.ingredients.Length > 0) {
+        if (placedItems[0] && placedItems[0].ingredientScriptable.ingredients.Length > 0) {
+            if (CheckCorrectMaterial()) {
                 currentDecraftingTime = decraftingTime;
                 isStarted = true;
                 return true;
@@ -37,6 +40,17 @@ public class DecraftingMachine : MachineScript
         item.transform.position = placeItemPositions[0].position;
         //Rigidbody itemrb = materialDrop.GetComponent<Rigidbody>();
         //itemrb.AddForce
+    }
+
+    private bool CheckCorrectMaterial() {
+        foreach(IngredientScriptable item in placedItems[0].ingredientScriptable.ingredients) {
+            if(string.Compare(item.fullName, materialDrop.ingredientScriptable.fullName) == 0) {
+                Debug.Log("Material found");
+                return true;
+            }
+        }
+        Debug.Log("Material not found");
+        return false;
     }
 
 #if UNITY_EDITOR

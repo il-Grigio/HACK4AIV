@@ -7,8 +7,7 @@ public class Threadmill : MachineScript {
     [SerializeField] float timeToMove = 5;
     float currentTime;
     public override bool Interact() {
-
-        return false;
+        return true;
     }
     private void Update() {
         if (placedItems[0]) {
