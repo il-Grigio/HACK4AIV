@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Puppet
   model3D: {fileID: 0}
-  myIngredients:
+  icon: {fileID: 0}
+  ingredients:
   - {fileID: 11400000, guid: 0855fbed8cd76524e8e51d11aea6b601, type: 2}
   - {fileID: 11400000, guid: 0855fbed8cd76524e8e51d11aea6b601, type: 2}
   - {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc, type: 2}
