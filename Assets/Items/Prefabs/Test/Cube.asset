@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a6b6653b397f294cb2c984fc019d3bf, type: 3}
-  m_Name: Mattress
+  m_Name: Cube
   m_EditorClassIdentifier: 
-  fullName: Mattress
+  fullName: Cube
   model3D: {fileID: 0}
   icon: {fileID: 0}
   ingredients:
-  - {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc, type: 2}
-  - {fileID: 11400000, guid: fd05215a69fc08a4891c358a12db7318, type: 2}
+  - {fileID: 11400000, guid: 26f4d6413167b4c4ca4d488930208592, type: 2}

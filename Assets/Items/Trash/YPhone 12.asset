@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: YPhone 12
   model3D: {fileID: 0}
-  myIngredients:
+  icon: {fileID: 0}
+  ingredients:
   - {fileID: 11400000, guid: 25410311cbf614b4293464a08aa71dc2, type: 2}

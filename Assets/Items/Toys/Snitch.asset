@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Blintendo Snitch Pro
   model3D: {fileID: 0}
-  myIngredients:
+  icon: {fileID: 0}
+  ingredients:
   - {fileID: 11400000, guid: 25410311cbf614b4293464a08aa71dc2, type: 2}
   - {fileID: 11400000, guid: 25410311cbf614b4293464a08aa71dc2, type: 2}
   - {fileID: 11400000, guid: 4c63ce9a0301c084e9623b70ab9d0e4b, type: 2}

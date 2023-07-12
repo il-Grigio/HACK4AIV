@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Tyres
   model3D: {fileID: 0}
-  myIngredients:
+  icon: {fileID: 0}
+  ingredients:
   - {fileID: 11400000, guid: b9c3625582aa6b7428180c18e9455eb7, type: 2}
