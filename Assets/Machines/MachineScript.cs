@@ -32,6 +32,14 @@ public abstract class MachineScript : MonoBehaviour
         }
         return null;
     }
+    public void RemoveItem(ItemComponent item) {
+        for (int i = 0; i < placedItems.Length; i++) {
+            if (placedItems[i] == item) {
+                placedItems = null;
+                return;
+            }
+        }
+    }
 
     public bool CanPlaceItems() {
         for (int i = 0; i < placeItemPositions.Length; i++) {
