@@ -10,7 +10,7 @@ public abstract class MachineScript : MonoBehaviour
 {
     [SerializeField] protected MachineType MachineType;
     [SerializeField] protected Transform[] placeItemPositions;
-    [SerializeField] protected ItemComponent[] placedItems;
+    protected ItemComponent[] placedItems;
     private void Awake() {
         placedItems = new ItemComponent[placeItemPositions.Length];
     }
