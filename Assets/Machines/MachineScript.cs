@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum MachineType { }
-public class MachineScript : MonoBehaviour
+public enum MachineType { 
+    Decrafting,
+    DecraftingSpam,
+    Crafting
+}
+public abstract class MachineScript : MonoBehaviour
 {
-    [SerializeField] MachineType MachineType;
-    [SerializeField] Transform[] placeItemPositions;
-    ItemComponent[] placedItems;
+    [SerializeField] protected MachineType MachineType;
+    [SerializeField] protected Transform[] placeItemPositions;
+    protected ItemComponent[] placedItems;
     private void Awake() {
         placedItems = new ItemComponent[placeItemPositions.Length];
     }
@@ -35,5 +39,5 @@ public class MachineScript : MonoBehaviour
         return false;
     }
 
-
+    public abstract bool Interact();
 }
