@@ -52,10 +52,10 @@ public class RecipeManager : MonoBehaviour
 
     private void AddItemToUI(UIIngredient item)
     {
-        GameObject.Instantiate(UIPrefab, recipeContainer.transform);
-        UIPrefab.ingredient = item.ingredient;
-        UIPrefab.ingredientImage.sprite = UIPrefab.ingredient.icon;
-        UIPrefab.benchImage.sprite = materialIcons[item.station];
+        UIUnitManager newUI = GameObject.Instantiate(UIPrefab, recipeContainer.transform);
+        newUI.ingredient = item.ingredient;
+        newUI.ingredientImage.sprite = UIPrefab.ingredient.icon;
+        newUI.benchImage.sprite = materialIcons[item.station];
 
         recipeContainer.UpdateContainerSize();
     }
