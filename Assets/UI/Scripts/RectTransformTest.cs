@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RectTransformTest : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class RectTransformTest : MonoBehaviour
 
     [SerializeField]
     private RectTransform rectSizeArea;
+    [SerializeField]
+    private Scrollbar scroll;
     [SerializeField]
     private bool updateContainer = false;
 
@@ -32,8 +35,7 @@ public class RectTransformTest : MonoBehaviour
     }
 
     private void Update()
-        {
-        
+    {
         if (updateContainer)
         {
             UpdateContainerSize();
@@ -41,7 +43,7 @@ public class RectTransformTest : MonoBehaviour
         }
     }
 
-    void SearchForUnits()
+    private void SearchForUnits()
     {
         RectTransform[] tempRects = GetComponentsInChildren<RectTransform>();
         units.Clear();
@@ -54,17 +56,15 @@ public class RectTransformTest : MonoBehaviour
         }
     }
 
-    public void FirstTimeContainerSetup()
-    {
-        SearchForUnits();
-        rect_t.sizeDelta = new Vector2(rect_t.sizeDelta.x, (units[0].rect.height * units.Count) - rect_t.rect.height);
-    }
-
     public void UpdateContainerSize()
     {
         Canvas.ForceUpdateCanvases();
         RECT_T_HEIGHT = rectSizeArea.rect.height;
         SearchForUnits();
-        rect_t.sizeDelta = new Vector2(rect_t.sizeDelta.x, (units[0].rect.height * units.Count) - RECT_T_HEIGHT);
+        if (units.Count > 0)
+        {
+            rect_t.sizeDelta = new Vector2(rect_t.sizeDelta.x, (units[0].rect.height * units.Count) - RECT_T_HEIGHT);
+            scroll.value = 1;
+        }
     }
 }
