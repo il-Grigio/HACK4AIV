@@ -41,6 +41,8 @@ public class CharacterPickUp : CharacterAbility
     [Header("DEBUGGER")]
     [SerializeField] protected ItemComponent _itemComponent;
     [SerializeField] private bool hasItem = false;
+    private HandIKCharcter handIK;
+    
 
 
     float hitDistance;
@@ -51,6 +53,7 @@ public class CharacterPickUp : CharacterAbility
     protected override void Initialization() {
         base.Initialization();
         _characterController = _controller.GetComponent<CharacterController>();
+        handIK = GetComponentInChildren<HandIKCharcter>();
     }
 
     /// <summary>
@@ -74,7 +77,6 @@ public class CharacterPickUp : CharacterAbility
                 PickUpItem();
         }
        
-
 
     }
     public void DropItemLogic() {
@@ -158,6 +160,27 @@ public class CharacterPickUp : CharacterAbility
         item.transform.position = itemStand.transform.position;
     }
 
+    private void Update()
+    {
+        if (hasItem) 
+        {
+            //Vector3 pos = itemStand.position + model.right * 3;
+            //_itemComponent.GetComponent<Collider>().enabled = true;
+            //RaycastHit hit;
+            //if(Physics.Raycast(pos, -model.right, out hit,2, pickuppableLayerMask)) 
+            //{
+            //    Debug.DrawLine(pos, hit.point,Color.blue);
+            //    if(hit.transform == _itemComponent.transform) 
+            //    {
+            //    }
+            //}
+            //_itemComponent.GetComponent<Collider>().enabled = false;
+            handIK.SetIK(HandIKCharcter.Side.Right, itemStand.position + model.right * 0.5f, itemStand.rotation);
+            handIK.SetIK(HandIKCharcter.Side.Left, itemStand.position - model.right * 0.5f, itemStand.rotation);
+        }
+        else handIK.automatic = true;
+
+    }
     //private void OnDrawGizmos() {
 
     //    Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
