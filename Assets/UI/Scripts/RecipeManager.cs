@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing.Text;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,8 @@ public enum Workstation
     RubberStation,
     GlassStation,
     ClothStation,
-    CircuitsStation
+    CircuitsStation,
+    CraftingStation
 }
 
 public class RecipeManager : MonoBehaviour
@@ -74,6 +76,8 @@ public class RecipeManager : MonoBehaviour
             
         AddItemToUI(newIngredient);
     }
+
+    
 }
 
 public class UIIngredient
