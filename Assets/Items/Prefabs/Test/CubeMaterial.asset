@@ -15,4 +15,5 @@ MonoBehaviour:
   fullName: Material Cube
   model3D: {fileID: 0}
   icon: {fileID: 0}
-  ingredients: []
+  ingredients:
+  - {fileID: 11400000, guid: b6ff2f76d5ef4794f86f0f5956a57169, type: 2}

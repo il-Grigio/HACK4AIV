@@ -9,6 +9,7 @@ public class DecraftingMachine : MachineScript
     [SerializeField] private float currentDecraftingTime;
     private bool isStarted;
     private float itemRotationSpeed;
+    [SerializeField] private float itemThrowForce;
 
     private void Update() {
         if (isStarted) {
@@ -38,8 +39,8 @@ public class DecraftingMachine : MachineScript
     private void SpawnMaterial() {
         ItemComponent item = Instantiate<ItemComponent>(materialDrop);
         item.transform.position = placeItemPositions[0].position;
-        //Rigidbody itemrb = materialDrop.GetComponent<Rigidbody>();
-        //itemrb.AddForce
+        Rigidbody itemrb = item.GetComponent<Rigidbody>();
+        itemrb.AddForce(-transform.forward * itemThrowForce);
     }
 
     private bool CheckCorrectMaterial() {

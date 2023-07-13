@@ -7,4 +7,6 @@ public class CraftingStand : MachineScript
     public override bool Interact() {
         return true;
     }
+
+    public ItemComponent getPlacedItem() { if (placedItems[0]) { return placedItems[0]; } return null; }
 }
