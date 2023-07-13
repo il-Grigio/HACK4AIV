@@ -158,27 +158,27 @@ public class CharacterPickUp : CharacterAbility
         item.transform.position = itemStand.transform.position;
     }
 
-    private void OnDrawGizmos() {
+    //private void OnDrawGizmos() {
 
-        Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
-        Vector3 direction = model.forward;
-        float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
+    //    Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
+    //    Vector3 direction = model.forward;
+    //    float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
 
-        Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
-                maxDistance, workStationLayerMask);
-        hitDistance = (_hit.collider != null) ? _hit.distance : -1;
+    //    Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+    //            maxDistance, workStationLayerMask);
+    //    hitDistance = (_hit.collider != null) ? _hit.distance : -1;
 
-        // Visualize the spherecast shape in the Scene View
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(origin, origin + direction * maxDistance);
+    //    // Visualize the spherecast shape in the Scene View
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawLine(origin, origin + direction * maxDistance);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(origin, sphereCastRadius);
-        Gizmos.DrawWireSphere(origin + direction * maxDistance, sphereCastRadius);
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(origin, sphereCastRadius);
+    //    Gizmos.DrawWireSphere(origin + direction * maxDistance, sphereCastRadius);
 
-        Gizmos.color = Color.black;
-        Gizmos.DrawWireSphere(origin + direction * hitDistance, sphereCastRadius);
-    }
+    //    Gizmos.color = Color.black;
+    //    Gizmos.DrawWireSphere(origin + direction * hitDistance, sphereCastRadius);
+    //}
 
 
     /// <summary>
