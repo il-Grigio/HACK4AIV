@@ -506,6 +506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 336424036}
+  - component: {fileID: 336424037}
   m_Layer: 0
   m_Name: RecipeManager
   m_TagString: Untagged
@@ -528,6 +529,36 @@ Transform:
   m_Father: {fileID: 1918232351}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &336424037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336424035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5bb4fa94ed06a4fbfc8829bbe31def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPhases: []
+  newRecepieEntering:
+    m_PersistentCalls:
+      m_Calls: []
+  recepieFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  newPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  deliveredWrongRecepy:
+    m_PersistentCalls:
+      m_Calls: []
+  didntFinishInTimeRecepie:
+    m_PersistentCalls:
+      m_Calls: []
+  activeRecepies: []
+  failedRecepies: 0
 --- !u!1 &370392662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1597,7 @@ MonoBehaviour:
   MachineType: 3
   placeItemPositions:
   - {fileID: 2036374400}
+  placedItems: []
 --- !u!65 &904960229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2537,10 +2569,11 @@ MonoBehaviour:
   - {fileID: 1274491444}
   - {fileID: 93454093}
   - {fileID: 1181630578}
+  placedItems: []
   decraftingTime: 0
-  compatibleItems: []
   materialDrop: {fileID: 0}
   currentDecraftingTime: 0
+  itemThrowForce: 0
 --- !u!1 &1618121291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,6 +2744,7 @@ MonoBehaviour:
   MachineType: 0
   placeItemPositions:
   - {fileID: 591018893}
+  placedItems: []
   finalDestination: {fileID: 806942185}
   timeToMove: 3
 --- !u!1 &1666771291 stripped
@@ -3116,6 +3150,7 @@ Transform:
   - {fileID: 1919321264}
   - {fileID: 612343371}
   - {fileID: 336424036}
+  - {fileID: 2040650794}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3337,6 +3372,92 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1666771298}
   m_SourcePrefab: {fileID: 100100000, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
+--- !u!1 &2024044415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2024044416}
+  - component: {fileID: 2024044417}
+  m_Layer: 0
+  m_Name: FmodEnvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2024044416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024044415}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2040650794}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2024044417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024044415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eeeb488e8e1a1244906cc4636cebbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ambienceSound>k__BackingField:
+    Guid:
+      Data1: 1963136115
+      Data2: 1141517755
+      Data3: -1352180289
+      Data4: 956709888
+    Path: event:/Ambiance/IndustrialAmbiance
+  <musicMenu>k__BackingField:
+    Guid:
+      Data1: 690139820
+      Data2: 1085815235
+      Data3: -16881784
+      Data4: -352075400
+    Path: event:/MusicEvents/MainMenu
+  <ChainSawTable>k__BackingField:
+    Guid:
+      Data1: 361984373
+      Data2: 1180717069
+      Data3: -744626530
+      Data4: 204451103
+    Path: event:/SFXEvents/ChainSawTable
+  <pickUpItem>k__BackingField:
+    Guid:
+      Data1: -617471470
+      Data2: 1180623382
+      Data3: -437238084
+      Data4: -1921699312
+    Path: event:/SFXEvents/PickUpMaterial
+  <dropItem>k__BackingField:
+    Guid:
+      Data1: -942714159
+      Data2: 1126031177
+      Data3: -1640516458
+      Data4: -270164588
+    Path: event:/SFXEvents/DropDownMaterial
+  <footsStep>k__BackingField:
+    Guid:
+      Data1: 733880416
+      Data2: 1160065087
+      Data3: -267556186
+      Data4: -489198063
+    Path: event:/SFXEvents/FootsStep
 --- !u!1 &2036374399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3368,6 +3489,55 @@ Transform:
   m_Father: {fileID: 904960232}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2040650793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2040650794}
+  - component: {fileID: 2040650795}
+  m_Layer: 0
+  m_Name: FMOD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2040650794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040650793}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.159566, y: 3.5525093, z: -26.421047}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2024044416}
+  m_Father: {fileID: 1918232351}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2040650795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040650793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c0759046f751642a406c1ac81d0f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 10
+  musicVolume: 3
+  ambienceVolume: 10
+  SFXVolume: 10
 --- !u!1 &2043279810
 GameObject:
   m_ObjectHideFlags: 0

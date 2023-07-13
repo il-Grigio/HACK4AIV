@@ -73,9 +73,7 @@ public class CharacterPickUp : CharacterAbility
             else
                 PickUpItem();
         }
-        if (_inputManager.TimeControlButton.State.CurrentState == MMInput.ButtonStates.ButtonUp) {
-            //TimeControlStop();
-        }
+       
 
 
     }
