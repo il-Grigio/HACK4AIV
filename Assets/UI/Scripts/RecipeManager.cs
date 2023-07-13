@@ -1,8 +1,8 @@
+using Grigios;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing.Text;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,37 +18,37 @@ public enum Workstation
     CraftingStation
 }
 
-public class RecipeManager : MonoBehaviour
+public class RecipeManager : Singleton<RecipeManager>
 {
     [SerializeField]
     private RectTransformTest recipeContainer;
     [SerializeField]
     private UIUnitManager UIPrefab;
 
-    [SerializeField] private Sprite bench_metal_image;
-    [SerializeField] private Sprite bench_wood_image;
-    [SerializeField] private Sprite bench_plastic_image;
-    [SerializeField] private Sprite bench_rubber_image;
-    [SerializeField] private Sprite bench_glass_image;
-    [SerializeField] private Sprite bench_cloth_image;
-    [SerializeField] private Sprite bench_circuits_image;
+    [SerializeField] private IngredientScriptable bench_metal;
+    [SerializeField] private IngredientScriptable bench_wood;
+    [SerializeField] private IngredientScriptable bench_plastic;
+    [SerializeField] private IngredientScriptable bench_rubber;
+    [SerializeField] private IngredientScriptable bench_glass;
+    [SerializeField] private IngredientScriptable bench_cloth;
+    [SerializeField] private IngredientScriptable bench_circuits;
 
     private List<UIIngredient> items;
-    private Dictionary<Workstation, Sprite> materialIcons;
+    [HideInInspector] public Dictionary<Workstation, IngredientScriptable> materialIcons;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         items = new List<UIIngredient>();
-        materialIcons = new Dictionary<Workstation, Sprite>();
+        materialIcons = new Dictionary<Workstation, IngredientScriptable>();
 
-        materialIcons.Add(Workstation.MetalStation, bench_metal_image);
-        materialIcons.Add(Workstation.WoodStation, bench_wood_image);
-        materialIcons.Add(Workstation.PlasticStation, bench_plastic_image);
-        materialIcons.Add(Workstation.RubberStation, bench_rubber_image);
-        materialIcons.Add(Workstation.GlassStation, bench_glass_image);
-        materialIcons.Add(Workstation.ClothStation, bench_cloth_image);
-        materialIcons.Add(Workstation.CircuitsStation, bench_circuits_image);
+        materialIcons.Add(Workstation.MetalStation, bench_metal);
+        materialIcons.Add(Workstation.WoodStation, bench_wood);
+        materialIcons.Add(Workstation.PlasticStation, bench_plastic);
+        materialIcons.Add(Workstation.RubberStation, bench_rubber);
+        materialIcons.Add(Workstation.GlassStation, bench_glass);
+        materialIcons.Add(Workstation.ClothStation, bench_cloth);
+        materialIcons.Add(Workstation.CircuitsStation, bench_circuits);
 
     }
 
@@ -57,7 +57,7 @@ public class RecipeManager : MonoBehaviour
         UIUnitManager newUI = GameObject.Instantiate(UIPrefab, recipeContainer.transform);
         newUI.ingredient = item.ingredient;
         newUI.ingredientImage.sprite = item.ingredient.icon;
-        newUI.benchImage.sprite = materialIcons[item.station];
+        newUI.benchImage.sprite = materialIcons[item.station].icon;
 
         recipeContainer.UpdateContainerSize();
     }

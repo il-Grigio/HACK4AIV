@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DecraftingMachine : MachineScript
 {
+    [SerializeField] Workstation workstationType;
     [SerializeField] private float decraftingTime;
     [SerializeField] private ItemComponent materialDrop;
     [SerializeField] private float currentDecraftingTime;
@@ -38,18 +40,21 @@ public class DecraftingMachine : MachineScript
     //Spawns material with a small hop
     private void SpawnMaterial() {
         ItemComponent item = Instantiate<ItemComponent>(materialDrop);
+        item.ingredientScriptable = RecipeManager.Instance.materialIcons[workstationType];
         item.transform.position = placeItemPositions[0].position;
         Rigidbody itemrb = item.GetComponent<Rigidbody>();
         itemrb.AddForce(-transform.forward * itemThrowForce);
     }
 
     private bool CheckCorrectMaterial() {
-        foreach(IngredientScriptable item in placedItems[0].ingredientScriptable.ingredients) {
-            if(string.Compare(item.fullName, materialDrop.ingredientScriptable.fullName) == 0) {
-                Debug.Log("Material found");
-                return true;
-            }
-        }
+        return placedItems[0].ingredientScriptable.ingredients.Contains(RecipeManager.Instance.materialIcons[workstationType]);
+        //foreach(IngredientScriptable item in placedItems[0].ingredientScriptable.ingredients) {
+        //    //if(string.Compare(item.fullName, materialDrop.ingredientScriptable.fullName) == 0) {
+        //    //if () { 
+        //    //    Debug.Log("Material found");
+        //    //    return true;
+        //    //}
+        //}
         Debug.Log("Material not found");
         return false;
     }

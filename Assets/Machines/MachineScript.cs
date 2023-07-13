@@ -10,6 +10,7 @@ public enum MachineType {
 }
 public abstract class MachineScript : MonoBehaviour
 {
+    Workstation workstation;
     [SerializeField] protected MachineType MachineType;
     [SerializeField] protected Transform[] placeItemPositions;
     [SerializeField] protected ItemComponent[] placedItems;

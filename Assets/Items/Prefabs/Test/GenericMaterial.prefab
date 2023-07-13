@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4119859082408076196}
   - component: {fileID: 1656657812851438089}
   m_Layer: 23
-  m_Name: CubeMaterial
+  m_Name: GenericMaterial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,5 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9c26fc39d4e514885ff24d76195df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientScriptable: {fileID: 11400000, guid: 26f4d6413167b4c4ca4d488930208592,
-    type: 2}
+  ingredientScriptable: {fileID: 0}

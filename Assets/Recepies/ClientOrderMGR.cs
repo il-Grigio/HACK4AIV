@@ -14,7 +14,7 @@ public class Recepie : ScriptableObject {
     public IngredientScriptable recepie;
 }
 
-public class RecepieMGR : Grigios.Singleton<RecepieMGR>
+public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 {
 
     [System.Serializable]
