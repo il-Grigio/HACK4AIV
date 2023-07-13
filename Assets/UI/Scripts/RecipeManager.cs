@@ -56,10 +56,15 @@ public class RecipeManager : MonoBehaviour
     {
         UIUnitManager newUI = GameObject.Instantiate(UIPrefab, recipeContainer.transform);
         newUI.ingredient = item.ingredient;
-        newUI.ingredientImage.sprite = UIPrefab.ingredient.icon;
+        newUI.ingredientImage.sprite = item.ingredient.icon;
         newUI.benchImage.sprite = materialIcons[item.station];
 
         recipeContainer.UpdateContainerSize();
+    }
+
+    private bool ContainsAttribute()
+    {
+        return true;
     }
 
     public void NewRecipe(IngredientScriptable newItem, Workstation station)

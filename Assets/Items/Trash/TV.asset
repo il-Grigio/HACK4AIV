@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Old Television
   model3D: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 12c99d7ff76d10f43a20564d8cbf9449, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 25410311cbf614b4293464a08aa71dc2, type: 2}
   - {fileID: 11400000, guid: 4c63ce9a0301c084e9623b70ab9d0e4b, type: 2}

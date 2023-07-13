@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Bicicle
   model3D: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: 21300014, guid: 678058abcbfe36f42902c11d9e5f64fc, type: 3}
   ingredients:
   - {fileID: 11400000, guid: fd05215a69fc08a4891c358a12db7318, type: 2}
   - {fileID: 11400000, guid: b9c3625582aa6b7428180c18e9455eb7, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Car Door
   model3D: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: 21300004, guid: f5f1e19b6cf4f294aa5dd90c42db7090, type: 3}
   ingredients:
   - {fileID: 11400000, guid: fd05215a69fc08a4891c358a12db7318, type: 2}
   - {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc, type: 2}
