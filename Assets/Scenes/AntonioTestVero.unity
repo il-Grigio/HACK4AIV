@@ -2371,7 +2371,11 @@ MonoBehaviour:
   - {fileID: 1274491444}
   - {fileID: 93454093}
   - {fileID: 1181630578}
+  placedItems: []
   decraftingTime: 0
+  materialDrop: {fileID: 0}
+  currentDecraftingTime: 0
+  itemThrowForce: 0
 --- !u!1 &1618121291
 GameObject:
   m_ObjectHideFlags: 0
@@ -3195,6 +3199,13 @@ MonoBehaviour:
       Data3: -437238084
       Data4: -1921699312
     Path: event:/SFXEvents/PickUpMaterial
+  <dropItem>k__BackingField:
+    Guid:
+      Data1: -942714159
+      Data2: 1126031177
+      Data3: -1640516458
+      Data4: -270164588
+    Path: event:/SFXEvents/DropDownMaterial
   <footsStep>k__BackingField:
     Guid:
       Data1: 733880416

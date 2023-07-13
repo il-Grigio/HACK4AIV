@@ -106,7 +106,6 @@ public class CharacterPickUp : CharacterAbility
 
         DropItem(_itemComponent);
         
-        
         hasItem = false;
     }
 
@@ -115,6 +114,7 @@ public class CharacterPickUp : CharacterAbility
         item.transform.GetComponent<Rigidbody>().useGravity = true;
         item.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         item.transform.GetComponent<Collider>().enabled = true;
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.dropItem,this.transform.position);
         _itemComponent = null;
     }
 
