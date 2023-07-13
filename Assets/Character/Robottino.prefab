@@ -16562,6 +16562,37 @@ MonoBehaviour:
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
   MaterialIndexes: 
   UseMaterialPropertyBlocks: 0
+--- !u!1 &7536930370319352127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5296165234272838658}
+  m_Layer: 0
+  m_Name: RightHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5296165234272838658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536930370319352127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1443839214342841353}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7995506368366974240
 GameObject:
   m_ObjectHideFlags: 0
@@ -21815,7 +21846,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5471091547018936928}
-    m_AddedComponents: []
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 45fda79a34375a24a85f493ca342524f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5296165234272838658}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 45fda79a34375a24a85f493ca342524f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6498826865130196895}
   m_SourcePrefab: {fileID: 100100000, guid: 45fda79a34375a24a85f493ca342524f, type: 3}
 --- !u!4 &1443839214342841353 stripped
 Transform:
@@ -21829,6 +21868,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1406026198946038754}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6498826865130196895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2252464678936477363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9bb9b8840c7694789e4909bddcdab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  automatic: 1
 --- !u!95 &4821561661742841459 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 45fda79a34375a24a85f493ca342524f,
