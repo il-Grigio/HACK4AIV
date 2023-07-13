@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Mattress
   model3D: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: 3969610055334106238, guid: 2e7c9fb977d8c834eaab8acbb55218df, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc, type: 2}
   - {fileID: 11400000, guid: fd05215a69fc08a4891c358a12db7318, type: 2}
