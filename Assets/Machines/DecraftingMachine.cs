@@ -9,7 +9,7 @@ public class DecraftingMachine : MachineScript
     [SerializeField] private float decraftingTime;
     [SerializeField] private ItemComponent materialDrop;
     [SerializeField] private float currentDecraftingTime;
-    private bool isStarted;
+    public bool isStarted;
     private float itemRotationSpeed;
     [SerializeField] private float itemThrowForce;
 
