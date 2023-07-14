@@ -23,12 +23,16 @@ public class CharacterSideMenu : CharacterAbility {
         // on our main stick/direction pad/keyboard
         if (_inputManager.ReloadButton.State.CurrentState == MMInput.ButtonStates.ButtonDown) {
             trigger.TriggerAnimation();
-            isToggled = !isToggled;
-            
-            PermitAbility(isToggled);
-            charMoveScript.InputAuthorized = !isToggled;
-            
         }
-        _verticalMovement = _verticalInput;
+        if (isToggled)
+        {
+            _verticalMovement = _verticalInput;
+        }
+    }
+
+    public void ToggleInputs()
+    {
+        isToggled = !isToggled;
+        charMoveScript.InputAuthorized = !isToggled;
     }
 }
