@@ -4,16 +4,6 @@ using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-[CreateAssetMenu(fileName = "new Recepie", menuName = "Recepie")]
-public class Recepie : ScriptableObject {
-    public float timeToFinishRecepie = 60;
-    [HideInInspector] public float currentTime;
-    public float timeBonusOnComplete;
-    public float timeLostOnIncomplete;
-    public IngredientScriptable recepie;
-}
-
 public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 {
 
@@ -54,7 +44,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     //private
     int currentPhaseIndex = 1;
     public int CurrentPhaseIndex => currentPhaseIndex;
-    List<Recepie> recepiesToRemove;
+    List<Recepie> recepiesToRemove = new List<Recepie>();
     float partialTime;
     int nRecepiesArrived = 0;
     private void Start() {

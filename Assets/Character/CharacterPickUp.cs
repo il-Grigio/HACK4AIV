@@ -135,6 +135,7 @@ public class CharacterPickUp : CharacterAbility
 
             MachineScript machine = _hit.transform.GetComponent<MachineScript>();
             _itemComponent = machine.GetFirstItem();
+            if (_itemComponent == null) return;
             machine.RemoveItem(_itemComponent);
             PutItemInArms(_itemComponent);
             return;
@@ -168,6 +169,7 @@ public class CharacterPickUp : CharacterAbility
     {
         if (hasItem) 
         {
+            _itemComponent.transform.localPosition = Vector3.zero;
             //Vector3 pos = itemStand.position + model.right * 3;
             //_itemComponent.GetComponent<Collider>().enabled = true;
             //RaycastHit hit;

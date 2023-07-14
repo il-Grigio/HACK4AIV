@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 96294237646036025}
   - component: {fileID: 9214410579933311868}
   m_Layer: 23
-  m_Name: MetalPrefab
+  m_Name: RubberPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2b901fbe04c54ba42bc9f64c95cba6d0, type: 2}
+  - {fileID: 2100000, guid: 346cb9687cd228647842a141f29594cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,5 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9c26fc39d4e514885ff24d76195df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientScriptable: {fileID: 11400000, guid: fd05215a69fc08a4891c358a12db7318,
+  ingredientScriptable: {fileID: 11400000, guid: b9c3625582aa6b7428180c18e9455eb7,
     type: 2}
