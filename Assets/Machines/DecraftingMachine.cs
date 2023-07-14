@@ -40,7 +40,7 @@ public class DecraftingMachine : MachineScript
     //Spawns material with a small hop
     private void SpawnMaterial() {
         ItemComponent item = Instantiate<ItemComponent>(materialDrop);
-        item.ingredientScriptable = RecipeManager.Instance.materialIcons[workstationType];
+        //item.ingredientScriptable = RecipeManager.Instance.materialIcons[workstationType];
         item.transform.position = placeItemPositions[0].position;
         Rigidbody itemrb = item.GetComponent<Rigidbody>();
         itemrb.AddForce(-transform.forward * itemThrowForce);
@@ -55,8 +55,8 @@ public class DecraftingMachine : MachineScript
         //    //    return true;
         //    //}
         //}
-        Debug.Log("Material not found");
-        return false;
+        //Debug.Log("Material not found");
+        //return false;
     }
 
 #if UNITY_EDITOR

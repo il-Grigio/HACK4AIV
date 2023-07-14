@@ -7,6 +7,6 @@ public class IngredientScriptable : ScriptableObject
     [SerializeField] public string fullName;
     [SerializeField] public GameObject model3D;
     [SerializeField] public Sprite icon;
-    [SerializeField] public IngredientScriptable[] ingredients;
+    [SerializeField] public IngredientScriptable[] ingredients = new IngredientScriptable[0];
 
 }

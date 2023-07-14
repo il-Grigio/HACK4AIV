@@ -4964,6 +4964,7 @@ GameObject:
   - component: {fileID: 3238189167726219938}
   - component: {fileID: 3399947704271758362}
   - component: {fileID: 8607522619627411759}
+  - component: {fileID: 8533938410050578834}
   m_Layer: 10
   m_Name: Robottino
   m_TagString: Player
@@ -5334,6 +5335,7 @@ MonoBehaviour:
   PhysicsInteractionsRaycastOffset: {x: 0, y: -0.3, z: -1.5}
   _itemComponent: {fileID: 0}
   hasItem: 0
+  gizmoDebug: 0
 --- !u!114 &8607522619627411759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5346,6 +5348,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba19af16bde931a44bfc687f7dcf1cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8533938410050578834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482120854846787258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2522bb57aec42a446a5f5772d784c817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartSfx: {fileID: 0}
+  AbilityInProgressSfx: {fileID: 0}
+  AbilityStopSfx: {fileID: 0}
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
+  workStationLayerMask:
+    serializedVersion: 2
+    m_Bits: 16777216
+  model: {fileID: 1443839214342841353}
+  sphereCastRadius: 1.5
+  PhysicsInteractionsRaycastLength: 5
+  PhysicsInteractionsRaycastOffset: {x: 0, y: -0.3, z: -1.5}
 --- !u!1 &1847705109815912789
 GameObject:
   m_ObjectHideFlags: 0
