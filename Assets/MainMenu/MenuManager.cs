@@ -13,16 +13,16 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private LayerMask rayMask;
     [SerializeField] private MenuButton[] buttons;
+    [SerializeField] private Transform selector;
+    private Vector3 selectorOffset;
     private int selectedButton;
     private bool hasChangedSelection;
 
     private string menuAxis = "MenuSelection";
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+    private void Awake() {
+        selectorOffset = selector.localPosition;
+    }
     // Update is called once per frame
     void Update(){
         //Joypad selection
@@ -57,13 +57,20 @@ public class MenuManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0)) {
                 if (buttons[selectedButton]) {
+                    foreach(MenuButton button in buttons) {
+                        if(button && button.GetType() == typeof(LifterButton) && button != buttons[selectedButton]) {
+                            LifterButton liftButton = (LifterButton)button;
+                            liftButton.tabOpened = false;
+                        }
+                    }
                     buttons[selectedButton].ExecuteButton();
                 }
             }
         }
+        ChangeSelector();
     }
 
     private void ChangeSelector() {
-
+        selector.position = new Vector3(selector.position.x, buttons[selectedButton].transform.position.y, selector.position.z);
     }
 }
