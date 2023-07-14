@@ -19,6 +19,7 @@ public class MenuManager : MonoBehaviour
     private bool hasChangedSelection;
 
     private string menuAxis = "MenuSelection";
+    private string menuSelectionAxis = "MenuConfirm";
 
     private void Awake() {
         selectorOffset = selector.localPosition;
@@ -36,6 +37,10 @@ public class MenuManager : MonoBehaviour
 
         if (Mathf.RoundToInt(Input.GetAxisRaw(menuAxis)) == 0) {
             hasChangedSelection = false;
+        }
+
+        if (Input.GetButtonDown(menuSelectionAxis)){
+            buttons[selectedButton].ExecuteButton();
         }
 
         //Cursor selection (Overwrites Joypad selection)

@@ -19,6 +19,8 @@ public class FMODEvents : MonoBehaviour
     [field: Header("DropDownItem")]
     [field: SerializeField] public EventReference dropItem { get; private set; }
 
+    [field: Header("PlaceItemInTheCrafting")]
+    [field: SerializeField] public EventReference placeItemInCrafting { get; private set; }
     [field: Header("footsSteps")]
     [field: SerializeField] public EventReference footsStep { get; private set; }
     public static FMODEvents instance { get; private set; }

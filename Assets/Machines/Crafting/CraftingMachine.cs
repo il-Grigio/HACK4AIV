@@ -17,7 +17,7 @@ public class CraftingMachine : MachineScript
     [SerializeField] private Transform spawnPoint;
 
 
-    IngredientScriptable itemToCraft;
+    public IngredientScriptable itemToCraft;
     private ItemComponent craftedItem;
 
     public override bool Interact() {

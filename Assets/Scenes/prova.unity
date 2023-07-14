@@ -236,7 +236,35 @@ MonoBehaviour:
       Data2: 1180717069
       Data3: -744626530
       Data4: 204451103
-    Path: event:/SFXEvents/ChainSawTable
+    Path: event:/SFXEvents/WoodTable
+  <pickUpItem>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <dropItem>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <placeItemInCrafting>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <footsStep>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &949254581
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,9 +558,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2793bb927a7f6474db06e698a3d4efc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToReach: 10
-  speed: 2
-  timer: 0
+  soundToPlay:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!65 &1687194565
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -638,7 +670,7 @@ MonoBehaviour:
       Data2: 1180717069
       Data3: -744626530
       Data4: 204451103
-    Path: event:/SFXEvents/ChainSawTable
+    Path: event:/SFXEvents/WoodTable
   Event: 
   PlayEvent: 0
   StopEvent: 0
