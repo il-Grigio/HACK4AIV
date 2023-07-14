@@ -26,14 +26,12 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update(){
         //Joypad selection
-        Debug.Log((int)Input.GetAxisRaw(menuAxis));
         if (!hasChangedSelection) {
             selectedButton += (int)Input.GetAxisRaw(menuAxis);
             if((int)Input.GetAxisRaw(menuAxis) != 0) {
                 hasChangedSelection = true;
             }
             selectedButton = Mathf.Clamp(selectedButton, (int)MenuLabels.NewGame, (int)MenuLabels.Quit);
-            Debug.Log(selectedButton);
         }
 
         if (Mathf.RoundToInt(Input.GetAxisRaw(menuAxis)) == 0) {
@@ -58,8 +56,14 @@ public class MenuManager : MonoBehaviour
             }
 
             if (Input.GetMouseButtonDown(0)) {
-                Debug.Log("Executed button: " + selectedButton);
+                if (buttons[selectedButton]) {
+                    buttons[selectedButton].ExecuteButton();
+                }
             }
         }
+    }
+
+    private void ChangeSelector() {
+
     }
 }
