@@ -82,10 +82,12 @@ public class CraftingMachine : MachineScript
         currentCraftingTime = 0;
         for (int i = 0; i < placedItems.Length; i++) {
             if (placedItems[i] == null) continue;
+
+            //TODO destroy?
             placedItems[i].gameObject.SetActive(false);
             placedItems[i] = null;
         }
-
+        //TODO add prefabs dictionary
         craftedItem = Instantiate(blankItem);
         craftedItem.transform.position = spawnPoint.position;
         craftedItem.ingredientScriptable = itemToCraft;

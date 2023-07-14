@@ -21,7 +21,7 @@ public class TrashManager : Grigios.Singleton<TrashManager> {
     bool isSpawning;
     float currentSpawningTime;
     ClientOrderMGR clientOrderMGR;
-    ItemComponent[] activeItems;
+    ItemComponent[] activeItems = new ItemComponent[0];
     int currentTrash;
 
 
@@ -36,9 +36,17 @@ public class TrashManager : Grigios.Singleton<TrashManager> {
         activeItems = FindObjectsByType<ItemComponent>(FindObjectsSortMode.None);
 
         for (int i = 0; i < activeItems.Length; i++) {
-            if (System.Array.Exists(trashPhases[clientOrderMGR.CurrentPhaseIndex].possibleTrash, obj => obj == activeItems[i].ingredientScriptable)){
-                currentTrash++;
+            //TODO sono cloni non posso confrontare così
+            foreach (ItemComponent possibleTrash in trashPhases[clientOrderMGR.CurrentPhaseIndex].possibleTrash) {
+                if (possibleTrash.ingredientScriptable == activeItems[i].ingredientScriptable) 
+                    currentTrash++;
             }
+
+            //trashPhases[clientOrderMGR.CurrentPhaseIndex].possibleTrash.ToList().Contains(activeItems[i].ingredientScriptable);
+
+            //if (System.Array.Exists(trashPhases[clientOrderMGR.CurrentPhaseIndex].possibleTrash, obj => obj == activeItems[i].ingredientScriptable)){
+            //    currentTrash++;
+            //}
         }
     }
 
@@ -47,7 +55,7 @@ public class TrashManager : Grigios.Singleton<TrashManager> {
             StartSpawning();
         }
         if (isSpawning) {
-            currentSpawningTime -= Time.time;
+            currentSpawningTime -= Time.deltaTime;
             if(currentSpawningTime <= 0) {
                 isSpawning = false;
                 SpawnNow();
@@ -64,5 +72,6 @@ public class TrashManager : Grigios.Singleton<TrashManager> {
     private void SpawnNow() {
         ItemComponent spawnedItem = Instantiate(currentItemToSpawn);
         enteringThreadmill.PlaceItem(spawnedItem);
+        SetActiveItems();
     }
 }
