@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3425878522790332304
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.7497916
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.585417
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6719008315657019372, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9720021fa8d7741aa64b99943e598e, type: 2}
+    - target: {fileID: 919132149155446097, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Bancone_Vetro Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552124249113355630, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9720021fa8d7741aa64b99943e598e, type: 2}
+    - target: {fileID: 5679131526071911847, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9720021fa8d7741aa64b99943e598e, type: 2}
+    - target: {fileID: 8614972948872743914, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a9720021fa8d7741aa64b99943e598e, type: 2}
+    - target: {fileID: 8614972948872743914, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 512eef3619cedad4ebd5676cb5528fe8, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b8fce742c9dfbf3429e92d1041adf328, type: 3}
