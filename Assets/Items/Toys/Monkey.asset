@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a6b6653b397f294cb2c984fc019d3bf, type: 3}
   m_Name: Monkey
   m_EditorClassIdentifier: 
-  fullName: MonkeyWithPlates
+  fullName: Monkey With Plates
   model3D: {fileID: 0}
   icon: {fileID: 0}
   ingredients:
