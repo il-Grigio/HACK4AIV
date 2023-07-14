@@ -9,10 +9,12 @@ public class UICraftingUnit : MonoBehaviour
     [SerializeField] public Image ingredientImage;
     [SerializeField] public RectTransform ingredientsContainer;
     [SerializeField] private UIIngredientManager ingredientSample;
+    [SerializeField] private RectTransform timeRect;
 
     private List<UIIngredientManager> ingredients;
     [HideInInspector] public float MaxTime;
     [HideInInspector] public float currentTime;
+    //when time = 0, posX is -380
 
     public UICraftingUnit() { }
 
@@ -21,7 +23,7 @@ public class UICraftingUnit : MonoBehaviour
         ingredient = _ingredient;
     }
 
-    private void Awake()
+    private void Start()
     {
         ingredientImage.sprite = ingredient.icon;
         ingredients = new List<UIIngredientManager>();
@@ -30,10 +32,21 @@ public class UICraftingUnit : MonoBehaviour
             UIIngredientManager newIgredient = GameObject.Instantiate(ingredientSample, ingredientsContainer.transform);
             ingredientSample.outputIngredientIcon.sprite = outputIngredient.icon;
         }
+        timeRect.GetComponent<Animator>().SetFloat("TimeMultiplier", 1f / MaxTime);
+        currentTime = 0;
     }
 
     private void Update()
     {
-        
+        currentTime += Time.deltaTime;
+        if (currentTime >= MaxTime)
+        {
+            //Destroy(gameObject);
+        }
+    }
+
+    public void RemoveItem()
+    {
+        Destroy(gameObject);
     }
 }

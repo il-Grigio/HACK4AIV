@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 2861011166675193246}
   - component: {fileID: 1430127393901972292}
   - component: {fileID: 3625652027301670933}
+  - component: {fileID: 5325810765420088967}
   m_Layer: 5
   m_Name: TimeContent
   m_TagString: Untagged
@@ -498,6 +499,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &5325810765420088967
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900843546312434909}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3cfb3429eaa1a364cae082bc0c77098e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4085697061458736731
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6ba66e27011a0409c1953fcbe1461f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitSample: {fileID: 0}
+  UIContainer: {fileID: 0}
 --- !u!114 &1491238996847353381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,6 +591,9 @@ MonoBehaviour:
   ingredientsContainer: {fileID: 489662410949280142}
   ingredientSample: {fileID: 6822778395433641114, guid: fdf8715f10b39b74d9540dd2c8a0f0c5,
     type: 3}
+  timeRect: {fileID: 2861011166675193246}
+  MaxTime: 0
+  currentTime: 0
 --- !u!1 &8461737271962411683
 GameObject:
   m_ObjectHideFlags: 0

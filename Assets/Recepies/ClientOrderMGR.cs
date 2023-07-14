@@ -54,9 +54,11 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     //private
     int currentPhaseIndex = 1;
     public int CurrentPhaseIndex => currentPhaseIndex;
-    List<Recepie> recepiesToRemove;
+    List<Recepie> recepiesToRemove = new List<Recepie>();
     float partialTime;
     int nRecepiesArrived = 0;
+    UIClientOrder uiClientOrder;
+
     private void Start() {
         failedRecepies = 0;
         activeRecepies.Clear();
@@ -98,6 +100,10 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
             }
         }
         if(recepiesToRemove.Count > 0) {
+            foreach(var item in recepiesToRemove)
+            {
+                uiClientOrder.RemoveItem(item);
+            }
             activeRecepies.RemoveAll(i => recepiesToRemove.Contains(i));
             recepiesToRemove.Clear();
 
@@ -127,6 +133,12 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
             activeRecepies.Add(newRecepie);
             nRecepiesArrived++;
             newRecepie.currentTime = newRecepie.timeToFinishRecepie;
+
+            if(!uiClientOrder)
+            {
+                uiClientOrder = GameObject.Find("ToysMenu").GetComponent<UIClientOrder>();
+            }
+            uiClientOrder.NewRequest(newRecepie);
         }
         else {
             //TODO finishGame
