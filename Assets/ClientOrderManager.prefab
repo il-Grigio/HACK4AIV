@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9179066630141436595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2328185447431193027}
+  - component: {fileID: 6839144696822864093}
+  m_Layer: 0
+  m_Name: ClientOrderManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2328185447431193027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179066630141436595}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.346356, y: 13.052838, z: -22.71335}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6839144696822864093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179066630141436595}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5bb4fa94ed06a4fbfc8829bbe31def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPhases:
+  - possibleRecepies:
+    - {fileID: 11400000, guid: a0eb44884d60b9841908f7e0b9fe37ae, type: 2}
+    - {fileID: 11400000, guid: 85ec79723a7d5544eb73d17aac7ba6f7, type: 2}
+    timeToFinishPhase: 150
+    currentTime: 0
+    timeToAddRecepie: 20
+    initialRecepiesInThisPhase: 2
+    totalRecepiesInThisPhase: 5
+  - possibleRecepies:
+    - {fileID: 11400000, guid: 9c798618d0f19ea47a648c155180df43, type: 2}
+    - {fileID: 11400000, guid: 85ec79723a7d5544eb73d17aac7ba6f7, type: 2}
+    - {fileID: 11400000, guid: a0eb44884d60b9841908f7e0b9fe37ae, type: 2}
+    - {fileID: 11400000, guid: 27dc6ae9cd94bd4458770660c17302f1, type: 2}
+    timeToFinishPhase: 180
+    currentTime: 0
+    timeToAddRecepie: 20
+    initialRecepiesInThisPhase: 3
+    totalRecepiesInThisPhase: 7
+  - possibleRecepies:
+    - {fileID: 11400000, guid: 96800b461e2fb8e45bb5cb68eab75a97, type: 2}
+    - {fileID: 11400000, guid: 3675abb3651ebfc45854cf2df9f440df, type: 2}
+    - {fileID: 11400000, guid: 379c840d79ed7d840950cae37e12aab2, type: 2}
+    - {fileID: 11400000, guid: 29611fc95767e5e4ba8e182e45e01a6d, type: 2}
+    - {fileID: 11400000, guid: dccbe4813b7168746a1537490d3415d3, type: 2}
+    - {fileID: 11400000, guid: 08bd707d3ece9b14aa5e1dcec467da32, type: 2}
+    timeToFinishPhase: 300
+    currentTime: 0
+    timeToAddRecepie: 40
+    initialRecepiesInThisPhase: 5
+    totalRecepiesInThisPhase: 10
+  - possibleRecepies:
+    - {fileID: 11400000, guid: 96800b461e2fb8e45bb5cb68eab75a97, type: 2}
+    - {fileID: 11400000, guid: 3675abb3651ebfc45854cf2df9f440df, type: 2}
+    - {fileID: 11400000, guid: 379c840d79ed7d840950cae37e12aab2, type: 2}
+    - {fileID: 11400000, guid: 29611fc95767e5e4ba8e182e45e01a6d, type: 2}
+    - {fileID: 11400000, guid: dccbe4813b7168746a1537490d3415d3, type: 2}
+    - {fileID: 11400000, guid: 08bd707d3ece9b14aa5e1dcec467da32, type: 2}
+    - {fileID: 11400000, guid: e99f2567368b6844d8d62d19c73d8eb2, type: 2}
+    - {fileID: 11400000, guid: 4c2207319b315c64a9905c6b6633204b, type: 2}
+    timeToFinishPhase: 420
+    currentTime: 0
+    timeToAddRecepie: 50
+    initialRecepiesInThisPhase: 6
+    totalRecepiesInThisPhase: 15
+  - possibleRecepies:
+    - {fileID: 11400000, guid: 96800b461e2fb8e45bb5cb68eab75a97, type: 2}
+    - {fileID: 11400000, guid: 3675abb3651ebfc45854cf2df9f440df, type: 2}
+    - {fileID: 11400000, guid: 379c840d79ed7d840950cae37e12aab2, type: 2}
+    - {fileID: 11400000, guid: 29611fc95767e5e4ba8e182e45e01a6d, type: 2}
+    - {fileID: 11400000, guid: dccbe4813b7168746a1537490d3415d3, type: 2}
+    - {fileID: 11400000, guid: 08bd707d3ece9b14aa5e1dcec467da32, type: 2}
+    - {fileID: 11400000, guid: e99f2567368b6844d8d62d19c73d8eb2, type: 2}
+    - {fileID: 11400000, guid: 4c2207319b315c64a9905c6b6633204b, type: 2}
+    - {fileID: 11400000, guid: 42330d8b0523ed5498c1a447c6218829, type: 2}
+    - {fileID: 11400000, guid: 9da73be189139c146b53a63240602c02, type: 2}
+    - {fileID: 11400000, guid: a0ced316be11a9443ba3229659d1f30a, type: 2}
+    timeToFinishPhase: 600
+    currentTime: 0
+    timeToAddRecepie: 30
+    initialRecepiesInThisPhase: 4
+    totalRecepiesInThisPhase: 18
+  newRecepieEntering:
+    m_PersistentCalls:
+      m_Calls: []
+  recepieFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  newPhase:
+    m_PersistentCalls:
+      m_Calls: []
+  deliveredWrongRecepy:
+    m_PersistentCalls:
+      m_Calls: []
+  didntFinishInTimeRecepie:
+    m_PersistentCalls:
+      m_Calls: []
+  activeRecepies: []
+  failedRecepies: 0

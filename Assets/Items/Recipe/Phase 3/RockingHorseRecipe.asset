@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: RockingHorseRecipe
+  m_EditorClassIdentifier: Assembly-CSharp::Recepie
+  timeToFinishRecepie: 40
+  currentTime: 0
+  timeBonusOnComplete: 20
+  timeLostOnIncomplete: 40
+  recepie: {fileID: 11400000, guid: eddb5bd185718bc408d5667f471025c0, type: 2}
