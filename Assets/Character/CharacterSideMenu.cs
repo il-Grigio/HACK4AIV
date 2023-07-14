@@ -11,12 +11,12 @@ public class CharacterSideMenu : CharacterAbility {
     private CharacterMovement charMoveScript;
     private bool isToggled = false;
 
-    protected override void Awake()
-    {
-        base.Awake();
+    protected override void Initialization() {
+        base.Initialization();
         trigger = GameObject.Find("RecipesMenu").GetComponent<UIAnimationTrigger>();
         charMoveScript = GetComponent<CharacterMovement>();
     }
+    
 
     protected override void HandleInput() {
         // here as an example we check if we're pressing down
