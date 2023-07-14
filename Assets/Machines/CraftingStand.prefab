@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 7734179597006399668}
   - component: {fileID: 8523137244024316236}
   - component: {fileID: 1524910188605044053}
-  - component: {fileID: 5879346544827064109}
+  - component: {fileID: 6685575878069808131}
   m_Layer: 0
   m_Name: CraftingStand
   m_TagString: Untagged
@@ -486,7 +486,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5879346544827064109
+--- !u!114 &6685575878069808131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -495,15 +495,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 7388723654953895973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd969dbf68a77047b5d0e1ca7436382, type: 3}
+  m_Script: {fileID: 11500000, guid: 997f46f87101283438fb9f8a6df94303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MachineType: 3
+  MachineType: 2
   placeItemPositions:
   - {fileID: 1782111767977410142}
   - {fileID: 7497919838108248081}
   - {fileID: 3830414425211966115}
   placedItems: []
+  craftables:
+  - {fileID: 11400000, guid: ead11373cb6ee6943aac8fc81dd434fa, type: 2}
+  - {fileID: 11400000, guid: 0700daeaa31b3a741bf55a2181aa0225, type: 2}
+  - {fileID: 11400000, guid: 3081a63f286c6664e84e19444a7b4d39, type: 2}
+  - {fileID: 11400000, guid: 320c4d191ef0c0e4a940168fe9fac220, type: 2}
+  - {fileID: 11400000, guid: 7d9d105266f75814ab683e6e65b51878, type: 2}
+  - {fileID: 11400000, guid: 918b7aec49398ee4ca80bdf581d9da02, type: 2}
+  - {fileID: 11400000, guid: 44877f23401aadc4c95a8ecaf5ef70dd, type: 2}
+  - {fileID: 11400000, guid: c7075ee678575af43b2e5a9fdf7c58c0, type: 2}
+  - {fileID: 11400000, guid: eddb5bd185718bc408d5667f471025c0, type: 2}
+  - {fileID: 11400000, guid: 151bddcaba8be3f4999a981d0a57c62e, type: 2}
+  - {fileID: 11400000, guid: cef59f336f670bd478f8fffb98d9bf56, type: 2}
+  genericCraftable: {fileID: 11400000, guid: 5c8f19912caae624aa9d9cdf81159abc, type: 2}
+  blankItem: {fileID: 1656657812851438089, guid: bbdd507b339a6f74d9e9644429bdb645,
+    type: 3}
+  craftingTime: 5
+  spawnPoint: {fileID: 7380314609022356685}
 --- !u!1 &7389974665628387785
 GameObject:
   m_ObjectHideFlags: 0

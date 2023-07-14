@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9c26fc39d4e514885ff24d76195df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientScriptable: {fileID: 11400000, guid: fade471dd64105347b45a04872ffe544,
+  ingredientScriptable: {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc,
     type: 2}
 --- !u!54 &180166037
 Rigidbody:
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9c26fc39d4e514885ff24d76195df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientScriptable: {fileID: 11400000, guid: fade471dd64105347b45a04872ffe544,
+  ingredientScriptable: {fileID: 11400000, guid: 25410311cbf614b4293464a08aa71dc2,
     type: 2}
 --- !u!54 &711033378
 Rigidbody:
@@ -1981,6 +1981,32 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1113812606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7388723654953895973, guid: 5f5526f27e352fd4a9b70c51d6ba2765,
+    type: 3}
+  m_PrefabInstance: {fileID: 2041944545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1113812612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113812606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997f46f87101283438fb9f8a6df94303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MachineType: 2
+  placeItemPositions: []
+  placedItems: []
+  craftables: []
+  genericCraftable: {fileID: 0}
+  blankItem: {fileID: 0}
+  craftingTime: 5
+  spawnPoint: {fileID: 0}
 --- !u!1 &1181630577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,7 +2189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9c26fc39d4e514885ff24d76195df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientScriptable: {fileID: 11400000, guid: fade471dd64105347b45a04872ffe544,
+  ingredientScriptable: {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc,
     type: 2}
 --- !u!54 &1343872871
 Rigidbody:
@@ -2964,7 +2990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9c26fc39d4e514885ff24d76195df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientScriptable: {fileID: 11400000, guid: fade471dd64105347b45a04872ffe544,
+  ingredientScriptable: {fileID: 11400000, guid: 25410311cbf614b4293464a08aa71dc2,
     type: 2}
 --- !u!54 &1685360025
 Rigidbody:
@@ -3788,6 +3814,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CraftingStand
       objectReference: {fileID: 0}
+    - target: {fileID: 7388723654953895973, guid: 5f5526f27e352fd4a9b70c51d6ba2765,
+        type: 3}
+      propertyPath: m_Layer
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 8523137244024316236, guid: 5f5526f27e352fd4a9b70c51d6ba2765,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3796,7 +3827,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7388723654953895973, guid: 5f5526f27e352fd4a9b70c51d6ba2765,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1113812612}
   m_SourcePrefab: {fileID: 100100000, guid: 5f5526f27e352fd4a9b70c51d6ba2765, type: 3}
 --- !u!1 &2043279810
 GameObject:

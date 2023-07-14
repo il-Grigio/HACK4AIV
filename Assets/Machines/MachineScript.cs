@@ -17,7 +17,7 @@ public abstract class MachineScript : MonoBehaviour
     private void Awake() {
         placedItems = new ItemComponent[placeItemPositions.Length];
     }
-    public void PlaceItem(ItemComponent item) {
+    public virtual void PlaceItem(ItemComponent item) {
         for (int i = 0; i < placeItemPositions.Length; i++) {
             if (placedItems[i] == null) {
                 placedItems[i] = item;
@@ -27,7 +27,7 @@ public abstract class MachineScript : MonoBehaviour
             }
         }
     }
-    public ItemComponent GetFirstItem() {
+    public virtual ItemComponent GetFirstItem() {
         for (int i = 0;i < placedItems.Length;i++) { 
             if (placedItems[i]) {
                 return placedItems[i];
@@ -35,7 +35,7 @@ public abstract class MachineScript : MonoBehaviour
         }
         return null;
     }
-    public void RemoveItem(ItemComponent item) {
+    public virtual void RemoveItem(ItemComponent item) {
         for (int i = 0; i < placedItems.Length; i++) {
             if (placedItems[i] == item) {
                 placedItems[i] = null;
@@ -44,7 +44,7 @@ public abstract class MachineScript : MonoBehaviour
         }
     }
 
-    public bool CanPlaceItems() {
+    public virtual bool CanPlaceItems() {
         for (int i = 0; i < placeItemPositions.Length; i++) {
             if (placedItems[i] == null) return true;
         }
