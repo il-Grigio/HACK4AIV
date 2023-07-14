@@ -1648,6 +1648,7 @@ GameObject:
   - component: {fileID: 983464421}
   - component: {fileID: 983464420}
   - component: {fileID: 983464422}
+  - component: {fileID: 983464423}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1674,9 +1675,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -540}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &983464420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1741,6 +1742,27 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!95 &983464423
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983464417}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c228314876fef5d48852e6b2bb921ccd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1046466649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,7 +1774,8 @@ GameObject:
   - component: {fileID: 1046466650}
   - component: {fileID: 1046466653}
   - component: {fileID: 1046466652}
-  - component: {fileID: 1046466654}
+  - component: {fileID: 1046466655}
+  - component: {fileID: 1046466656}
   m_Layer: 5
   m_Name: RecipesMenu
   m_TagString: Untagged
@@ -1779,7 +1802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -400, y: 0}
   m_SizeDelta: {x: 400, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1046466652
@@ -1811,17 +1834,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeContainer: {fileID: 432457707}
   UIPrefab: {fileID: 634100095424449779, guid: 4d468d1251b2efa41b831642d1db242e, type: 3}
-  bench_metal_image: {fileID: 21300008, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
-  bench_wood_image: {fileID: 21300002, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
-  bench_plastic_image: {fileID: 21300004, guid: acc0224da40bd614eaa39fa27daa0b19,
-    type: 3}
-  bench_rubber_image: {fileID: 21300006, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
-  bench_glass_image: {fileID: 21300000, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
-  bench_cloth_image: {fileID: -5801900999811722206, guid: 2e7c9fb977d8c834eaab8acbb55218df,
-    type: 3}
-  bench_circuits_image: {fileID: 21300010, guid: 678058abcbfe36f42902c11d9e5f64fc,
-    type: 3}
---- !u!114 &1046466654
+  bench_metal: {fileID: 0}
+  bench_wood: {fileID: 0}
+  bench_plastic: {fileID: 0}
+  bench_rubber: {fileID: 0}
+  bench_glass: {fileID: 0}
+  bench_cloth: {fileID: 0}
+  bench_circuits: {fileID: 0}
+--- !u!95 &1046466655
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046466649}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 98dcf9771ffee124dbf5531d46e737d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1046466656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1830,13 +1871,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1046466649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30ebc3f10c3e3745b176f389ea1e89b, type: 3}
+  m_Script: {fileID: 11500000, guid: dcd36fcf77174ea428511666d0587035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: -400, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0}
-  speed: 400
-  isMoving: 0
+  animator: {fileID: 1046466655}
+  paramName: Open
 --- !u!1 &1092225691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,7 +2358,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1247338161}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1046466656}
+        m_TargetAssemblyTypeName: UIAnimationTrigger, Assembly-CSharp
+        m_MethodName: TriggerAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1247338161
 MonoBehaviour:
   m_ObjectHideFlags: 0
