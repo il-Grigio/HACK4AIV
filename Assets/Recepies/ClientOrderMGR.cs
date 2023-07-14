@@ -52,16 +52,19 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 
 
     //private
-    int currentPhaseIndex = 1;
+    int currentPhaseIndex = 0;
     public int CurrentPhaseIndex => currentPhaseIndex;
     List<Recepie> recepiesToRemove = new List<Recepie>();
     float partialTime;
     int nRecepiesArrived = 0;
     UIClientOrder uiClientOrder;
+    UIGeneralTimer uiTimer;
 
     private void Start() {
         failedRecepies = 0;
         activeRecepies.Clear();
+        uiTimer = GameObject.Find("Timer").GetComponent<UIGeneralTimer>();
+        uiTimer.SetTimer(myPhases[currentPhaseIndex].timeToFinishPhase);
     }
     public void GoToNextPhase() {
         currentPhaseIndex++;
@@ -71,6 +74,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
             AddNewRecepie();
         }
         myPhases[currentPhaseIndex].currentTime = myPhases[currentPhaseIndex].timeToFinishPhase;
+        uiTimer.SetTimer(myPhases[currentPhaseIndex].timeToFinishPhase);
         partialTime = 0;
     }
 

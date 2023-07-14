@@ -36,15 +36,6 @@ public class UICraftingUnit : MonoBehaviour
         currentTime = 0;
     }
 
-    private void Update()
-    {
-        currentTime += Time.deltaTime;
-        if (currentTime >= MaxTime)
-        {
-            //Destroy(gameObject);
-        }
-    }
-
     public void RemoveItem()
     {
         Destroy(gameObject);

@@ -4323,6 +4323,7 @@ MonoBehaviour:
   decraftingTime: 0
   materialDrop: {fileID: 0}
   currentDecraftingTime: 0
+  isStarted: 0
   itemThrowForce: 0
 --- !u!1 &1567706654
 GameObject:
@@ -6350,7 +6351,7 @@ MonoBehaviour:
       Data2: 1180717069
       Data3: -744626530
       Data4: 204451103
-    Path: event:/SFXEvents/ChainSawTable
+    Path: event:/SFXEvents/WoodTable
   <pickUpItem>k__BackingField:
     Guid:
       Data1: -617471470
@@ -6365,6 +6366,13 @@ MonoBehaviour:
       Data3: -1640516458
       Data4: -270164588
     Path: event:/SFXEvents/DropDownMaterial
+  <placeItemInCrafting>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <footsStep>k__BackingField:
     Guid:
       Data1: 733880416

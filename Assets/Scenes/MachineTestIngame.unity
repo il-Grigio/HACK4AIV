@@ -161,10 +161,6 @@ MonoBehaviour:
   MachineType: 0
   placeItemPositions: []
   placedItems: []
-  craftingStands:
-  - {fileID: 379730893}
-  - {fileID: 1530403747}
-  - {fileID: 2015154497}
   craftables:
   - {fileID: 11400000, guid: ead11373cb6ee6943aac8fc81dd434fa, type: 2}
   - {fileID: 11400000, guid: 0700daeaa31b3a741bf55a2181aa0225, type: 2}
@@ -178,7 +174,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 151bddcaba8be3f4999a981d0a57c62e, type: 2}
   - {fileID: 11400000, guid: cef59f336f670bd478f8fffb98d9bf56, type: 2}
   - {fileID: 11400000, guid: 965daa759b2a2814e843f673e7d6ac53, type: 2}
+  genericCraftable: {fileID: 0}
+  blankItem: {fileID: 0}
+  craftingTime: 5
   spawnPoint: {fileID: 1909200211}
+  itemToCraft: {fileID: 0}
 --- !u!65 &19857616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -802,18 +802,6 @@ Transform:
   m_Father: {fileID: 1940791665}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &379730893 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5879346544827064109, guid: 5f5526f27e352fd4a9b70c51d6ba2765,
-    type: 3}
-  m_PrefabInstance: {fileID: 7176336377675153760}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd969dbf68a77047b5d0e1ca7436382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &532436518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2319,18 +2307,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 652412253}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1530403747 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5879346544827064109, guid: 5f5526f27e352fd4a9b70c51d6ba2765,
-    type: 3}
-  m_PrefabInstance: {fileID: 532436518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd969dbf68a77047b5d0e1ca7436382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1618121291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,7 +2544,7 @@ MonoBehaviour:
       Data2: 1180717069
       Data3: -744626530
       Data4: 204451103
-    Path: event:/SFXEvents/ChainSawTable
+    Path: event:/SFXEvents/WoodTable
   <pickUpItem>k__BackingField:
     Guid:
       Data1: -617471470
@@ -2583,6 +2559,13 @@ MonoBehaviour:
       Data3: -1640516458
       Data4: -270164588
     Path: event:/SFXEvents/DropDownMaterial
+  <placeItemInCrafting>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <footsStep>k__BackingField:
     Guid:
       Data1: 733880416
@@ -3253,18 +3236,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1666771298}
   m_SourcePrefab: {fileID: 100100000, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
---- !u!114 &2015154497 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5879346544827064109, guid: 5f5526f27e352fd4a9b70c51d6ba2765,
-    type: 3}
-  m_PrefabInstance: {fileID: 283266909}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd969dbf68a77047b5d0e1ca7436382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2043279810
 GameObject:
   m_ObjectHideFlags: 0
