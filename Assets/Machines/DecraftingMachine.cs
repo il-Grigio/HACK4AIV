@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DecraftingMachine : MachineScript
 {
@@ -12,6 +13,8 @@ public class DecraftingMachine : MachineScript
     [HideInInspector]public bool isStarted;
     private float itemRotationSpeed;
     [SerializeField] private float itemThrowForce;
+
+    [SerializeField] protected UnityEvent cantInteract;
 
     protected RecipeManager recipeManager;
 
@@ -36,7 +39,10 @@ public class DecraftingMachine : MachineScript
 
     //When the player interacts with the machine, use this function (Es. start crafting)
     public override bool Interact() {
-        if (isStarted) return false;
+        if (isStarted) {
+            cantInteract.Invoke();
+            return false;
+        }
         if (placedItems[0] && placedItems[0].ingredientScriptable.ingredients.Length > 0) {
             if (CheckCorrectMaterial()) {
                 currentDecraftingTime = decraftingTime;
@@ -44,6 +50,7 @@ public class DecraftingMachine : MachineScript
                 return true;
             }
         }
+        cantInteract.Invoke();
         return false;
     }
 

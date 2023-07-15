@@ -51,6 +51,7 @@ public class RecipeManager : Singleton<RecipeManager>
     {
         items = new List<UIIngredient>();
         materialIcons = new Dictionary<Workstation, IngredientScriptable>();
+        benchSprites = new Dictionary<Workstation, Sprite>();
 
         materialIcons.Add(Workstation.MetalStation, metal);
         materialIcons.Add(Workstation.WoodStation, wood);
