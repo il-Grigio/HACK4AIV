@@ -26,6 +26,7 @@ public class UIContextMenu : MonoBehaviour
     {
         ContextAction_Pickup.gameObject.SetActive(false);
         ContextAction_Interact.gameObject.SetActive(false);
+        following = false;
     }
 
     public void OpenMenu(Transform _target, bool interactable)
@@ -45,12 +46,13 @@ public class UIContextMenu : MonoBehaviour
     {
         if (following)
         {
-            FollowTarget();
+            //FollowTarget();
         }
     }
 
     private void FollowTarget()
     {
-        transform.position = Camera.main.WorldToScreenPoint(target.position) + new Vector3(offset.x, offset.y, 0);
+        Vector3 newPos = Camera.main.WorldToScreenPoint(target.position) /*+ new Vector3(offset.x, offset.y, 0)*/;
+        gameObject.GetComponent<RectTransform>().anchoredPosition = newPos;
     }
 }

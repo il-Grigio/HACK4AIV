@@ -46,7 +46,12 @@ public class CharacterPickUp : CharacterAbility
     
     
     private HandIKCharcter handIK;
-    
+
+    //CONTEXTUAL MENU
+    private UIContextMenu contextMenu;
+    private bool menuPUShowing = false;
+    private bool menuInShowing = false;
+    private Transform lastCollider = null;
 
 
     float hitDistance;
@@ -167,6 +172,13 @@ public class CharacterPickUp : CharacterAbility
         item.transform.position = itemStand.transform.position;
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+        contextMenu = GameObject.Find("ContextMenu").GetComponent<UIContextMenu>();
+
+    }
+
     private void Update()
     {
         if (hasItem) 
@@ -188,14 +200,65 @@ public class CharacterPickUp : CharacterAbility
         }
         else handIK.automatic = true;
 
+        CheckForInteractables();
+        CheckForPickUps();
+        if(!menuPUShowing && !menuInShowing)
+        {
+            contextMenu.CloseMenu();
+        }
     }
+
+    private void CheckForPickUps()
+    {
+        Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
+        Vector3 direction = model.forward;
+        float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
+        Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+                maxDistance, pickuppableLayerMask);
+        if (_hit.collider)
+        {
+            if (!menuPUShowing && !_hit.collider.transform == lastCollider)
+            {
+                contextMenu.OpenMenu(_hit.collider.transform, false);
+                menuPUShowing = true;
+            }
+            
+        }
+        else if (menuPUShowing)
+        {
+            menuPUShowing = false;
+        }
+    }
+
+    private void CheckForInteractables()
+    {
+        Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
+        Vector3 direction = model.forward;
+        float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
+        Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+                maxDistance, workStationLayerMask);
+        if (_hit.collider)
+        {
+            if (!menuInShowing && !_hit.collider.transform == lastCollider)
+            {
+                contextMenu.OpenMenu(_hit.collider.transform, true);
+                menuInShowing = true;
+            }
+
+        }
+        else if(menuInShowing)
+        {
+            menuInShowing = false;
+        }
+    }
+
     private void OnDrawGizmos() {
         if (!gizmoDebug) return;
         Vector3 origin = _controller3D.transform.position + _characterController.center + model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
         Vector3 direction = model.forward;
         float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
 
-        Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+        Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,   
                 maxDistance, workStationLayerMask);
         hitDistance = (_hit.collider != null) ? _hit.distance : -1;
 
