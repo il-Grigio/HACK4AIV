@@ -93,7 +93,10 @@ public class CraftingMachine : MachineScript
         craftedItem.ingredientScriptable = itemToCraft;
         itemToCraft = null;
     }
-
+    public override void PlaceItem(ItemComponent item) {
+        itemToCraft = null;
+        base.PlaceItem(item);
+    }
     public override bool CanPlaceItems() {
         int positionsOccuipied = 0;
         for (int i = 0; i < placedItems.Length; i++) {
