@@ -1703,13 +1703,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeContainer: {fileID: 7113573014096817691}
   UIPrefab: {fileID: 634100095424449779, guid: 4d468d1251b2efa41b831642d1db242e, type: 3}
-  bench_metal: {fileID: 11400000, guid: fd05215a69fc08a4891c358a12db7318, type: 2}
-  bench_wood: {fileID: 11400000, guid: 0855fbed8cd76524e8e51d11aea6b601, type: 2}
-  bench_plastic: {fileID: 11400000, guid: d96d9a36e02d8e24990ee0d03f7b53c3, type: 2}
-  bench_rubber: {fileID: 11400000, guid: b9c3625582aa6b7428180c18e9455eb7, type: 2}
-  bench_glass: {fileID: 11400000, guid: 4c63ce9a0301c084e9623b70ab9d0e4b, type: 2}
-  bench_cloth: {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc, type: 2}
-  bench_circuits: {fileID: 11400000, guid: 25410311cbf614b4293464a08aa71dc2, type: 2}
+  metal: {fileID: 0}
+  wood: {fileID: 0}
+  plastic: {fileID: 0}
+  rubber: {fileID: 0}
+  glass: {fileID: 0}
+  cloth: {fileID: 0}
+  circuits: {fileID: 0}
+  metalBench: {fileID: 21300000, guid: f643dcf377558a24eb9c1cb5c094d804, type: 3}
+  woodBench: {fileID: 21300000, guid: f5432bf9bc8fa78419077846102ec349, type: 3}
+  plasticBench: {fileID: 21300000, guid: 7517494685156e94e83c7b0b421f9827, type: 3}
+  rubberBench: {fileID: 21300000, guid: 87cb852c597998f458b5bc3374d0b82b, type: 3}
+  glassBench: {fileID: 21300000, guid: 533ffd550cfeb974491e1d2befe6ad59, type: 3}
+  clothBench: {fileID: 21300000, guid: 4bab6077ff5db7c41b5fa14841a7967a, type: 3}
+  circuitsBench: {fileID: 21300000, guid: 41d38d1179ea67046a6dc7929023d643, type: 3}
 --- !u!114 &8201567201498985489
 MonoBehaviour:
   m_ObjectHideFlags: 0

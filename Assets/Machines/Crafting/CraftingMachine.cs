@@ -87,10 +87,8 @@ public class CraftingMachine : MachineScript
             placedItems[i].gameObject.SetActive(false);
             placedItems[i] = null;
         }
-        //TODO add prefabs dictionary
         craftedItem = ItemsObjectPool.Instance.GetItem(blankItem.ingredientScriptable);
         craftedItem.transform.position = spawnPoint.position;
-        craftedItem.ingredientScriptable = itemToCraft;
         itemToCraft = null;
     }
     public override void PlaceItem(ItemComponent item) {
