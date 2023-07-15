@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 6685575878069808131}
   - component: {fileID: 340605110481229820}
   - component: {fileID: 494239067962377487}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: CraftingStand
   m_TagString: Untagged
   m_Icon: {fileID: 0}

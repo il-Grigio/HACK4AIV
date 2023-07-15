@@ -10,7 +10,7 @@ public class DecraftingBurnMachine : DecraftingMachine
     bool isBurning = false;
     private ItemComponent craftedItem;
     protected override void Update() {
-
+        if (!placedItems[0]) return;
         if (isStarted) {
             currentDecraftingTime -= Time.deltaTime;
             if (currentDecraftingTime <= 0) {
@@ -60,5 +60,6 @@ public class DecraftingBurnMachine : DecraftingMachine
     protected override void SpawnMaterial() {
         craftedItem = ItemsObjectPool.Instance.GetItem(materialDrop.ingredientScriptable);
         craftedItem.transform.position = spawnPoint.position;
+        craftedItem.GetComponent<Rigidbody>().useGravity = false;
     }
 }

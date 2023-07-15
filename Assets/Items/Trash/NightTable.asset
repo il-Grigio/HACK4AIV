@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Night Table
   model3D: {fileID: 0}
-  icon: {fileID: -5801900999811722206, guid: 2e7c9fb977d8c834eaab8acbb55218df, type: 3}
+  icon: {fileID: 21300000, guid: 3f1fb77cecd8d1d4c91ac4bf7465c88f, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 0855fbed8cd76524e8e51d11aea6b601, type: 2}
   - {fileID: 11400000, guid: fd05215a69fc08a4891c358a12db7318, type: 2}

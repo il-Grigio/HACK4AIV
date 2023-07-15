@@ -52,6 +52,7 @@ public class DecraftingMachine : MachineScript
         ItemComponent item = ItemsObjectPool.Instance.GetItem(materialDrop.ingredientScriptable);
         //item.ingredientScriptable = RecipeManager.Instance.materialIcons[workstationType];
         item.transform.position = placeItemPositions[0].position;
+        item.GetComponent<Collider>().enabled = true;
         Rigidbody itemrb = item.GetComponent<Rigidbody>();
         itemrb.AddForce(-transform.forward * itemThrowForce);
     }
