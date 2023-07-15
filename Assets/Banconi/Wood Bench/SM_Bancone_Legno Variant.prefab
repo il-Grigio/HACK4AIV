@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bancone_Legno Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fe4b0fb510118814292fc4112d19b2ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 8675484353427341875, guid: fe4b0fb510118814292fc4112d19b2ae,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -81,5 +86,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe4b0fb510118814292fc4112d19b2ae,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2632676625332735540}
   m_SourcePrefab: {fileID: 100100000, guid: fe4b0fb510118814292fc4112d19b2ae, type: 3}
+--- !u!1 &831365062251579928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fe4b0fb510118814292fc4112d19b2ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 524937428752938825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2632676625332735540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831365062251579928}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 234.92558, y: 154.1663, z: 143.92105}
+  m_Center: {x: -100.18679, y: 73.71675, z: 50.67474}

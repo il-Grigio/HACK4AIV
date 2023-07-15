@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: BaseballBatRecepie
+  m_Script: {fileID: 11500000, guid: 48ab8766a783922478dd93d0939fdea6, type: 3}
+  m_Name: CarillonRecipe
   m_EditorClassIdentifier: Assembly-CSharp::Recepie
   timeToFinishRecepie: 60
   currentTime: 0
-  timeBonusOnComplete: 15
-  timeLostOnIncomplete: 15
-  recepie: {fileID: 11400000, guid: 320c4d191ef0c0e4a940168fe9fac220, type: 2}
+  timeBonusOnComplete: 40
+  timeLostOnIncomplete: 60
+  recepie: {fileID: 11400000, guid: 0700daeaa31b3a741bf55a2181aa0225, type: 2}

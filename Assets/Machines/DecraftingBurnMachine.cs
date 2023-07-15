@@ -6,9 +6,9 @@ public class DecraftingBurnMachine : DecraftingMachine
 {
     [SerializeField] float burnTime;
     [SerializeField] Transform spawnPoint;
-    [SerializeField]float currentBurnTime;
+    float currentBurnTime;
     bool isBurning = false;
-    [SerializeField] private ItemComponent craftedItem;
+    private ItemComponent craftedItem;
     protected override void Update() {
 
         if (isStarted) {
