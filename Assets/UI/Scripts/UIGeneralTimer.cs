@@ -35,7 +35,7 @@ public class UIGeneralTimer : MonoBehaviour
         currentTime -= Time.deltaTime;
         if (currentTime >= 0)
         {
-            text.text = "" + (int)(currentTime / 60) + ":" + (currentTime < 10 ? "0" : "") + (int)currentTime % 60;
+            text.text = "" + (int)(currentTime / 60) + ":" + (currentTime % 60 < 10 ? "0" : "") + (int)currentTime % 60;
         }
     }
 }

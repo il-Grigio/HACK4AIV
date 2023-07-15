@@ -70,7 +70,7 @@ public class RecipeManager : Singleton<RecipeManager>
     public void NewRecipe(IngredientScriptable newItem, Workstation station)
     {
         UIIngredient newIngredient = new UIIngredient(newItem, station);
-        if (!items.Contains(newIngredient))
+        if (!CheckForDuplicates(newIngredient))
         {
             items.Add(newIngredient);
         }
@@ -78,12 +78,24 @@ public class RecipeManager : Singleton<RecipeManager>
         {
             return;
         }
-            
+        
         AddItemToUI(newIngredient);
     }
 
-    
+    private bool CheckForDuplicates(UIIngredient ingredientToCheck)
+    {
+        foreach (var item in items)
+        {
+            if (item.ingredient == ingredientToCheck.ingredient && item.station == ingredientToCheck.station)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
+
 
 public class UIIngredient
 {
