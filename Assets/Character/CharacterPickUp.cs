@@ -136,10 +136,11 @@ public class CharacterPickUp : CharacterAbility
 
             MachineScript machine = _hit.transform.GetComponent<MachineScript>();
             _itemComponent = machine.GetFirstItem();
-            if (_itemComponent == null) return;
-            machine.RemoveItem(_itemComponent);
-            PutItemInArms(_itemComponent);
-            return;
+            if (_itemComponent) {
+                machine.RemoveItem(_itemComponent);
+                PutItemInArms(_itemComponent);
+                return;
+            }
         }
 
 
