@@ -5,9 +5,12 @@ using UnityEngine;
 public class DecraftingSpamMachine : DecraftingMachine
 {
     [SerializeField] private int interactionsTimes;
-    int currentInteractions;
+    public int currentInteractions;
     public override bool Interact() {
-        if (!CheckCorrectMaterial()) return false;
+        if (!CheckCorrectMaterial()) {
+            cantInteract.Invoke();
+            return false;
+        }
         if(currentInteractions < interactionsTimes) {
             currentInteractions++;
             if(currentInteractions ==  interactionsTimes) {
