@@ -23,7 +23,7 @@ public class UIClientOrder : MonoBehaviour
         ingredients.Add(newItem);
         UICraftingUnit newUnit = GameObject.Instantiate(unitSample, UIContainer);
         newUnit.ingredient = newItem.recepie;
-        newUnit.MaxTime = newItem.currentTime;
+        newUnit.MaxTime = newItem.timeToFinishRecepie;
         ingredientList.Add(newUnit);
 
         if (ingredients.Count > 1) 
@@ -35,8 +35,14 @@ public class UIClientOrder : MonoBehaviour
     public void RemoveItem(Recepie item)
     {
         ingredients.Remove(item);
-        ingredientList[0].RemoveItem();
-        ingredientList.RemoveAt(0);
+        for (int i = 0; i < ingredientList.Count; i++) {
+            if(item.recepie == ingredientList[i].ingredient) {
+                ingredientList[i].RemoveItem();
+                ingredientList.RemoveAt(i);
+
+                return;
+            }
+        }
     }
 
     public void SortItems()

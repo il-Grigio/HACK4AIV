@@ -27,7 +27,8 @@ public class CraftingMachine : MachineScript
             //item not exist
             if (placedItems[i] == null) continue;
             //toys or base materials
-            else if (craftables.Contains(placedItems[i].ingredientScriptable) || placedItems[i].ingredientScriptable == genericCraftable) list2.AddRange(placedItems[i].ingredientScriptable.ingredients);
+            else if (craftables.Contains(placedItems[i].ingredientScriptable) || placedItems[i].ingredientScriptable == genericCraftable) 
+                list2.AddRange(placedItems[i].ingredientScriptable.ingredients);
             //trash
             else list2.Add(placedItems[i].ingredientScriptable);
         }
@@ -83,19 +84,22 @@ public class CraftingMachine : MachineScript
         for (int i = 0; i < placedItems.Length; i++) {
             if (placedItems[i] == null) continue;
 
-            //TODO destroy?
             placedItems[i].gameObject.SetActive(false);
             placedItems[i] = null;
         }
-        craftedItem = ItemsObjectPool.Instance.GetItem(blankItem.ingredientScriptable);
+        craftedItem = ItemsObjectPool.Instance.GetItem(itemToCraft);
+        craftedItem.GetComponent<Collider>().enabled = false;
+        craftedItem.GetComponent<Rigidbody>().useGravity = false;
         craftedItem.transform.position = spawnPoint.position;
         itemToCraft = null;
+        finished.Invoke();
     }
     public override void PlaceItem(ItemComponent item) {
         itemToCraft = null;
         base.PlaceItem(item);
     }
     public override bool CanPlaceItems() {
+        if (!machineActive) return false;
         int positionsOccuipied = 0;
         for (int i = 0; i < placedItems.Length; i++) {
             if (placedItems[i] == null) continue;

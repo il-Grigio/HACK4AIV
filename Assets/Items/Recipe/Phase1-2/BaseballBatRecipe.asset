@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ab8766a783922478dd93d0939fdea6, type: 3}
   m_Name: BaseballBatRecipe
   m_EditorClassIdentifier: Assembly-CSharp::Recepie
-  timeToFinishRecepie: 60
+  timeToFinishRecepie: 120
   currentTime: 0
-  timeBonusOnComplete: 20
+  timeBonusOnComplete: 50
   timeLostOnIncomplete: 20
   recepie: {fileID: 11400000, guid: 320c4d191ef0c0e4a940168fe9fac220, type: 2}

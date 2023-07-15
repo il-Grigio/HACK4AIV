@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.Progress;
 
 public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 {
@@ -93,6 +94,8 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
         foreach (Recepie recepie in activeRecepies) {
             recepie.currentTime -= Time.deltaTime;
             if(recepie.currentTime <= 0) {
+                myPhases[currentPhaseIndex].currentTime += recepie.timeLostOnIncomplete;
+                if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].currentTime);
                 didntFinishInTimeRecepie.Invoke();
                 recepiesToRemove.Add(recepie);
             }
@@ -108,12 +111,23 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
         }
     }
 
+    public void DeliverAnItem(IngredientScriptable item) {
+        
+        foreach (Recepie recepie in activeRecepies) {
+            if(recepie.recepie == item) {
+                DeliverARecepie(recepie);
+                return;
+            }
+        }
+    }
 
     public void DeliverARecepie(Recepie recepie) {
         if (recepie == null) { return; }
         if(activeRecepies.Contains(recepie)) {
             activeRecepies.Remove(recepie);
+            uiClientOrder.RemoveItem(recepie);
             myPhases[currentPhaseIndex].currentTime += recepie.timeBonusOnComplete * recepie.currentTime / recepie.timeToFinishRecepie;
+            if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].currentTime);
             recepieFinished.Invoke();
 
             if(activeRecepies.Count == 0) {
