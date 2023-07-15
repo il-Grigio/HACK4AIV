@@ -29,7 +29,7 @@ public class SettingsMusic : MonoBehaviour
                     }
                     else
                     {
-                        AudioManager.instance.masterVolume ++;
+                        AudioManager.instance.masterVolume++;
                     }
                     break;
                 }
@@ -41,7 +41,7 @@ public class SettingsMusic : MonoBehaviour
                     }
                     else
                     {
-                        AudioManager.instance.musicVolume ++;
+                        AudioManager.instance.musicVolume++;
                     }
                     break;
                 }
@@ -65,7 +65,7 @@ public class SettingsMusic : MonoBehaviour
                     }
                     else
                     {
-                        AudioManager.instance.ambienceVolume ++;
+                        AudioManager.instance.ambienceVolume++;
                     }
                     break;
                 }
@@ -86,7 +86,7 @@ public class SettingsMusic : MonoBehaviour
                     }
                     else
                     {
-                        AudioManager.instance.masterVolume --;
+                        AudioManager.instance.masterVolume--;
                     }
                     break;
                 }
@@ -98,7 +98,7 @@ public class SettingsMusic : MonoBehaviour
                     }
                     else
                     {
-                        AudioManager.instance.musicVolume --;
+                        AudioManager.instance.musicVolume--;
                     }
                     break;
                 }
@@ -110,7 +110,7 @@ public class SettingsMusic : MonoBehaviour
                     }
                     else
                     {
-                        AudioManager.instance.SFXVolume --;
+                        AudioManager.instance.SFXVolume--;
                     }
                     break;
                 }
@@ -122,7 +122,7 @@ public class SettingsMusic : MonoBehaviour
                     }
                     else
                     {
-                        AudioManager.instance.ambienceVolume --;
+                        AudioManager.instance.ambienceVolume--;
                     }
                     break;
                 }
