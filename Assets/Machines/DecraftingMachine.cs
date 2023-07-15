@@ -61,6 +61,7 @@ public class DecraftingMachine : MachineScript
         item.transform.position = placeItemPositions[0].position;
         item.GetComponent<Collider>().enabled = true;
         Rigidbody itemrb = item.GetComponent<Rigidbody>();
+        itemrb.useGravity = true;
         itemrb.AddForce(-transform.forward * itemThrowForce);
     }
 
