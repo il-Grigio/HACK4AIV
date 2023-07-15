@@ -13,7 +13,8 @@ public class DecraftingSpamMachine : DecraftingMachine
             if(currentInteractions ==  interactionsTimes) {
                 SpawnMaterial();
                 recipeManager.NewRecipe(placedItems[0].ingredientScriptable, workstationType);
-                Destroy(placedItems[0].gameObject);
+                placedItems[0].gameObject.SetActive(false);
+                placedItems[0].transform.parent = ItemsObjectPool.Instance.transform;
                 placedItems[0] = null;
                 currentInteractions = 0;
             }

@@ -88,7 +88,7 @@ public class CraftingMachine : MachineScript
             placedItems[i] = null;
         }
         //TODO add prefabs dictionary
-        craftedItem = Instantiate(blankItem);
+        craftedItem = ItemsObjectPool.Instance.GetItem(blankItem.ingredientScriptable);
         craftedItem.transform.position = spawnPoint.position;
         craftedItem.ingredientScriptable = itemToCraft;
         itemToCraft = null;

@@ -70,7 +70,7 @@ public class TrashManager : Grigios.Singleton<TrashManager> {
         currentSpawningTime = Random.Range(trashPhases[clientOrderMGR.CurrentPhaseIndex].minDelayTime, trashPhases[clientOrderMGR.CurrentPhaseIndex].maxDelayTime);
     }
     private void SpawnNow() {
-        ItemComponent spawnedItem = Instantiate(currentItemToSpawn);
+        ItemComponent spawnedItem = ItemsObjectPool.Instance.GetItem(currentItemToSpawn.ingredientScriptable);
         enteringThreadmill.PlaceItem(spawnedItem);
         SetActiveItems();
     }
