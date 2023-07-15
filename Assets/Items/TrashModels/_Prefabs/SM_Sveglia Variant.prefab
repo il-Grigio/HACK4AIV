@@ -93,6 +93,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Sveglia Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bbbfc1fa62c9e3e49942fad2098c3406,
+        type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

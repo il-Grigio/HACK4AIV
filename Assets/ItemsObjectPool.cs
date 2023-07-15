@@ -10,6 +10,7 @@ public class ItemsObjectPool : Singleton<ItemsObjectPool>
     Dictionary<IngredientScriptable, List<ItemComponent>> ingredients;
 
     private void Awake() {
+        ingredients = new Dictionary<IngredientScriptable, List<ItemComponent>>();
         foreach (var item in items) {
             item.gameObject.SetActive(false);
             if (ingredients.ContainsKey(item.ingredientScriptable)) {
@@ -23,14 +24,14 @@ public class ItemsObjectPool : Singleton<ItemsObjectPool>
         }
         foreach (List<ItemComponent> item in ingredients.Values) {
             for (int i = 0; i < initialDuplicates; i++) {
-                ItemComponent o = Instantiate(item[0]);
+                ItemComponent o = Instantiate(item[0], transform);
                 item.Add(o);
             }
         }
 
     }
 
-    public ItemComponent GetItem(IngredientScriptable ingredientScriptable) {
+    public ItemComponent GetItem(IngredientScriptable ingredientScriptable, bool autoSetActive = true) {
         if(!ingredients.ContainsKey (ingredientScriptable)) return null;
         ItemComponent item = null;
         for (int i = 1; i < ingredients[ingredientScriptable].Count; i++) {
@@ -39,9 +40,10 @@ public class ItemsObjectPool : Singleton<ItemsObjectPool>
         }
 
         if(item == null) {
-            item = Instantiate(ingredients[ingredientScriptable][0]);
+            item = Instantiate(ingredients[ingredientScriptable][0], transform);
             ingredients[ingredientScriptable].Add(item);
         }
+        if(autoSetActive)item.gameObject.SetActive(true);
         return item;
     }
 }
