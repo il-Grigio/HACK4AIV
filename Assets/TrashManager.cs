@@ -27,7 +27,7 @@ public class TrashManager : Grigios.Singleton<TrashManager> {
 
     ItemComponent currentItemToSpawn;
 
-    private void Start() {
+    private void Awake() {
         clientOrderMGR = ClientOrderMGR.Instance;
     }
 
@@ -69,7 +69,11 @@ public class TrashManager : Grigios.Singleton<TrashManager> {
         currentItemToSpawn = possibleTrash[Random.Range(0, possibleTrash.Length)];
         currentSpawningTime = Random.Range(trashPhases[clientOrderMGR.CurrentPhaseIndex].minDelayTime, trashPhases[clientOrderMGR.CurrentPhaseIndex].maxDelayTime);
     }
-    private void SpawnNow() {
+    public void SpawnNow() {
+        if (!currentItemToSpawn) {
+            ItemComponent[] possibleTrash = trashPhases[ClientOrderMGR.Instance.CurrentPhaseIndex].possibleTrash;
+            currentItemToSpawn = possibleTrash[Random.Range(0, possibleTrash.Length)];
+        }
         ItemComponent spawnedItem = ItemsObjectPool.Instance.GetItem(currentItemToSpawn.ingredientScriptable);
         enteringThreadmill.PlaceItem(spawnedItem);
         SetActiveItems();

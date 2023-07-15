@@ -5332,9 +5332,9 @@ MonoBehaviour:
     m_Bits: 16777216
   itemStand: {fileID: 1855719141623332108}
   model: {fileID: 1443839214342841353}
-  sphereCastRadius: 1.5
-  PhysicsInteractionsRaycastLength: 5
-  PhysicsInteractionsRaycastOffset: {x: 0, y: -0.3, z: -1.5}
+  sphereCastRadius: 1
+  PhysicsInteractionsRaycastLength: 2
+  PhysicsInteractionsRaycastOffset: {x: 0, y: -0.3, z: -1}
   _itemComponent: {fileID: 0}
   hasItem: 0
   gizmoDebug: 0
