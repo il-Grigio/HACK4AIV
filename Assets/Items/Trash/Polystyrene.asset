@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Polystyrene
   model3D: {fileID: 0}
-  icon: {fileID: -4735227888760902796, guid: 2e7c9fb977d8c834eaab8acbb55218df, type: 3}
+  icon: {fileID: 21300000, guid: 7bf4a0ab0873a3c46ba5f406b7dc3768, type: 3}
   ingredients:
   - {fileID: 11400000, guid: d96d9a36e02d8e24990ee0d03f7b53c3, type: 2}

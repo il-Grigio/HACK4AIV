@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Shoes
   model3D: {fileID: 0}
-  icon: {fileID: 3534290621102056461, guid: 678058abcbfe36f42902c11d9e5f64fc, type: 3}
+  icon: {fileID: 21300000, guid: d383326b3c45e86479d3008441934cf6, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc, type: 2}
   - {fileID: 11400000, guid: b9c3625582aa6b7428180c18e9455eb7, type: 2}

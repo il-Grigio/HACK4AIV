@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Alarm Clock
   model3D: {fileID: 0}
-  icon: {fileID: -6256563695458652631, guid: 678058abcbfe36f42902c11d9e5f64fc, type: 3}
+  icon: {fileID: 21300000, guid: 0ae59cc3602c4ad4594e05ca1c8b76bc, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 4c63ce9a0301c084e9623b70ab9d0e4b, type: 2}
   - {fileID: 11400000, guid: fd05215a69fc08a4891c358a12db7318, type: 2}
