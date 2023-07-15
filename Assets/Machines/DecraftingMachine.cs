@@ -13,12 +13,20 @@ public class DecraftingMachine : MachineScript
     private float itemRotationSpeed;
     [SerializeField] private float itemThrowForce;
 
+    private RecipeManager recipeManager;
+
+    private void Start()
+    {
+        recipeManager = GameObject.Find("RecipesMenu").GetComponent<RecipeManager>();
+    }
+
     protected virtual void Update() {
         if (isStarted) {
             currentDecraftingTime -= Time.deltaTime;
             if(currentDecraftingTime <= 0) {
                 isStarted = false;
                 SpawnMaterial();
+                recipeManager.NewRecipe(placedItems[0].ingredientScriptable, workstationType);
                 Destroy(placedItems[0].gameObject);
                 placedItems[0] = null;
             }
