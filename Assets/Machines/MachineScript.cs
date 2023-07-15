@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 public enum MachineType { 
     Decrafting,
     DecraftingSpam,
@@ -15,6 +17,7 @@ public abstract class MachineScript : MonoBehaviour
     [SerializeField] protected Transform[] placeItemPositions;
     [SerializeField] protected ItemComponent[] placedItems;
     public bool machineActive = true;
+    [SerializeField] protected UnityEvent finished;
     private void Awake() {
         placedItems = new ItemComponent[placeItemPositions.Length];
     }

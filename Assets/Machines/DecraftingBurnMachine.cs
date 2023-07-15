@@ -62,5 +62,6 @@ public class DecraftingBurnMachine : DecraftingMachine
         craftedItem = ItemsObjectPool.Instance.GetItem(materialDrop.ingredientScriptable);
         craftedItem.transform.position = spawnPoint.position;
         craftedItem.GetComponent<Rigidbody>().useGravity = false;
+        finished.Invoke();
     }
 }

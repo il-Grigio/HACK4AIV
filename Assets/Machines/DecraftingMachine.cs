@@ -63,6 +63,7 @@ public class DecraftingMachine : MachineScript
         Rigidbody itemrb = item.GetComponent<Rigidbody>();
         itemrb.useGravity = true;
         itemrb.AddForce(-transform.forward * itemThrowForce);
+        finished.Invoke();
     }
 
     protected bool CheckCorrectMaterial() {

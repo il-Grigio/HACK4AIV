@@ -30,7 +30,7 @@ public class UICraftingUnit : MonoBehaviour
         foreach(var outputIngredient in ingredient.ingredients)
         {
             UIIngredientManager newIgredient = GameObject.Instantiate(ingredientSample, ingredientsContainer.transform);
-            ingredientSample.outputIngredientIcon.sprite = outputIngredient.icon;
+            newIgredient.outputIngredientIcon.sprite = outputIngredient.icon;
         }
         timeRect.GetComponent<Animator>().SetFloat("TimeMultiplier", 1f / MaxTime);
         currentTime = 0;
