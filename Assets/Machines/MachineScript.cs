@@ -21,8 +21,8 @@ public abstract class MachineScript : MonoBehaviour
         for (int i = 0; i < placeItemPositions.Length; i++) {
             if (placedItems[i] == null) {
                 placedItems[i] = item;
-                placedItems[i].transform.parent = transform;
                 placedItems[i].transform.position = placeItemPositions[i].position;
+                placedItems[i].transform.parent = transform;
                 return;
             }
         }

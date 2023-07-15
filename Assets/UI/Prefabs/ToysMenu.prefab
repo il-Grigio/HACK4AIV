@@ -167,11 +167,11 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0.0028686523, y: 0}
   m_SizeDelta: {x: 1900, y: 250}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &3373957080604756665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,3 +242,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSample: {fileID: 1491238996847353381, guid: 63c6dcdcb612c3b49b96816994168fe4,
     type: 3}
+  UIContainer: {fileID: 6398860437670270761}

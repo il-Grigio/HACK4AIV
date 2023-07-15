@@ -4,16 +4,6 @@ using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-[CreateAssetMenu(fileName = "new Recepie", menuName = "Recepie")]
-public class Recepie : ScriptableObject {
-    public float timeToFinishRecepie = 60;
-    [HideInInspector] public float currentTime;
-    public float timeBonusOnComplete;
-    public float timeLostOnIncomplete;
-    public IngredientScriptable recepie;
-}
-
 public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 {
 
@@ -52,7 +42,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 
 
     //private
-    int currentPhaseIndex = 0;
+    int currentPhaseIndex = -1;
     public int CurrentPhaseIndex => currentPhaseIndex;
     List<Recepie> recepiesToRemove = new List<Recepie>();
     float partialTime;
@@ -63,8 +53,12 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     private void Start() {
         failedRecepies = 0;
         activeRecepies.Clear();
-        uiTimer = GameObject.Find("Timer").GetComponent<UIGeneralTimer>();
-        uiTimer.SetTimer(myPhases[currentPhaseIndex].timeToFinishPhase);
+        GoToNextPhase();
+        GameObject t = GameObject.Find("Timer");
+        if(t) uiTimer = t.GetComponent<UIGeneralTimer>();
+        if(uiTimer)
+            uiTimer.SetTimer(myPhases[currentPhaseIndex].timeToFinishPhase);
+
     }
     public void GoToNextPhase() {
         currentPhaseIndex++;
@@ -74,7 +68,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
             AddNewRecepie();
         }
         myPhases[currentPhaseIndex].currentTime = myPhases[currentPhaseIndex].timeToFinishPhase;
-        uiTimer.SetTimer(myPhases[currentPhaseIndex].timeToFinishPhase);
+        if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].timeToFinishPhase);
         partialTime = 0;
     }
 

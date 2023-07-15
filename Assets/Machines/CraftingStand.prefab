@@ -389,6 +389,8 @@ GameObject:
   - component: {fileID: 8523137244024316236}
   - component: {fileID: 1524910188605044053}
   - component: {fileID: 6685575878069808131}
+  - component: {fileID: 340605110481229820}
+  - component: {fileID: 494239067962377487}
   m_Layer: 0
   m_Name: CraftingStand
   m_TagString: Untagged
@@ -498,7 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997f46f87101283438fb9f8a6df94303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MachineType: 2
   placeItemPositions:
   - {fileID: 1782111767977410142}
   - {fileID: 7497919838108248081}
@@ -521,6 +522,57 @@ MonoBehaviour:
     type: 3}
   craftingTime: 5
   spawnPoint: {fileID: 7380314609022356685}
+  itemToCraft: {fileID: 0}
+--- !u!114 &340605110481229820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7388723654953895973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 614296949
+      Data2: 1159430201
+      Data3: -1702576486
+      Data4: -1051751384
+    Path: event:/SFXEvents/MetalTable
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
+--- !u!114 &494239067962377487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7388723654953895973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850d420384aefb14ca3c743185747869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay:
+    Guid:
+      Data1: 614296949
+      Data2: 1159430201
+      Data3: -1702576486
+      Data4: -1051751384
+    Path: event:/SFXEvents/MetalTable
 --- !u!1 &7389974665628387785
 GameObject:
   m_ObjectHideFlags: 0

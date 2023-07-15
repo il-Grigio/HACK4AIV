@@ -5,20 +5,28 @@ using UnityEngine;
 
 public class DecraftingMachine : MachineScript
 {
-    [SerializeField] Workstation workstationType;
+    [SerializeField] protected Workstation workstationType;
     [SerializeField] private float decraftingTime;
-    [SerializeField] private ItemComponent materialDrop;
-    [SerializeField] private float currentDecraftingTime;
-    public bool isStarted;
+    [SerializeField] protected ItemComponent materialDrop;
+    protected float currentDecraftingTime;
+    [HideInInspector]public bool isStarted;
     private float itemRotationSpeed;
     [SerializeField] private float itemThrowForce;
 
-    private void Update() {
+    protected RecipeManager recipeManager;
+
+    private void Start()
+    {
+        recipeManager = GameObject.Find("RecipesMenu").GetComponent<RecipeManager>();
+    }
+
+    protected virtual void Update() {
         if (isStarted) {
             currentDecraftingTime -= Time.deltaTime;
             if(currentDecraftingTime <= 0) {
                 isStarted = false;
                 SpawnMaterial();
+                recipeManager.NewRecipe(placedItems[0].ingredientScriptable, workstationType);
                 Destroy(placedItems[0].gameObject);
                 placedItems[0] = null;
             }
@@ -27,6 +35,7 @@ public class DecraftingMachine : MachineScript
 
     //When the player interacts with the machine, use this function (Es. start crafting)
     public override bool Interact() {
+        if (isStarted) return false;
         if (placedItems[0] && placedItems[0].ingredientScriptable.ingredients.Length > 0) {
             if (CheckCorrectMaterial()) {
                 currentDecraftingTime = decraftingTime;
@@ -38,7 +47,7 @@ public class DecraftingMachine : MachineScript
     }
 
     //Spawns material with a small hop
-    private void SpawnMaterial() {
+    protected virtual void SpawnMaterial() {
         ItemComponent item = Instantiate<ItemComponent>(materialDrop);
         //item.ingredientScriptable = RecipeManager.Instance.materialIcons[workstationType];
         item.transform.position = placeItemPositions[0].position;
@@ -46,7 +55,8 @@ public class DecraftingMachine : MachineScript
         itemrb.AddForce(-transform.forward * itemThrowForce);
     }
 
-    private bool CheckCorrectMaterial() {
+    protected bool CheckCorrectMaterial() {
+        if (placedItems[0] == null) return false;
         return placedItems[0].ingredientScriptable.ingredients.Contains(RecipeManager.Instance.materialIcons[workstationType]);
         //foreach(IngredientScriptable item in placedItems[0].ingredientScriptable.ingredients) {
         //    //if(string.Compare(item.fullName, materialDrop.ingredientScriptable.fullName) == 0) {
