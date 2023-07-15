@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7577003131748485753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3097122728228219360}
+  m_Layer: 24
+  m_Name: startPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3097122728228219360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577003131748485753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.838, y: 1.345, z: -0.544}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6626697843476115675}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6664337790542599984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,12 +166,20 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c424021588a746945a2611803e66613c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d386e539efba9b4293bdedebf39c73e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3097122728228219360}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d386e539efba9b4293bdedebf39c73e,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5539858446333882683}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d386e539efba9b4293bdedebf39c73e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8330757738504295206}
   m_SourcePrefab: {fileID: 100100000, guid: 0d386e539efba9b4293bdedebf39c73e, type: 3}
 --- !u!1 &5817826328187890273 stripped
 GameObject:
@@ -169,3 +208,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.591599, y: 1.7693992, z: 1.3636978}
   m_Center: {x: -0.79579914, y: 0.8674586, z: -0.5455472}
+--- !u!114 &8330757738504295206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5817826328187890273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 495a36271c0b06c4abe2bb42b3e4575c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeItemPositions:
+  - {fileID: 3097122728228219360}
+  placedItems: []
+  workstationType: 5
+  decraftingTime: 0
+  materialDrop: {fileID: 9214410579933311868, guid: 1737d4548643b1744a325cc368b6ec6d,
+    type: 3}
+  isStarted: 0
+  itemThrowForce: 200
+  interactionsTimes: 15
+--- !u!4 &6626697843476115675 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d386e539efba9b4293bdedebf39c73e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6664337790542599984}
+  m_PrefabAsset: {fileID: 0}

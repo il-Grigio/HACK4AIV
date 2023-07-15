@@ -56,6 +56,7 @@ public class DecraftingMachine : MachineScript
     }
 
     protected bool CheckCorrectMaterial() {
+        if (placedItems[0] == null) return false;
         return placedItems[0].ingredientScriptable.ingredients.Contains(RecipeManager.Instance.materialIcons[workstationType]);
         //foreach(IngredientScriptable item in placedItems[0].ingredientScriptable.ingredients) {
         //    //if(string.Compare(item.fullName, materialDrop.ingredientScriptable.fullName) == 0) {
