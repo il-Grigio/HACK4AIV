@@ -96,6 +96,7 @@ public class CraftingMachine : MachineScript
         base.PlaceItem(item);
     }
     public override bool CanPlaceItems() {
+        if (!machineActive) return false;
         int positionsOccuipied = 0;
         for (int i = 0; i < placedItems.Length; i++) {
             if (placedItems[i] == null) continue;

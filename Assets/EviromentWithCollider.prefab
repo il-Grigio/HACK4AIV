@@ -104,8 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 14.023564, y: 7.28033, z: 1}
-  m_Center: {x: -6.511784, y: 3.140165, z: 2.1148793e-14}
+  m_Size: {x: 13.406878, y: 7.28033, z: 1}
+  m_Center: {x: -6.2034407, y: 3.140165, z: 2.5530617e-14}
 --- !u!1 &1533048538552820097
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,8 +263,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 14.023564, y: 7.28033, z: 1}
-  m_Center: {x: -6.511784, y: 3.140165, z: 2.1148793e-14}
+  m_Size: {x: 13.621196, y: 7.28033, z: 1}
+  m_Center: {x: -6.712969, y: 3.140165, z: 1.8289786e-14}
 --- !u!1 &4107642619001670336
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,8 +475,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 9.920835, y: 7.28033, z: 1.492823}
-  m_Center: {x: -3.5166745, y: 3.140165, z: -0.24641156}
+  m_Size: {x: 9.066949, y: 7.28033, z: 1.492823}
+  m_Center: {x: -3.0897303, y: 3.140165, z: -0.24641156}
 --- !u!1 &6996147736057941479
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,8 +677,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.964577, y: 7.28033, z: 2.0458062}
-  m_Center: {x: -3.9822893, y: 3.140165, z: -0.26798368}
+  m_Size: {x: 8.441962, y: 7.28033, z: 2.0458062}
+  m_Center: {x: -4.2435966, y: 3.140165, z: -0.26798368}
 --- !u!1001 &4690589192502492252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -690,7 +690,7 @@ PrefabInstance:
     - target: {fileID: 6805552460538125551, guid: 52cad72f80e65de4c959ba5784161fee,
         type: 3}
       propertyPath: m_Name
-      value: Enviroment (1) Variant
+      value: EviromentWithCollider
       objectReference: {fileID: 0}
     - target: {fileID: 9030602459467431553, guid: 52cad72f80e65de4c959ba5784161fee,
         type: 3}
@@ -700,7 +700,7 @@ PrefabInstance:
     - target: {fileID: 9030602459467431553, guid: 52cad72f80e65de4c959ba5784161fee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 322.6349
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9030602459467431553, guid: 52cad72f80e65de4c959ba5784161fee,
         type: 3}
@@ -710,7 +710,7 @@ PrefabInstance:
     - target: {fileID: 9030602459467431553, guid: 52cad72f80e65de4c959ba5784161fee,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 300.5752
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 9030602459467431553, guid: 52cad72f80e65de4c959ba5784161fee,
         type: 3}

@@ -9,6 +9,7 @@ public class DecraftingBurnMachine : DecraftingMachine
     float currentBurnTime;
     bool isBurning = false;
     private ItemComponent craftedItem;
+    
     protected override void Update() {
         if (!placedItems[0]) return;
         if (isStarted) {

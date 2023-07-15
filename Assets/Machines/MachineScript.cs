@@ -14,6 +14,7 @@ public abstract class MachineScript : MonoBehaviour
     //[SerializeField] protected MachineType MachineType;
     [SerializeField] protected Transform[] placeItemPositions;
     [SerializeField] protected ItemComponent[] placedItems;
+    public bool machineActive = true;
     private void Awake() {
         placedItems = new ItemComponent[placeItemPositions.Length];
     }
@@ -45,6 +46,7 @@ public abstract class MachineScript : MonoBehaviour
     }
 
     public virtual bool CanPlaceItems() {
+        if (!machineActive) return false;
         for (int i = 0; i < placeItemPositions.Length; i++) {
             if (placedItems[i] == null) return true;
         }
