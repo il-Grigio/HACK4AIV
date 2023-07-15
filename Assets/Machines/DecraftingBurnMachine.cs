@@ -15,6 +15,7 @@ public class DecraftingBurnMachine : DecraftingMachine
             currentDecraftingTime -= Time.deltaTime;
             if (currentDecraftingTime <= 0) {
                 isStarted = false;
+                recipeManager.NewRecipe(placedItems[0].ingredientScriptable, workstationType);
                 Destroy(placedItems[0].gameObject);
                 placedItems[0] = null;
                 isBurning = true;

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DecraftingMachine : MachineScript
 {
-    [SerializeField] Workstation workstationType;
+    [SerializeField] protected Workstation workstationType;
     [SerializeField] private float decraftingTime;
     [SerializeField] protected ItemComponent materialDrop;
     protected float currentDecraftingTime;
@@ -13,7 +13,7 @@ public class DecraftingMachine : MachineScript
     private float itemRotationSpeed;
     [SerializeField] private float itemThrowForce;
 
-    private RecipeManager recipeManager;
+    protected RecipeManager recipeManager;
 
     private void Start()
     {
