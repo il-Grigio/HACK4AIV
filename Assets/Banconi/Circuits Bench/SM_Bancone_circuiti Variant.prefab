@@ -125,6 +125,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6159294659369538076}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6677999091591184779}
   m_SourcePrefab: {fileID: 100100000, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759, type: 3}
 --- !u!4 &2836101491080717525 stripped
 Transform:
@@ -174,11 +178,39 @@ MonoBehaviour:
   placeItemPositions:
   - {fileID: 1441340026836256605}
   placedItems: []
+  machineActive: 1
+  finished:
+    m_PersistentCalls:
+      m_Calls: []
   workstationType: 6
   decraftingTime: 10
   materialDrop: {fileID: 9214410579933311868, guid: bda0b3071313e4a4ab56e06a6a6f474b,
     type: 3}
   isStarted: 0
   itemThrowForce: 0
+  cantInteract:
+    m_PersistentCalls:
+      m_Calls: []
   burnTime: 20
   spawnPoint: {fileID: 1441340026836256605}
+--- !u!95 &6677999091591184779
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175050842187382383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49617a5c94d78fa418164bd8b49cfa75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
