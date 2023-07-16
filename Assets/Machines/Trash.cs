@@ -12,6 +12,7 @@ public class Trash : MachineScript
                 placedItems[i].gameObject.SetActive(false);
                 placedItems[i].transform.parent = ItemsObjectPool.Instance.transform; 
                 placedItems[i] = null;
+                finished.Invoke();
                 return;
             }
         }
