@@ -427,7 +427,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: 
-  sourceBankPath: Assets/FMODBanks/Desktop
+  sourceBankPath: Assets/FMODBanksNuovo/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -450,12 +450,8 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  - Desktop/Master
   Banks:
   - Ambiance
-  - Desktop/Ambiance
-  - Desktop/Music
-  - Desktop/SFX
   - Music
   - SFX
   BanksToLoad: []
