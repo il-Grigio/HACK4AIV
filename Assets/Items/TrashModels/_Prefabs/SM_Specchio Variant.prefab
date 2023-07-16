@@ -16,17 +16,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f561df503922a93458bcc495d84b6eaa,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 40
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f561df503922a93458bcc495d84b6eaa,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 40
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f561df503922a93458bcc495d84b6eaa,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 40
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f561df503922a93458bcc495d84b6eaa,
         type: 3}
@@ -105,15 +105,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f561df503922a93458bcc495d84b6eaa,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7622416259000967882}
+      addedObject: {fileID: 1342}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f561df503922a93458bcc495d84b6eaa,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3442878563452538316}
+      addedObject: {fileID: 1324}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f561df503922a93458bcc495d84b6eaa,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5633931966016083344}
+      addedObject: {fileID: 1568}
   m_SourcePrefab: {fileID: 100100000, guid: f561df503922a93458bcc495d84b6eaa, type: 3}
 --- !u!1 &8997074980849617196 stripped
 GameObject:
@@ -121,7 +121,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8078720883408352381}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &7622416259000967882
+--- !u!65 &1342
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,9 +140,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.013829616, y: 0.03460901, z: 0.011475573}
-  m_Center: {x: 0.00008742959, y: 0.01671396, z: 0.0033034214}
---- !u!54 &3442878563452538316
+  m_Size: {x: 0.69918513, y: 1.6820996, z: 0.59192634}
+  m_Center: {x: 0.0043921457, y: 0.8404592, z: 0.1766395}
+--- !u!54 &1324
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +169,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5633931966016083344
+--- !u!114 &1568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
