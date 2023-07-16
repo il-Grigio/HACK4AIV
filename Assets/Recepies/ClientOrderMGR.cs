@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Events;
-using static UnityEditor.Progress;
 
 public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 {
@@ -93,9 +91,9 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 
         foreach (Recepie recepie in activeRecepies) {
             recepie.currentTime -= Time.deltaTime;
+                if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].currentTime);
             if(recepie.currentTime <= 0) {
                 myPhases[currentPhaseIndex].currentTime += recepie.timeLostOnIncomplete;
-                if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].currentTime);
                 didntFinishInTimeRecepie.Invoke();
                 recepiesToRemove.Add(recepie);
             }
@@ -104,8 +102,10 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
             foreach(var item in recepiesToRemove)
             {
                 uiClientOrder.RemoveItem(item);
+                activeRecepies.Remove(item);
+                Destroy(item);
             }
-            activeRecepies.RemoveAll(i => recepiesToRemove.Contains(i));
+            //activeRecepies.RemoveAll(i => recepiesToRemove.Contains(i));
             recepiesToRemove.Clear();
 
         }
@@ -141,7 +141,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     public void AddNewRecepie() {
         RecepiePhase currentPhase = myPhases[currentPhaseIndex];
         if (currentPhase != null) {
-            Recepie newRecepie = currentPhase.possibleRecepies[Random.Range(0, currentPhase.possibleRecepies.Length)];
+            Recepie newRecepie = Instantiate( currentPhase.possibleRecepies[Random.Range(0, currentPhase.possibleRecepies.Length)]);
             activeRecepies.Add(newRecepie);
             nRecepiesArrived++;
             newRecepie.currentTime = newRecepie.timeToFinishRecepie;

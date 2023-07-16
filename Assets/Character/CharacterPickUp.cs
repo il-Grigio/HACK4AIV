@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
-using MoreMountains.Feedbacks;
-using Unity.VisualScripting;
-using static UnityEngine.UI.Image;
-using static UnityEditor.Progress;
-
 [AddComponentMenu("TopDown Engine/Character/Abilities/PickUp")]
 public class CharacterPickUp : CharacterAbility
 {
@@ -61,6 +56,10 @@ public class CharacterPickUp : CharacterAbility
     /// </summary>
     protected override void Initialization() {
         base.Initialization();
+        GameObject go = GameObject.Find("ContextMenu");
+        if (go != null) {
+            contextMenu = go.GetComponent<UIContextMenu>();
+        }
         _characterController = _controller.GetComponent<CharacterController>();
         handIK = GetComponentInChildren<HandIKCharcter>();
     }
@@ -172,13 +171,6 @@ public class CharacterPickUp : CharacterAbility
         item.transform.position = itemStand.transform.position;
     }
 
-    protected override void Awake()
-    {
-        base.Awake();
-        contextMenu = GameObject.Find("ContextMenu").GetComponent<UIContextMenu>();
-
-    }
-
     private void Update()
     {
         if (hasItem) 
@@ -204,7 +196,7 @@ public class CharacterPickUp : CharacterAbility
         CheckForPickUps();
         if(!menuPUShowing && !menuInShowing)
         {
-            contextMenu.CloseMenu();
+            if(contextMenu) contextMenu.CloseMenu();
         }
     }
 
@@ -219,7 +211,7 @@ public class CharacterPickUp : CharacterAbility
         {
             if (!menuPUShowing && !_hit.collider.transform == lastCollider)
             {
-                contextMenu.OpenMenu(_hit.collider.transform, false);
+                if (contextMenu) contextMenu.OpenMenu(_hit.collider.transform, false);
                 menuPUShowing = true;
             }
             
@@ -241,7 +233,8 @@ public class CharacterPickUp : CharacterAbility
         {
             if (!menuInShowing && !_hit.collider.transform == lastCollider)
             {
-                contextMenu.OpenMenu(_hit.collider.transform, true);
+                if (contextMenu)
+                    contextMenu.OpenMenu(_hit.collider.transform, true);
                 menuInShowing = true;
             }
 

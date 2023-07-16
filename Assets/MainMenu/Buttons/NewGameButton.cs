@@ -9,7 +9,7 @@ public class NewGameButton : MenuButton {
     [SerializeField] private Transform selector;
     private bool startCutscene;
     [SerializeField] private float ppWeightSpeed;
-    [SerializeField] 
+    [SerializeField] private Animation cutsceneAnimation;
 
     private void Update() {
         if (startCutscene) {
@@ -19,6 +19,7 @@ public class NewGameButton : MenuButton {
     public override void ExecuteButton() {
         selector.gameObject.SetActive(false); //Temp
         startCutscene = true;
+        cutsceneAnimation.Play();
         foreach (Lifter panel in panelsToLiftUp) { panel.LiftUp(); }
     }
 }

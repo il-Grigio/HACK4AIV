@@ -18,7 +18,7 @@ public abstract class MachineScript : MonoBehaviour
     [SerializeField] protected ItemComponent[] placedItems;
     public bool machineActive = true;
     [SerializeField] protected UnityEvent finished;
-    private void Awake() {
+    protected virtual void Awake() {
         placedItems = new ItemComponent[placeItemPositions.Length];
     }
     public virtual void PlaceItem(ItemComponent item) {
@@ -26,7 +26,7 @@ public abstract class MachineScript : MonoBehaviour
             if (placedItems[i] == null) {
                 placedItems[i] = item;
                 placedItems[i].transform.position = placeItemPositions[i].position;
-                placedItems[i].transform.parent = transform;
+                placedItems[i].transform.parent = placeItemPositions[i];
                 return;
             }
         }
