@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ab8766a783922478dd93d0939fdea6, type: 3}
   m_Name: LazyManRecipe
   m_EditorClassIdentifier: Assembly-CSharp::Recepie
-  timeToFinishRecepie: 120
-  currentTime: 40.648773
+  timeToFinishRecepie: 180
+  currentTime: -0.084808856
   timeBonusOnComplete: 40
   timeLostOnIncomplete: 20
   recepie: {fileID: 11400000, guid: 3081a63f286c6664e84e19444a7b4d39, type: 2}
