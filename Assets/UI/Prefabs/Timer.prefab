@@ -373,6 +373,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barSlider: {fileID: 3826105840809104790}
+  green: {r: 0, g: 1, b: 0, a: 1}
+  yellow: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  red: {r: 1, g: 0, b: 0, a: 1}
+  barImage: {fileID: 399392273928334201}
   time: 0
   text: {fileID: 3882541904766727030}
 --- !u!1 &7452386909929337344

@@ -57,7 +57,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
         activeRecepies.Clear();
         GoToNextPhase();
         GameObject t = GameObject.Find("Timer");
-        if(t) uiTimer = t.GetComponent<UIGeneralTimer>();
+        uiTimer = t.GetComponent<UIGeneralTimer>();
         if(uiTimer)
             uiTimer.SetTimer(myPhases[currentPhaseIndex].timeToFinishPhase, myPhases[currentPhaseIndex].timeToFinishPhase);
 
