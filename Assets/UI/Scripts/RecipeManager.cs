@@ -77,6 +77,7 @@ public class RecipeManager : Singleton<RecipeManager>
         newUI.ingredient = item.ingredient;
         newUI.ingredientImage.sprite = item.ingredient.icon;
         newUI.benchImage.sprite = benchSprites[item.station];
+        newUI.ingredientManager.outputIngredientIcon.sprite = materialIcons[item.station].icon;
 
         recipeContainer.UpdateContainerSize();
     }

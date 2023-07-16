@@ -16,11 +16,20 @@ public class DecraftingMachine : MachineScript
 
     [SerializeField] protected UnityEvent cantInteract;
 
+    [SerializeField] protected UIProgressBar progressBar;
+    protected bool hasProgressBar;
+
     protected RecipeManager recipeManager;
     protected Animator animator;
 
     protected override void Awake() {
         base.Awake();
+        hasProgressBar = progressBar != null;
+        if (hasProgressBar)
+        {
+            progressBar.Progress = 0f;
+            progressBar.gameObject.SetActive(false);
+        }
         animator = GetComponent<Animator>();
     }
 
@@ -32,13 +41,22 @@ public class DecraftingMachine : MachineScript
     protected virtual void Update() {
         if (isStarted) {
             currentDecraftingTime -= Time.deltaTime;
-            if(currentDecraftingTime <= 0) {
+            if (hasProgressBar)
+            {
+                progressBar.gameObject.SetActive(true);
+                progressBar.Progress = 1f - currentDecraftingTime / decraftingTime;
+            }
+            if (currentDecraftingTime <= 0) {
                 isStarted = false;
                 SpawnMaterial();
                 recipeManager.NewRecipe(placedItems[0].ingredientScriptable, workstationType);
                 placedItems[0].gameObject.SetActive(false);
                 placedItems[0].transform.parent = ItemsObjectPool.Instance.transform;
                 placedItems[0] = null;
+                if (hasProgressBar)
+                {
+                    progressBar.gameObject.SetActive(false);
+                }
             }
         }
         animator.SetBool("IsActive", isStarted);
