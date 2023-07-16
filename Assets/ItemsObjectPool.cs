@@ -46,4 +46,5 @@ public class ItemsObjectPool : Singleton<ItemsObjectPool>
         if(autoSetActive)item.gameObject.SetActive(true);
         return item;
     }
+
 }

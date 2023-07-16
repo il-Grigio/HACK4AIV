@@ -20,9 +20,11 @@ public class CraftingMachine : MachineScript
     public IngredientScriptable itemToCraft;
     private ItemComponent craftedItem;
 
-    public override bool Interact() {
-        bool areEqual = false;
         List<IngredientScriptable> list2 = new List<IngredientScriptable> ();
+    public override bool Interact() {
+        if (itemToCraft) return false;
+        bool areEqual = false;
+        list2 = new List<IngredientScriptable>();
         for (int i = 0; i < placedItems.Length; i++) {
             //item not exist
             if (placedItems[i] == null) continue;
@@ -45,7 +47,7 @@ public class CraftingMachine : MachineScript
         }
         if (!areEqual) {
             itemToCraft = genericCraftable;
-            itemToCraft.ingredients = list2.ToArray();
+            
         }
         
 
@@ -90,6 +92,11 @@ public class CraftingMachine : MachineScript
         //TODO ignoto
 
         craftedItem = ItemsObjectPool.Instance.GetItem(itemToCraft);
+        if(craftedItem.ingredientScriptable == genericCraftable) {
+            craftedItem.ingredientScriptable.ingredients = list2.ToArray();
+        }
+
+
         craftedItem.GetComponent<Collider>().enabled = false;
         craftedItem.GetComponent<Rigidbody>().useGravity = false;
         craftedItem.transform.position = spawnPoint.position;
@@ -147,11 +154,11 @@ public class CraftingMachine : MachineScript
         //}
    // }
 
-#if UNITY_EDITOR
-    private void OnGUI() {
-        if (GUI.Button(new Rect(10, 40, 60, 30), "Craft")) {
-            Interact();
-        }
-    }
-#endif
+//#if UNITY_EDITOR
+//    private void OnGUI() {
+//        if (GUI.Button(new Rect(10, 40, 60, 30), "Craft")) {
+//            Interact();
+//        }
+//    }
+//#endif
 }

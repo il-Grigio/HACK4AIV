@@ -59,18 +59,19 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
         GameObject t = GameObject.Find("Timer");
         if(t) uiTimer = t.GetComponent<UIGeneralTimer>();
         if(uiTimer)
-            uiTimer.SetTimer(myPhases[currentPhaseIndex].timeToFinishPhase);
+            uiTimer.SetTimer(myPhases[currentPhaseIndex].timeToFinishPhase, myPhases[currentPhaseIndex].timeToFinishPhase);
 
     }
     public void GoToNextPhase() {
         currentPhaseIndex++;
         nRecepiesArrived = 0;
+        failedRecepies = 0;
         newPhase.Invoke();
         for (int i = 0; i < myPhases[currentPhaseIndex].initialRecepiesInThisPhase; i++) {
             AddNewRecepie();
         }
         myPhases[currentPhaseIndex].currentTime = myPhases[currentPhaseIndex].timeToFinishPhase;
-        if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].timeToFinishPhase);
+        if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].currentTime, myPhases[currentPhaseIndex].timeToFinishPhase);
         partialTime = 0;
     }
 
@@ -88,21 +89,30 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
         if (nRecepiesArrived < myPhases[currentPhaseIndex].totalRecepiesInThisPhase) {
 
             partialTime += Time.deltaTime;
-            if(partialTime > myPhases[currentPhaseIndex].timeToAddRecepie || activeRecepies.Count <= 1) {
+            if((partialTime > myPhases[currentPhaseIndex].timeToAddRecepie || activeRecepies.Count <= 1) && activeRecepies.Count < 5) {
                 //Add recepie
                 partialTime = 0;
                 AddNewRecepie();
             }
         }
 
+        if(activeRecepies.Count == 0) {
+            if(failedRecepies < Mathf.CeilToInt(myPhases[currentPhaseIndex].totalRecepiesInThisPhase * 0.5f)) {
+                GoToNextPhase();
+            }
+            else {
+                //TODO lose
+            }
+        }
 
 
         foreach (Recepie recepie in activeRecepies) {
             recepie.currentTime -= Time.deltaTime;
-                if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].currentTime);
             if(recepie.currentTime <= 0) {
-                myPhases[currentPhaseIndex].currentTime += recepie.timeLostOnIncomplete;
+                myPhases[currentPhaseIndex].currentTime -= recepie.timeLostOnIncomplete;
+                if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].currentTime, myPhases[currentPhaseIndex].timeToFinishPhase);
                 didntFinishInTimeRecepie.Invoke();
+                failedRecepies++;
                 recepiesToRemove.Add(recepie);
             }
         }
@@ -135,7 +145,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
             activeRecepies.Remove(recepie);
             uiClientOrder.RemoveItem(recepie);
             myPhases[currentPhaseIndex].currentTime += recepie.timeBonusOnComplete * recepie.currentTime / recepie.timeToFinishRecepie;
-            if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].currentTime);
+            if (uiTimer) uiTimer.SetTimer(myPhases[currentPhaseIndex].currentTime, myPhases[currentPhaseIndex].timeToFinishPhase);
             recepieFinished.Invoke();
 
             if(activeRecepies.Count == 0) {

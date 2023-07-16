@@ -20,11 +20,11 @@ public class UIGeneralTimer : MonoBehaviour
         barSlider.GetComponent<Animator>().SetFloat("Time", 1f / time);
     }
 
-    public void SetTimer(float newTime)
+    public void SetTimer(float newTime, float maxTimer)
     {
-        time = newTime;
+        time = maxTimer;
         currentTime = newTime;
-        barSlider.GetComponent<Animator>().SetFloat("Time", 1f / time);
+        barSlider.GetComponent<Animator>().SetFloat("Time", 1f / (currentTime / time));
         barSlider.GetComponent<Animator>().Play("Timer", 0);
     }
 

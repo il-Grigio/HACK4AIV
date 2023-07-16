@@ -231,7 +231,7 @@ public class CharacterPickUp : CharacterAbility
                 maxDistance, workStationLayerMask);
         if (_hit.collider)
         {
-            if (!menuInShowing && !_hit.collider.transform == lastCollider)
+            if (!menuInShowing && !_hit.collider.transform == lastCollider && _hit.collider.GetComponent<MachineScript>().machineActive)
             {
                 if (contextMenu)
                     contextMenu.OpenMenu(_hit.collider.transform, true);
