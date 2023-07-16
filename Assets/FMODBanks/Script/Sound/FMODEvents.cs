@@ -23,6 +23,9 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference placeItemInCrafting { get; private set; }
     [field: Header("footsSteps")]
     [field: SerializeField] public EventReference footsStep { get; private set; }
+
+    [field: Header("loomTable")]
+    [field: SerializeField] public EventReference loomTable { get; private set; }
     public static FMODEvents instance { get; private set; }
     private void Awake()
     {

@@ -450,8 +450,12 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
+  - Desktop/Master
   Banks:
   - Ambiance
+  - Desktop/Ambiance
+  - Desktop/Music
+  - Desktop/SFX
   - Music
   - SFX
   BanksToLoad: []

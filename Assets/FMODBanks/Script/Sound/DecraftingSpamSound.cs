@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
-[RequireComponent(typeof(StudioEventEmitter))]
 public class DecraftingSpamSound : MonoBehaviour
 {
 
-    StudioEventEmitter emitter;
     DecraftingSpamMachine machine;
     [SerializeField] EventReference soundToPlay;
     int currentSoundPlayed = 0;
     void Start()
     {
         machine = GetComponent<DecraftingSpamMachine>();
-        emitter = AudioManager.instance.InitializeEventEmitter(soundToPlay, this.gameObject);
     }
 
     // Update is called once per frame
@@ -22,13 +19,8 @@ public class DecraftingSpamSound : MonoBehaviour
     {
         if(currentSoundPlayed < machine.currentInteractions) 
         {
-            emitter.Play();
+            AudioManager.instance.PlayOneShot(soundToPlay, this.transform.position);
             currentSoundPlayed++;
-        }
-        else if(currentSoundPlayed >= machine.currentInteractions) 
-        {
-
-            emitter.Stop();
         }
     }
 }

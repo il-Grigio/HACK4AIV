@@ -66,6 +66,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     }
     public void GoToNextPhase() {
         currentPhaseIndex++;
+        AudioManager.instance.SetMusicParameter("CurrentPhaseIndex", currentPhaseIndex);
         nRecepiesArrived = 0;
         failedRecepies = 0;
         newPhase.Invoke();

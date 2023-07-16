@@ -173,6 +173,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 260455602149546494}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6749484406730621874}
   m_SourcePrefab: {fileID: 100100000, guid: b8fce742c9dfbf3429e92d1041adf328, type: 3}
 --- !u!1 &2542919210032691905 stripped
 GameObject:
@@ -253,6 +257,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6749484406730621874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542919210032691905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1f6b5999fabd24c896aeca3a33fa24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay:
+    Guid:
+      Data1: -1849680573
+      Data2: 1341548795
+      Data3: -1862921313
+      Data4: 1174062599
+    Path: event:/SFXEvents/GlassTable
 --- !u!4 &2882747006239088763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,

@@ -153,6 +153,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6677999091591184779}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3182094289561579701}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5336994907439309215}
   m_SourcePrefab: {fileID: 100100000, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759, type: 3}
 --- !u!4 &2836101491080717525 stripped
 Transform:
@@ -240,6 +248,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3182094289561579701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175050842187382383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1087104709
+      Data2: 1167881255
+      Data3: -1791107705
+      Data4: -945030672
+    Path: event:/SFXEvents/CircuitTable
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 5
+--- !u!114 &5336994907439309215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175050842187382383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1663900a779f24d91e5cdb06061869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay:
+    Guid:
+      Data1: -1087104709
+      Data2: 1167881255
+      Data3: -1791107705
+      Data4: -945030672
+    Path: event:/SFXEvents/CircuitTable
 --- !u!1001 &4463769906908361002
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -88,6 +88,10 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void SetMusicParameter(string nameParameter, float parameterValue) 
+    {
+        musicMenuInstance.setParameterByName(nameParameter, parameterValue);
+    }
     public void StopMusic()
     {
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);

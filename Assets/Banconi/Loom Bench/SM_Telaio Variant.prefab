@@ -279,6 +279,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 672332155222416183}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d386e539efba9b4293bdedebf39c73e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7180261540692205798}
   m_SourcePrefab: {fileID: 100100000, guid: 0d386e539efba9b4293bdedebf39c73e, type: 3}
 --- !u!1 &5817826328187890273 stripped
 GameObject:
@@ -335,9 +339,9 @@ MonoBehaviour:
   cantInteract:
     m_PersistentCalls:
       m_Calls: []
+  progressBar: {fileID: 4044804997083804608}
   interactionsTimes: 15
   currentInteractions: 0
-  progressBar: {fileID: 4044804997083804608}
 --- !u!95 &672332155222416183
 Animator:
   serializedVersion: 5
@@ -359,6 +363,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7180261540692205798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5817826328187890273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1f6b5999fabd24c896aeca3a33fa24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay:
+    Guid:
+      Data1: -299508817
+      Data2: 1101813451
+      Data3: -1938218874
+      Data4: -1329805573
+    Path: event:/SFXEvents/SewingMachineTable
 --- !u!4 &6626697843476115675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d386e539efba9b4293bdedebf39c73e,

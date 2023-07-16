@@ -20,6 +20,7 @@ public class NewGameButton : MenuButton {
         selector.gameObject.SetActive(false); //Temp
         startCutscene = true;
         cutsceneAnimation.Play();
+        AudioManager.instance.SetMusicParameter("StartGame", 1);
         foreach (Lifter panel in panelsToLiftUp) { panel.LiftUp(); }
     }
 }
