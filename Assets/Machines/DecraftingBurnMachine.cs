@@ -13,9 +13,13 @@ public class DecraftingBurnMachine : DecraftingMachine
         base.Awake();
     }
     protected override void Update() {
-        if (!placedItems[0]) return;
+        //if (!placedItems[0]) return;
         if (isStarted) {
             currentDecraftingTime -= Time.deltaTime;
+            if (!placedItems[0]) {
+                isStarted = false;
+                currentDecraftingTime = decraftingTime;
+            }
             if (currentDecraftingTime <= 0) {
                 isStarted = false;
                 recipeManager.NewRecipe(placedItems[0].ingredientScriptable, workstationType);
@@ -31,7 +35,7 @@ public class DecraftingBurnMachine : DecraftingMachine
             currentBurnTime -= Time.deltaTime;
             if (currentBurnTime <= 0) {
                 craftedItem.gameObject.SetActive(false);
-                placedItems[0].transform.parent = ItemsObjectPool.Instance.transform;
+                craftedItem.transform.parent = ItemsObjectPool.Instance.transform;
 
                 craftedItem = null;
                 isBurning = false;
@@ -63,6 +67,7 @@ public class DecraftingBurnMachine : DecraftingMachine
     }
 
     protected override void SpawnMaterial() {
+        currentDecraftingTime = decraftingTime;
         craftedItem = ItemsObjectPool.Instance.GetItem(materialDrop.ingredientScriptable);
         craftedItem.transform.position = spawnPoint.position;
         craftedItem.GetComponent<Rigidbody>().useGravity = false;

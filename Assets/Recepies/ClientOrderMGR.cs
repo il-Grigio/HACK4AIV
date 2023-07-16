@@ -24,6 +24,8 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     [SerializeField] UnityEvent newPhase;
     [SerializeField] UnityEvent deliveredWrongRecepy;
     [SerializeField] UnityEvent didntFinishInTimeRecepie;
+    [SerializeField] UnityEvent win;
+    [SerializeField] UnityEvent lose;
 
     [Header("DEbug")]
     [SerializeField] bool nextPhase = false;
@@ -83,7 +85,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 
         myPhases[currentPhaseIndex].currentTime -= Time.deltaTime;
         if (myPhases[currentPhaseIndex].currentTime < 0) {
-            //TODO Lose Game
+            lose.Invoke();
         }
 
         if (nRecepiesArrived < myPhases[currentPhaseIndex].totalRecepiesInThisPhase) {
@@ -101,7 +103,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
                 GoToNextPhase();
             }
             else {
-                //TODO lose
+                lose.Invoke();
             }
         }
 
@@ -172,6 +174,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
         }
         else {
             //TODO finishGame
+            win.Invoke();
         }
         newRecepieEntering.Invoke();
     }

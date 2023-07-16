@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class DecraftingMachine : MachineScript
 {
     [SerializeField] protected Workstation workstationType;
-    [SerializeField] private float decraftingTime;
+    [SerializeField] protected float decraftingTime;
     [SerializeField] protected ItemComponent materialDrop;
     protected float currentDecraftingTime;
     [HideInInspector]public bool isStarted;

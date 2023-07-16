@@ -470,15 +470,16 @@ MonoBehaviour:
     - {fileID: 9006738736573142741, guid: 6de6640709bdab04b9ce8aec99fbc6e8, type: 3}
     maxNumberOfTrashInScene: 4
     minDelayTime: 5
-    maxDelayTime: 30
+    maxDelayTime: 10
   - possibleTrash:
     - {fileID: 1229317612290300677, guid: 009e26a5192cd8743b0acc7cc58c17ab, type: 3}
     - {fileID: 1774105060498640770, guid: 10461f9874a33f24088448f179962521, type: 3}
     - {fileID: 9006738736573142741, guid: 6de6640709bdab04b9ce8aec99fbc6e8, type: 3}
     - {fileID: 1740987348610689180, guid: 5668186ad35d9794a9a6f0954ba2c64f, type: 3}
+    - {fileID: -1158460812204747116, guid: a532cfb95a8768b4aa19c50ebd6dd93d, type: 3}
     maxNumberOfTrashInScene: 5
     minDelayTime: 5
-    maxDelayTime: 30
+    maxDelayTime: 10
   - possibleTrash:
     - {fileID: 1229317612290300677, guid: 009e26a5192cd8743b0acc7cc58c17ab, type: 3}
     - {fileID: 1774105060498640770, guid: 10461f9874a33f24088448f179962521, type: 3}
@@ -486,7 +487,8 @@ MonoBehaviour:
     - {fileID: 1740987348610689180, guid: 5668186ad35d9794a9a6f0954ba2c64f, type: 3}
     - {fileID: 1389909357913058247, guid: 1a0355034851920409b5941a32f4699b, type: 3}
     - {fileID: 5633931966016083344, guid: 5834a58b9a2c2c94589d66e6d0ea16b5, type: 3}
-    maxNumberOfTrashInScene: 4
+    - {fileID: -1158460812204747116, guid: a532cfb95a8768b4aa19c50ebd6dd93d, type: 3}
+    maxNumberOfTrashInScene: 7
     minDelayTime: 5
     maxDelayTime: 20
   - possibleTrash:
@@ -499,7 +501,7 @@ MonoBehaviour:
     - {fileID: 5633931966016083344, guid: 5834a58b9a2c2c94589d66e6d0ea16b5, type: 3}
     - {fileID: 6909161452648468187, guid: 0f0d40b3fb4e0eb4398b6ce3b92a8494, type: 3}
     - {fileID: 3781466789330341161, guid: 294bc70c564ea554d8a55104152e23e1, type: 3}
-    maxNumberOfTrashInScene: 5
+    maxNumberOfTrashInScene: 8
     minDelayTime: 10
     maxDelayTime: 40
   - possibleTrash:
@@ -517,7 +519,7 @@ MonoBehaviour:
     - {fileID: 4633447537532383309, guid: a54efce3adb135c4e84d48c5fe15a7cb, type: 3}
     - {fileID: 6589034858280554071, guid: 67ffbdb7651d6214dacc4871335c6612, type: 3}
     - {fileID: -9180182344219166721, guid: 049b3d83f8a7f6243ab022b7f960fa98, type: 3}
-    maxNumberOfTrashInScene: 3
+    maxNumberOfTrashInScene: 10
     minDelayTime: 15
     maxDelayTime: 60
   maxNumberOfItemsInScene: 10
