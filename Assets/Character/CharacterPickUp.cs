@@ -152,6 +152,13 @@ public class CharacterPickUp : CharacterAbility
                 maxDistance, pickuppableLayerMask);
         hasItem = (_hit.collider != null);
 
+        if(!hasItem) {
+            origin = _controller3D.transform.position + _characterController.center - model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
+            Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+                maxDistance, pickuppableLayerMask);
+            hasItem = (_hit.collider != null);
+        }
+
         if (hasItem) {
             //TODO change arms animations
             _itemComponent = _hit.transform.GetComponent<ItemComponent>();

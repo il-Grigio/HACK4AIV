@@ -8,7 +8,7 @@ public class ItemsObjectPool : Singleton<ItemsObjectPool>
     [SerializeField] List<ItemComponent> items = new List<ItemComponent>();
     [SerializeField] int initialDuplicates;
     Dictionary<IngredientScriptable, List<ItemComponent>> ingredients;
-
+    float time = 0;
     private void Awake() {
         ingredients = new Dictionary<IngredientScriptable, List<ItemComponent>>();
         foreach (var item in items) {
@@ -45,6 +45,21 @@ public class ItemsObjectPool : Singleton<ItemsObjectPool>
         }
         if(autoSetActive)item.gameObject.SetActive(true);
         return item;
+    }
+    private void Update() {
+        time += Time.deltaTime;
+        if(time > 5) {
+            time = 0;
+            foreach (List<ItemComponent> item in ingredients.Values) {
+                for (int i = 0; i < item.Count; i++) {
+                    if (item[i].isActiveAndEnabled && (item[i].transform.position - transform.position).sqrMagnitude > 100 * 100) {
+                        item[i].gameObject.SetActive(false);
+                        item[i].transform.parent = transform;
+                        item[i].transform.localPosition = Vector3.zero;
+                    }
+                }
+            }
+        }
     }
 
 }
