@@ -11,6 +11,9 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Music Menu")]
     [field: SerializeField] public EventReference musicMenu { get; private set; }
 
+    [field: Header("Speech")]
+    [field: SerializeField] public EventReference speechEvent { get; private set; }
+
     [field: Header("ChainSawTable")]
     [field: SerializeField] public EventReference ChainSawTable { get; private set; }
 

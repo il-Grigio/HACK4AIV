@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour
 
     private EventInstance ambienceEventInstance;
     private EventInstance musicMenuInstance;
+    private EventInstance speechInstance;
 
 
     void Awake()
@@ -66,6 +67,11 @@ public class AudioManager : MonoBehaviour
         musicMenuInstance.start();
     }
 
+    public void InizializeSpeechEvent(EventReference speechEvent) 
+    {
+        speechInstance = CreateInstance(speechEvent);
+        speechInstance.start();
+    }
     public EventInstance CreateInstance(EventReference eventeReference)
     {
         EventInstance myEvent = RuntimeManager.CreateInstance(eventeReference);
@@ -91,6 +97,11 @@ public class AudioManager : MonoBehaviour
     public void SetMusicParameter(string nameParameter, float parameterValue) 
     {
         musicMenuInstance.setParameterByName(nameParameter, parameterValue);
+    }
+
+    public void SetSpeechParameter(string parameterName, float parameterValue) 
+    {
+         speechInstance.setParameterByName(parameterName, parameterValue);
     }
     public void StopMusic()
     {
