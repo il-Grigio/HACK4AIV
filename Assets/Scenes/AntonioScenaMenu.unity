@@ -5986,7 +5986,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7649858011652825307, guid: d8280e7c31f703f419fb460e23371cd3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 2823994478781198217, guid: d8280e7c31f703f419fb460e23371cd3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5898544688815866504, guid: d8280e7c31f703f419fb460e23371cd3,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -5994,7 +6002,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 490498203831263149, guid: d8280e7c31f703f419fb460e23371cd3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 7937747285499539119, guid: d8280e7c31f703f419fb460e23371cd3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 6805205286984199997, guid: d8280e7c31f703f419fb460e23371cd3,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -6222,6 +6238,13 @@ MonoBehaviour:
       Data3: -267556186
       Data4: -489198063
     Path: event:/SFXEvents/FootsStep
+  <loomTable>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &2040650793
 GameObject:
   m_ObjectHideFlags: 0
