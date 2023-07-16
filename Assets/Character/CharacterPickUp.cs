@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
-using MoreMountains.Feedbacks;
-using Unity.VisualScripting;
-using static UnityEngine.UI.Image;
-using static UnityEditor.Progress;
-
 [AddComponentMenu("TopDown Engine/Character/Abilities/PickUp")]
 public class CharacterPickUp : CharacterAbility
 {

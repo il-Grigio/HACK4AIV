@@ -87,6 +87,8 @@ public class CraftingMachine : MachineScript
             placedItems[i].gameObject.SetActive(false);
             placedItems[i] = null;
         }
+        //TODO ignoto
+
         craftedItem = ItemsObjectPool.Instance.GetItem(itemToCraft);
         craftedItem.GetComponent<Collider>().enabled = false;
         craftedItem.GetComponent<Rigidbody>().useGravity = false;

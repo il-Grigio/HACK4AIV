@@ -12,7 +12,6 @@ public class DecraftingBurnMachine : DecraftingMachine
     Animator animator;
     protected override void Awake() {
         base.Awake();
-        animator = GetComponent<Animator>();
     }
     protected override void Update() {
         if (!placedItems[0]) return;
@@ -23,6 +22,7 @@ public class DecraftingBurnMachine : DecraftingMachine
                 recipeManager.NewRecipe(placedItems[0].ingredientScriptable, workstationType);
                 placedItems[0].gameObject.SetActive(false);
                 placedItems[0].transform.parent = ItemsObjectPool.Instance.transform;
+                placedItems[0] = null;
                 isBurning = true;
                 currentBurnTime = burnTime;
                 SpawnMaterial();
