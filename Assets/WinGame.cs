@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class LoseGame : MonoBehaviour
+public class WinGame : MonoBehaviour
 {
-    [SerializeField] GameObject loseGameScreen;
+    [SerializeField] GameObject winGameScreen;
     [SerializeField] GameObject thanksForPlayingObj;
     [SerializeField] FadeEffect fade;
 
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -18,11 +18,10 @@ public class LoseGame : MonoBehaviour
     {
         
     }
-
-    public void EndLoseGame() 
+    public void EndWinGame()
     {
         fade.FadeIn();
-        loseGameScreen.SetActive(true);
+        winGameScreen.SetActive(true);
         thanksForPlayingObj.SetActive(true);
         AudioManager.instance.StopMusic();
     }
