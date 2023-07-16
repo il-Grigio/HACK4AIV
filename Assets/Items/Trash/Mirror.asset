@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Mirror
   model3D: {fileID: 0}
-  icon: {fileID: 21300006, guid: 678058abcbfe36f42902c11d9e5f64fc, type: 3}
+  icon: {fileID: 21300000, guid: 8a7a1a0133eef45458bcf716375931dd, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 4c63ce9a0301c084e9623b70ab9d0e4b, type: 2}
   - {fileID: 11400000, guid: 0855fbed8cd76524e8e51d11aea6b601, type: 2}

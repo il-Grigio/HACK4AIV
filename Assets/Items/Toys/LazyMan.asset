@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Lazy Man Action Ficure
   model3D: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4bdc33f33b2d21f4b8cc72361f317f00, type: 3}
   ingredients:
   - {fileID: 11400000, guid: b9c3625582aa6b7428180c18e9455eb7, type: 2}
   - {fileID: 11400000, guid: 4c38383e25359e744bc68514fcd77edc, type: 2}

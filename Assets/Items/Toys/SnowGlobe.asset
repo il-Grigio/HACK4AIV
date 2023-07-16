@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: Glass snow globe
   model3D: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d02d74c6355a32b478c3bdf5aa7066c1, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 4c63ce9a0301c084e9623b70ab9d0e4b, type: 2}
   - {fileID: 11400000, guid: d96d9a36e02d8e24990ee0d03f7b53c3, type: 2}

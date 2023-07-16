@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: RockingHorse
   model3D: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 303e3d3a2bae55c44bfdaea70d0342f1, type: 3}
   ingredients:
   - {fileID: 11400000, guid: 0855fbed8cd76524e8e51d11aea6b601, type: 2}
   - {fileID: 11400000, guid: 0855fbed8cd76524e8e51d11aea6b601, type: 2}
