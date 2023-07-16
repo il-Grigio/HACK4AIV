@@ -41,11 +41,16 @@ public class DecraftingMachine : MachineScript
     protected virtual void Update() {
         if (isStarted) {
             currentDecraftingTime -= Time.deltaTime;
-            if (hasProgressBar)
-            {
-                progressBar.gameObject.SetActive(true);
-                progressBar.Progress = 1f - currentDecraftingTime / decraftingTime;
+            if(placedItems == null) {
+                isStarted = false;
             }
+
+
+            //if (hasProgressBar)
+            //{
+            //    progressBar.gameObject.SetActive(true);
+            //    progressBar.Progress = 1f - currentDecraftingTime / decraftingTime;
+            //}
             if (currentDecraftingTime <= 0) {
                 isStarted = false;
                 SpawnMaterial();
@@ -53,11 +58,15 @@ public class DecraftingMachine : MachineScript
                 placedItems[0].gameObject.SetActive(false);
                 placedItems[0].transform.parent = ItemsObjectPool.Instance.transform;
                 placedItems[0] = null;
-                if (hasProgressBar)
-                {
-                    progressBar.gameObject.SetActive(false);
-                }
+                //if (hasProgressBar)
+                //{
+                //    progressBar.gameObject.SetActive(false);
+                //}
             }
+        }
+        if (hasProgressBar) {
+            progressBar.gameObject.SetActive(isStarted);
+            progressBar.Progress = 1f - currentDecraftingTime / decraftingTime;
         }
         animator.SetBool("IsActive", isStarted);
     }
