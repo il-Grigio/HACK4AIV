@@ -46,6 +46,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.859647
       objectReference: {fileID: 0}
@@ -93,6 +108,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 0d2d7c1b4e51d194c9fd5ae9e9b45759,
         type: 3}
@@ -174,11 +194,18 @@ MonoBehaviour:
   placeItemPositions:
   - {fileID: 1441340026836256605}
   placedItems: []
+  machineActive: 1
+  finished:
+    m_PersistentCalls:
+      m_Calls: []
   workstationType: 6
   decraftingTime: 10
   materialDrop: {fileID: 9214410579933311868, guid: bda0b3071313e4a4ab56e06a6a6f474b,
     type: 3}
   isStarted: 0
   itemThrowForce: 0
+  cantInteract:
+    m_PersistentCalls:
+      m_Calls: []
   burnTime: 20
   spawnPoint: {fileID: 1441340026836256605}

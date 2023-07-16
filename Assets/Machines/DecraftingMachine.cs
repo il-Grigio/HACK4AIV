@@ -17,6 +17,12 @@ public class DecraftingMachine : MachineScript
     [SerializeField] protected UnityEvent cantInteract;
 
     protected RecipeManager recipeManager;
+    Animator animator;
+
+    protected override void Awake() {
+        base.Awake();
+        animator = GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -35,6 +41,7 @@ public class DecraftingMachine : MachineScript
                 placedItems[0] = null;
             }
         }
+        animator.SetBool("IsActive", isStarted);
     }
 
     //When the player interacts with the machine, use this function (Es. start crafting)

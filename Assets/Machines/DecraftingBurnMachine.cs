@@ -9,7 +9,11 @@ public class DecraftingBurnMachine : DecraftingMachine
     float currentBurnTime;
     bool isBurning = false;
     private ItemComponent craftedItem;
-    
+    Animator animator;
+    protected override void Awake() {
+        base.Awake();
+        animator = GetComponent<Animator>();
+    }
     protected override void Update() {
         if (!placedItems[0]) return;
         if (isStarted) {
@@ -35,6 +39,7 @@ public class DecraftingBurnMachine : DecraftingMachine
                 currentBurnTime = burnTime;
             }
         }
+        animator.SetBool("IsActive", isStarted || isBurning);
     }
     public override ItemComponent GetFirstItem() {
         if (craftedItem) {

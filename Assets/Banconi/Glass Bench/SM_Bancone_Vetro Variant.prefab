@@ -46,6 +46,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.7497916
       objectReference: {fileID: 0}
@@ -93,6 +108,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8fce742c9dfbf3429e92d1041adf328,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6719008315657019372, guid: b8fce742c9dfbf3429e92d1041adf328,
         type: 3}
@@ -192,6 +212,10 @@ MonoBehaviour:
   placeItemPositions:
   - {fileID: 7514165810153417755}
   placedItems: []
+  machineActive: 1
+  finished:
+    m_PersistentCalls:
+      m_Calls: []
   workstationType: 4
   decraftingTime: 0
   materialDrop: {fileID: 9214410579933311868, guid: 6a36ebc1448a06c4b90bfe97f4e013a4,

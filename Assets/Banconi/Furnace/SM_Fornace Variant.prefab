@@ -46,6 +46,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90d3e05ad9843754db20d059743de441,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 90d3e05ad9843754db20d059743de441,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 90d3e05ad9843754db20d059743de441,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 90d3e05ad9843754db20d059743de441,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.057114
       objectReference: {fileID: 0}
@@ -93,6 +108,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 90d3e05ad9843754db20d059743de441,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 683060527187582303, guid: 90d3e05ad9843754db20d059743de441,
         type: 3}
@@ -179,11 +199,18 @@ MonoBehaviour:
   placeItemPositions:
   - {fileID: 666338539374684185}
   placedItems: []
+  machineActive: 1
+  finished:
+    m_PersistentCalls:
+      m_Calls: []
   workstationType: 0
   decraftingTime: 20
   materialDrop: {fileID: 9214410579933311868, guid: 6387f836f6762ba4fa651061b96bee43,
     type: 3}
   isStarted: 0
   itemThrowForce: 0
+  cantInteract:
+    m_PersistentCalls:
+      m_Calls: []
   burnTime: 20
   spawnPoint: {fileID: 666338539374684185}
