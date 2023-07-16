@@ -34,6 +34,12 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     //se scade il tempo di una ricetta ++
     public int failedRecepies = 0;
 
+    public float CurrentTimePercentage {
+        get {
+            return myPhases[currentPhaseIndex].currentTime/myPhases[currentPhaseIndex].timeToFinishPhase;
+        }
+    }
+
 
     //N ricette iniziali
     //parte il tempo per finire le N ricette
