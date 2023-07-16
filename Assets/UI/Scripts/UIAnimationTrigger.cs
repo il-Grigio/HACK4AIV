@@ -11,7 +11,7 @@ public class UIAnimationTrigger : MonoBehaviour
 
     private CharacterSideMenu charMenuController;
 
-    private bool status = false;
+    public bool status = false;
 
     public void TriggerAnimation()
     {
