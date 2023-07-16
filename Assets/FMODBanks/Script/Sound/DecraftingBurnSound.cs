@@ -4,30 +4,34 @@ using UnityEngine;
 using FMODUnity;
 
 [RequireComponent(typeof(StudioEventEmitter))]
-public class DecraftingSpamSound : MonoBehaviour
+public class DecraftingBurnSound : MonoBehaviour
 {
-
     StudioEventEmitter emitter;
-    DecraftingSpamMachine machine;
+    DecraftingBurnMachine machine;
     [SerializeField] EventReference soundToPlay;
-    int currentSoundPlayed = 0;
+    bool isPlaying;
+
     void Start()
     {
-        machine = GetComponent<DecraftingSpamMachine>();
+        machine = GetComponent<DecraftingBurnMachine>();
         emitter = AudioManager.instance.InitializeEventEmitter(soundToPlay, this.gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currentSoundPlayed < machine.currentInteractions) 
+        if(machine.isStarted && !isPlaying) 
         {
-            emitter.Play();
-            currentSoundPlayed++;
+              emitter.Play();
+              isPlaying = true;
         }
-        else if(currentSoundPlayed >= machine.currentInteractions) 
+        if (machine.isBurning) 
         {
-
+            emitter.SetParameter("IsBurning", 1);
+        }
+        if (!machine.isStarted && !machine.isBurning) 
+        {
+            isPlaying = false;
             emitter.Stop();
         }
     }

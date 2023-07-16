@@ -154,6 +154,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3420315788403836579}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe4b0fb510118814292fc4112d19b2ae,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5164098502047805751}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe4b0fb510118814292fc4112d19b2ae,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8583518791428643294}
   m_SourcePrefab: {fileID: 100100000, guid: fe4b0fb510118814292fc4112d19b2ae, type: 3}
 --- !u!4 &54688274192355490 stripped
 Transform:
@@ -237,3 +245,53 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5164098502047805751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831365062251579928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 361984373
+      Data2: 1180717069
+      Data3: -744626530
+      Data4: 204451103
+    Path: event:/SFXEvents/WoodTable
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 6
+--- !u!114 &8583518791428643294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831365062251579928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2793bb927a7f6474db06e698a3d4efc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay:
+    Guid:
+      Data1: 361984373
+      Data2: 1180717069
+      Data3: -744626530
+      Data4: 204451103
+    Path: event:/SFXEvents/WoodTable

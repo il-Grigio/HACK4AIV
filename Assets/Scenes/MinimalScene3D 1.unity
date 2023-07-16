@@ -1757,13 +1757,21 @@ MonoBehaviour:
   placeItemPositions:
   - {fileID: 1494369813}
   placedItems: []
+  machineActive: 1
+  finished:
+    m_PersistentCalls:
+      m_Calls: []
   workstationType: 0
   decraftingTime: 1
   materialDrop: {fileID: 9214410579933311868, guid: 6387f836f6762ba4fa651061b96bee43,
     type: 3}
   isStarted: 0
   itemThrowForce: 200
+  cantInteract:
+    m_PersistentCalls:
+      m_Calls: []
   interactionsTimes: 5
+  currentInteractions: 0
 --- !u!1001 &864666957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1872,6 +1880,10 @@ MonoBehaviour:
   placeItemPositions:
   - {fileID: 2036374400}
   placedItems: []
+  machineActive: 1
+  finished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &904960229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3257,11 +3269,18 @@ MonoBehaviour:
   - {fileID: 93454093}
   - {fileID: 1181630578}
   placedItems: []
+  machineActive: 1
+  finished:
+    m_PersistentCalls:
+      m_Calls: []
   workstationType: 0
   decraftingTime: 0
   materialDrop: {fileID: 0}
   isStarted: 0
   itemThrowForce: 0
+  cantInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1618121291
 GameObject:
   m_ObjectHideFlags: 0
@@ -3551,6 +3570,10 @@ MonoBehaviour:
   placeItemPositions:
   - {fileID: 591018893}
   placedItems: []
+  machineActive: 1
+  finished:
+    m_PersistentCalls:
+      m_Calls: []
   finalDestination: {fileID: 806942185}
   timeToMove: 3
 --- !u!1 &1631167138 stripped
@@ -3574,16 +3597,22 @@ MonoBehaviour:
   placeItemPositions:
   - {fileID: 699092896}
   placedItems: []
+  machineActive: 1
+  finished:
+    m_PersistentCalls:
+      m_Calls: []
   workstationType: 0
   decraftingTime: 1
   materialDrop: {fileID: 9214410579933311868, guid: 6387f836f6762ba4fa651061b96bee43,
     type: 3}
   isStarted: 0
   itemThrowForce: 0
+  cantInteract:
+    m_PersistentCalls:
+      m_Calls: []
   burnTime: 5
   spawnPoint: {fileID: 699092896}
-  currentBurnTime: 0
-  craftedItem: {fileID: 0}
+  isBurning: 0
 --- !u!1 &1666771291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1272036331211942, guid: 9edcf7e494cf3e640b18cb7495fb179a,
@@ -4836,7 +4865,7 @@ MonoBehaviour:
       Data2: 1180717069
       Data3: -744626530
       Data4: 204451103
-    Path: event:/SFXEvents/ChainSawTable
+    Path: event:/SFXEvents/WoodTable
   <pickUpItem>k__BackingField:
     Guid:
       Data1: -617471470
