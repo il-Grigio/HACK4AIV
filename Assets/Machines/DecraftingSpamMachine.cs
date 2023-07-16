@@ -6,6 +6,19 @@ public class DecraftingSpamMachine : DecraftingMachine
 {
     [SerializeField] private int interactionsTimes;
     public int currentInteractions;
+    [SerializeField] private UIProgressBar progressBar;
+    private bool hasProgressBar;
+    protected override void Awake()
+    {
+        base.Awake();
+        hasProgressBar = progressBar != null;
+        if (hasProgressBar)
+        {
+            progressBar.Progress = 0f;
+            progressBar.gameObject.SetActive(false);
+        }
+    }
+
     public override bool Interact() {
         if (!CheckCorrectMaterial()) {
             cantInteract.Invoke();
@@ -13,6 +26,11 @@ public class DecraftingSpamMachine : DecraftingMachine
         }
         if(currentInteractions < interactionsTimes) {
             currentInteractions++;
+            if (hasProgressBar)
+            {
+                progressBar.gameObject.SetActive(true);
+                progressBar.Progress = (1f / interactionsTimes) * currentInteractions;
+            }
             if(currentInteractions ==  interactionsTimes) {
                 SpawnMaterial();
                 recipeManager.NewRecipe(placedItems[0].ingredientScriptable, workstationType);
@@ -20,6 +38,7 @@ public class DecraftingSpamMachine : DecraftingMachine
                 placedItems[0].transform.parent = ItemsObjectPool.Instance.transform;
                 placedItems[0] = null;
                 currentInteractions = 0;
+                progressBar.gameObject.SetActive(false);
             }
         }
         return true;
