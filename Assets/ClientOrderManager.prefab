@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9179066630141436595}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef5bb4fa94ed06a4fbfc8829bbe31def, type: 3}
   m_Name: 
@@ -48,11 +48,11 @@ MonoBehaviour:
   - possibleRecepies:
     - {fileID: 11400000, guid: a0eb44884d60b9841908f7e0b9fe37ae, type: 2}
     - {fileID: 11400000, guid: 85ec79723a7d5544eb73d17aac7ba6f7, type: 2}
-    timeToFinishPhase: 150
+    timeToFinishPhase: 300
     currentTime: 0
-    timeToAddRecepie: 20
+    timeToAddRecepie: 50
     initialRecepiesInThisPhase: 2
-    totalRecepiesInThisPhase: 5
+    totalRecepiesInThisPhase: 4
   - possibleRecepies:
     - {fileID: 11400000, guid: 9c798618d0f19ea47a648c155180df43, type: 2}
     - {fileID: 11400000, guid: 85ec79723a7d5544eb73d17aac7ba6f7, type: 2}
@@ -60,8 +60,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 27dc6ae9cd94bd4458770660c17302f1, type: 2}
     timeToFinishPhase: 180
     currentTime: 0
-    timeToAddRecepie: 20
-    initialRecepiesInThisPhase: 3
+    timeToAddRecepie: 40
+    initialRecepiesInThisPhase: 2
     totalRecepiesInThisPhase: 7
   - possibleRecepies:
     - {fileID: 11400000, guid: 96800b461e2fb8e45bb5cb68eab75a97, type: 2}
@@ -73,7 +73,7 @@ MonoBehaviour:
     timeToFinishPhase: 300
     currentTime: 0
     timeToAddRecepie: 40
-    initialRecepiesInThisPhase: 5
+    initialRecepiesInThisPhase: 2
     totalRecepiesInThisPhase: 10
   - possibleRecepies:
     - {fileID: 11400000, guid: 96800b461e2fb8e45bb5cb68eab75a97, type: 2}
@@ -87,7 +87,7 @@ MonoBehaviour:
     timeToFinishPhase: 420
     currentTime: 0
     timeToAddRecepie: 50
-    initialRecepiesInThisPhase: 6
+    initialRecepiesInThisPhase: 2
     totalRecepiesInThisPhase: 15
   - possibleRecepies:
     - {fileID: 11400000, guid: 96800b461e2fb8e45bb5cb68eab75a97, type: 2}
@@ -103,8 +103,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a0ced316be11a9443ba3229659d1f30a, type: 2}
     timeToFinishPhase: 600
     currentTime: 0
-    timeToAddRecepie: 30
-    initialRecepiesInThisPhase: 4
+    timeToAddRecepie: 35
+    initialRecepiesInThisPhase: 2
     totalRecepiesInThisPhase: 18
   newRecepieEntering:
     m_PersistentCalls:
@@ -114,12 +114,55 @@ MonoBehaviour:
       m_Calls: []
   newPhase:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TrashManager, Assembly-CSharp
+        m_MethodName: SpawnNow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MachineManager, Assembly-CSharp
+        m_MethodName: SetPhase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   deliveredWrongRecepy:
     m_PersistentCalls:
       m_Calls: []
   didntFinishInTimeRecepie:
     m_PersistentCalls:
       m_Calls: []
+  win:
+    m_PersistentCalls:
+      m_Calls: []
+  lose:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LoseGame, Assembly-CSharp
+        m_MethodName: EndLoseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  nextPhase: 0
   activeRecepies: []
   failedRecepies: 0
