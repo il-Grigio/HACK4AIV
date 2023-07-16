@@ -17,13 +17,12 @@ public class UIGeneralTimer : MonoBehaviour
 
     private float timeMultiplier;
     private float currentTime;
-    float startingSize;    
+    float startingSize;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        time = 100;
-        currentTime = time;
+    void Start() {
+        //time = 100;
+        //currentTime = time;
         startingSize = barSlider.localScale.x;
         //barSlider.GetComponent<Animator>().SetFloat("Time", 1f / time);
     }
@@ -39,6 +38,7 @@ public class UIGeneralTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (time == 0) return;
         currentTime -= Time.deltaTime;
         float percent = Mathf.Clamp01(currentTime / time);
 
