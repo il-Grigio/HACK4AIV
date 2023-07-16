@@ -54,8 +54,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseGameScreen: {fileID: 5152218483070543140}
-  thanksForPlayingObj: {fileID: 0}
-  fade: {fileID: 0}
+  thanksForPlayingObj: {fileID: 1730067157471397480}
+  fade: {fileID: 4172760612227656934}
 --- !u!1 &1296152972986983424
 GameObject:
   m_ObjectHideFlags: 0

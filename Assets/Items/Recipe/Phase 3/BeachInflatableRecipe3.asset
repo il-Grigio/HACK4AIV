@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ab8766a783922478dd93d0939fdea6, type: 3}
   m_Name: BeachInflatableRecipe3
   m_EditorClassIdentifier: Assembly-CSharp::Recepie
-  timeToFinishRecepie: 40
+  timeToFinishRecepie: 180
   currentTime: 0
   timeBonusOnComplete: 20
   timeLostOnIncomplete: 40

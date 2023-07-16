@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ab8766a783922478dd93d0939fdea6, type: 3}
   m_Name: RemoteCarRecipe
   m_EditorClassIdentifier: Assembly-CSharp::Recepie
-  timeToFinishRecepie: 60
+  timeToFinishRecepie: 200
   currentTime: 0
   timeBonusOnComplete: 40
   timeLostOnIncomplete: 60

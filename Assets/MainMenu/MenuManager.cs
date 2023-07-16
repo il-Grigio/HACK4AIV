@@ -76,6 +76,6 @@ public class MenuManager : MonoBehaviour
     }
 
     private void ChangeSelector() {
-        selector.position = new Vector3(selector.position.x, buttons[selectedButton].transform.position.y, selector.position.z);
+        selector.position = new Vector3(selector.position.x, buttons[selectedButton].transform.position.y + 0.1f, selector.position.z);
     }
 }
