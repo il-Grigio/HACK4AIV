@@ -64,7 +64,7 @@ Transform:
   - {fileID: 8187026173364303388}
   - {fileID: 3038065640390487217}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &740117867755381856
 MonoBehaviour:
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 3038065640390487217}
+  barImage: {fileID: 550730075965406041}
 --- !u!1 &6053012891723722414
 GameObject:
   m_ObjectHideFlags: 0

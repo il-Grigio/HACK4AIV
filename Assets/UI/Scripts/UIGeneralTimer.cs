@@ -43,7 +43,7 @@ public class UIGeneralTimer : MonoBehaviour
         float percent = Mathf.Clamp01(currentTime / time);
 
         if(percent >= 0.5f) {
-            barImage.color = Color.Lerp(yellow, green, percent * 2 - 1);
+                barImage.color = Color.Lerp(yellow, green, percent * 2 - 1);
         }else
             barImage.color = Color.Lerp(red, yellow, percent * 2);
 

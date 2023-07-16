@@ -34240,6 +34240,112 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1001 &8448291193661972950
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8882809286263613133}
+    m_Modifications:
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -170
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879424732509221731, guid: cf3b9ffacaa97c142973de8832782218,
+        type: 3}
+      propertyPath: m_Name
+      value: ProgressBar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cf3b9ffacaa97c142973de8832782218, type: 3}
+--- !u!4 &6104042352178052485 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2417225984614554707, guid: cf3b9ffacaa97c142973de8832782218,
+    type: 3}
+  m_PrefabInstance: {fileID: 8448291193661972950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9185990101299283382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 740117867755381856, guid: cf3b9ffacaa97c142973de8832782218,
+    type: 3}
+  m_PrefabInstance: {fileID: 8448291193661972950}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d125b039338ae6e4e987357cd9152414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8992750052446683430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34251,7 +34357,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 27e6e4a594234614fa6369000ecb9ac8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 27e6e4a594234614fa6369000ecb9ac8,
         type: 3}
@@ -34364,6 +34470,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27e6e4a594234614fa6369000ecb9ac8,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 6104042352178052485}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27e6e4a594234614fa6369000ecb9ac8,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 925670889922829033}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27e6e4a594234614fa6369000ecb9ac8,
         type: 3}
@@ -34442,8 +34552,10 @@ MonoBehaviour:
   cantInteract:
     m_PersistentCalls:
       m_Calls: []
+  progressBar: {fileID: 9185990101299283382}
   burnTime: 15
   spawnPoint: {fileID: 925670889922829033}
+  isBurning: 0
 --- !u!95 &932499537913469125
 Animator:
   serializedVersion: 5
