@@ -24,6 +24,9 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     [SerializeField] UnityEvent newPhase;
     [SerializeField] UnityEvent deliveredWrongRecepy;
     [SerializeField] UnityEvent didntFinishInTimeRecepie;
+
+    [Header("DEbug")]
+    [SerializeField] bool nextPhase = false;
     public List<Recepie> activeRecepies;
 
     //se scade il tempo di una ricetta ++
@@ -72,6 +75,11 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     }
 
     private void Update() {
+        if (nextPhase) {
+            nextPhase = false;
+            GoToNextPhase();
+        }
+
         myPhases[currentPhaseIndex].currentTime -= Time.deltaTime;
         if (myPhases[currentPhaseIndex].currentTime < 0) {
             //TODO Lose Game

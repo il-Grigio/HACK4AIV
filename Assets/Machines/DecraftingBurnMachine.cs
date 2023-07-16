@@ -9,7 +9,6 @@ public class DecraftingBurnMachine : DecraftingMachine
     float currentBurnTime;
     public bool isBurning = false;
     private ItemComponent craftedItem;
-    Animator animator;
     protected override void Awake() {
         base.Awake();
     }
