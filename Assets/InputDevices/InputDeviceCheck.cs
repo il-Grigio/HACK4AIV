@@ -22,7 +22,9 @@ public class InputDeviceCheck : MonoBehaviour
 
         if (HasReciver)
         {
-            OnInputChanged(CurrentInput);
+            if (OnInputChanged != null) {
+                OnInputChanged(CurrentInput);
+            }
         }
 
     }
