@@ -17,7 +17,7 @@ public class DecraftingMachine : MachineScript
     [SerializeField] protected UnityEvent cantInteract;
 
     protected RecipeManager recipeManager;
-    Animator animator;
+    protected Animator animator;
 
     protected override void Awake() {
         base.Awake();
