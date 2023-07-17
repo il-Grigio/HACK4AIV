@@ -482,6 +482,7 @@ MonoBehaviour:
     - {fileID: 1229317612290300677, guid: 009e26a5192cd8743b0acc7cc58c17ab, type: 3}
     - {fileID: 1774105060498640770, guid: 10461f9874a33f24088448f179962521, type: 3}
     - {fileID: 9006738736573142741, guid: 6de6640709bdab04b9ce8aec99fbc6e8, type: 3}
+    - {fileID: -9180182344219166721, guid: 049b3d83f8a7f6243ab022b7f960fa98, type: 3}
     maxNumberOfTrashInScene: 4
     minDelayTime: 5
     maxDelayTime: 10

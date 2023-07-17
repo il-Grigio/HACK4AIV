@@ -75,12 +75,12 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
         AudioManager.instance.SetMusicParameter("CurrentPhaseIndex", currentPhaseIndex);
         nRecepiesArrived = 0;
         failedRecepies = 0;
-        newPhase.Invoke();
-
-        if(currentPhaseIndex == myPhases.Length) {
+        if(currentPhaseIndex >= myPhases.Length) {
             win.Invoke();
             return;
         }
+        newPhase.Invoke();
+
 
         for (int i = 0; i < myPhases[currentPhaseIndex].initialRecepiesInThisPhase; i++) {
             AddNewRecepie();
@@ -91,11 +91,14 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     }
 
     private void Update() {
+
         if (nextPhase) {
             nextPhase = false;
             GoToNextPhase();
         }
 
+        if (currentPhaseIndex >= myPhases.Length) 
+            return;
         myPhases[currentPhaseIndex].currentTime -= Time.deltaTime;
         if (myPhases[currentPhaseIndex].currentTime < 0) {
             lose.Invoke();

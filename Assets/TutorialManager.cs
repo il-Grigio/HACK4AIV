@@ -100,7 +100,7 @@ public class TutorialManager : Grigios.Singleton<TutorialManager>
                         }
                         break;
                     case TutorialTriggers.tab:
-                        if (uIAnimationTrigger.status) {
+                        if (uIAnimationTrigger.status || deliverRecepie) {
                             NextIndex();
                         }
                         break;
@@ -122,6 +122,7 @@ public class TutorialManager : Grigios.Singleton<TutorialManager>
             }
         }
         if(currentIndex >= myLists.Count) {
+            textMeshProUGUI.text = "";
             return;
         }
         textMeshProUGUI.text = myLists[currentIndex].s;

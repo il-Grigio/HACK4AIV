@@ -1767,6 +1767,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3733048827740373820}
   paramName: Open
+  toggleMenu: {fileID: 7772841331093161512}
+  status: 0
 --- !u!1 &6180378335920835748
 GameObject:
   m_ObjectHideFlags: 0
