@@ -31,6 +31,7 @@ public class UIGeneralTimer : MonoBehaviour
     {
         time = maxTimer;
         currentTime = newTime;
+        Update();
         //barSlider.GetComponent<Animator>().SetFloat("Time", /*1f /*/ (currentTime / time));
         //barSlider.GetComponent<Animator>().Play("Timer", 0);
     }

@@ -101,7 +101,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
                 DeliverARecepie(activeRecepies[0]);
             }
 
-            GoToNextPhase();
+            //GoToNextPhase();
         }
 
         if (currentPhaseIndex >= myPhases.Length) 

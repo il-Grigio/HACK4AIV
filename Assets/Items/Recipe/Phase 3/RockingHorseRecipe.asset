@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ab8766a783922478dd93d0939fdea6, type: 3}
   m_Name: RockingHorseRecipe
   m_EditorClassIdentifier: Assembly-CSharp::Recepie
-  timeToFinishRecepie: 180
+  timeToFinishRecepie: 240
   currentTime: 0
-  timeBonusOnComplete: 20
+  timeBonusOnComplete: 60
   timeLostOnIncomplete: 40
   recepie: {fileID: 11400000, guid: eddb5bd185718bc408d5667f471025c0, type: 2}

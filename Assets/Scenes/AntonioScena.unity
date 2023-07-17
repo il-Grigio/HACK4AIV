@@ -973,7 +973,7 @@ PrefabInstance:
     - target: {fileID: 7617232344289363377, guid: 9a661b99d1b952949b8e2dd6a12c99fb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0022583008
+      value: 0.0036010742
       objectReference: {fileID: 0}
     - target: {fileID: 7772841331093161512, guid: 9a661b99d1b952949b8e2dd6a12c99fb,
         type: 3}
@@ -13836,6 +13836,17 @@ PrefabInstance:
       propertyPath: maxNumberOfItemsInScene
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 2187791074816470050, guid: ed4bcbb3b57ae4f45a86422024c82c2c,
+        type: 3}
+      propertyPath: trashPhases.Array.data[2].possibleTrash.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187791074816470050, guid: ed4bcbb3b57ae4f45a86422024c82c2c,
+        type: 3}
+      propertyPath: trashPhases.Array.data[2].possibleTrash.Array.data[7]
+      value: 
+      objectReference: {fileID: -9180182344219166721, guid: 049b3d83f8a7f6243ab022b7f960fa98,
+        type: 3}
     - target: {fileID: 4692580430806638674, guid: ed4bcbb3b57ae4f45a86422024c82c2c,
         type: 3}
       propertyPath: m_Name
