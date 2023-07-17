@@ -29,9 +29,27 @@ public class UIGeneralTimer : MonoBehaviour
 
     public void SetTimer(float newTime, float maxTimer)
     {
+        if(startingSize == 0) startingSize = barSlider.localScale.x;
+
+
         time = maxTimer;
         currentTime = newTime;
-        Update();
+
+        if (time == 0) return;
+        currentTime -= Time.deltaTime;
+        float percent = Mathf.Clamp01(currentTime / time);
+
+        if (percent >= 0.5f) {
+            barImage.color = Color.Lerp(yellow, green, percent * 2 - 1);
+        }
+        else
+            barImage.color = Color.Lerp(red, yellow, percent * 2);
+
+        barSlider.localScale = new Vector3(startingSize * percent, barSlider.localScale.y, barSlider.localScale.z);
+        if (currentTime >= 0) {
+            text.text = "" + (int)(currentTime / 60) + ":" + (currentTime % 60 < 10 ? "0" : "") + (int)currentTime % 60;
+        }
+
         //barSlider.GetComponent<Animator>().SetFloat("Time", /*1f /*/ (currentTime / time));
         //barSlider.GetComponent<Animator>().Play("Timer", 0);
     }
