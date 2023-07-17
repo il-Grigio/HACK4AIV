@@ -23,6 +23,7 @@ public class DecraftingBurnMachine : DecraftingMachine
             {
                 progressBar.gameObject.SetActive(true);
                 progressBar.Progress = 1f - currentDecraftingTime / decraftingTime;
+                progressBar.BarImage.color = green;
             }
             currentDecraftingTime -= Time.deltaTime;
             if (!placedItems[0]) {
