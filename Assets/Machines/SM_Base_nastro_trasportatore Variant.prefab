@@ -501,7 +501,7 @@ MonoBehaviour:
     - {fileID: 9006738736573142741, guid: 6de6640709bdab04b9ce8aec99fbc6e8, type: 3}
     - {fileID: 1740987348610689180, guid: 5668186ad35d9794a9a6f0954ba2c64f, type: 3}
     - {fileID: 1389909357913058247, guid: 1a0355034851920409b5941a32f4699b, type: 3}
-    - {fileID: 5633931966016083344, guid: 5834a58b9a2c2c94589d66e6d0ea16b5, type: 3}
+    - {fileID: 1568, guid: 5834a58b9a2c2c94589d66e6d0ea16b5, type: 3}
     - {fileID: -1158460812204747116, guid: a532cfb95a8768b4aa19c50ebd6dd93d, type: 3}
     maxNumberOfTrashInScene: 7
     minDelayTime: 5
@@ -512,8 +512,8 @@ MonoBehaviour:
     - {fileID: 9006738736573142741, guid: 6de6640709bdab04b9ce8aec99fbc6e8, type: 3}
     - {fileID: 1740987348610689180, guid: 5668186ad35d9794a9a6f0954ba2c64f, type: 3}
     - {fileID: 1389909357913058247, guid: 1a0355034851920409b5941a32f4699b, type: 3}
-    - {fileID: 9214410579933311868, guid: 698fc529c2bf3b847a5eff3229d4585d, type: 3}
-    - {fileID: 5633931966016083344, guid: 5834a58b9a2c2c94589d66e6d0ea16b5, type: 3}
+    - {fileID: 1568, guid: 5834a58b9a2c2c94589d66e6d0ea16b5, type: 3}
+    - {fileID: -1158460812204747116, guid: a532cfb95a8768b4aa19c50ebd6dd93d, type: 3}
     - {fileID: 6909161452648468187, guid: 0f0d40b3fb4e0eb4398b6ce3b92a8494, type: 3}
     - {fileID: 3781466789330341161, guid: 294bc70c564ea554d8a55104152e23e1, type: 3}
     maxNumberOfTrashInScene: 8
@@ -525,7 +525,7 @@ MonoBehaviour:
     - {fileID: 9006738736573142741, guid: 6de6640709bdab04b9ce8aec99fbc6e8, type: 3}
     - {fileID: 1740987348610689180, guid: 5668186ad35d9794a9a6f0954ba2c64f, type: 3}
     - {fileID: 1389909357913058247, guid: 1a0355034851920409b5941a32f4699b, type: 3}
-    - {fileID: 5633931966016083344, guid: 5834a58b9a2c2c94589d66e6d0ea16b5, type: 3}
+    - {fileID: 1568, guid: 5834a58b9a2c2c94589d66e6d0ea16b5, type: 3}
     - {fileID: 683713329754110375, guid: 617557d4cd4df124c817e6dd6dd8c202, type: 3}
     - {fileID: 6909161452648468187, guid: 0f0d40b3fb4e0eb4398b6ce3b92a8494, type: 3}
     - {fileID: 3781466789330341161, guid: 294bc70c564ea554d8a55104152e23e1, type: 3}
