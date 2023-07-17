@@ -6,6 +6,11 @@ public class EnteringThreadmill : MachineScript {
     [SerializeField] Transform finalDestination;
     [SerializeField] float timeToMove = 5;
     float currentTime;
+    Animator animator;
+    protected override void Awake() {
+        base.Awake();
+        animator= GetComponent<Animator>();
+    }
     public override bool CanPlaceItems() {
         return false;
     }
@@ -17,6 +22,7 @@ public class EnteringThreadmill : MachineScript {
     }
 
     private void Update() {
+        if (animator) animator.SetBool("IsActive", placedItems[0]);
         if (placedItems[0]) {
             currentTime += Time.deltaTime;
             placedItems[0].transform.position = Vector3.Lerp(placeItemPositions[0].position, finalDestination.position, currentTime / timeToMove);
