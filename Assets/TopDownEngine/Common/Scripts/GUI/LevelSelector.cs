@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using MoreMountains.Tools;
+using MoreMountains.Feedbacks;
 
 namespace MoreMountains.TopDownEngine
 {
@@ -78,6 +79,21 @@ namespace MoreMountains.TopDownEngine
 			TopDownEngineEvent.Trigger(TopDownEngineEventTypes.UnPause, null);
 			LoadScene(SceneManager.GetActiveScene().name);
 		}
-		
-	}
+
+		public virtual void LoadAntonioScene() {
+            TopDownEngineEvent.Trigger(TopDownEngineEventTypes.TogglePause, null);
+            SceneManager.LoadScene(LevelName);
+		}
+
+        private IEnumerator LoadAntonioSceneAsync() {
+            AsyncOperation sceneLoad = SceneManager.LoadSceneAsync(LevelName);
+            sceneLoad.allowSceneActivation = false;
+            while (sceneLoad.progress < 0.9f) {
+                yield return null;
+            }
+            sceneLoad.allowSceneActivation = true;
+            yield return null;
+        }
+
+    }
 }

@@ -215,16 +215,16 @@ namespace MoreMountains.Tools
 	            
 				if (!_scenesInBuild.Contains(sceneToLoadName))
 				{
-					Debug.LogError("MMLoadingSceneManagerAdditive : impossible to load the '"+sceneToLoadName+"' scene, " +
-					               "there is no such scene in the project's build settings.");
-					return;
+					//Debug.LogError("MMLoadingSceneManagerAdditive : impossible to load the '"+sceneToLoadName+"' scene, " +
+					//               "there is no such scene in the project's build settings.");
+					//return;
 				}
 				if (!_scenesInBuild.Contains(loadingSceneName))
 				{
-					Debug.LogError("MMLoadingSceneManagerAdditive : impossible to load the '"+loadingSceneName+"' scene, " +
-					               "there is no such scene in the project's build settings.");
-					return;
-				}
+					//Debug.LogError("MMLoadingSceneManagerAdditive : impossible to load the '"+loadingSceneName+"' scene, " +
+					//               "there is no such scene in the project's build settings.");
+					//return;
+                }
 			}
 
 			_loadingInProgress = true;
