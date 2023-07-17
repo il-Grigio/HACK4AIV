@@ -121,11 +121,14 @@ public class TutorialManager : Grigios.Singleton<TutorialManager>
                 }
             }
         }
-        if(currentIndex >= myLists.Count) {
+        if(currentIndex == myLists.Count) {
             textMeshProUGUI.text = "";
+            currentIndex++;
             return;
         }
-        textMeshProUGUI.text = myLists[currentIndex].s;
+        if(currentIndex < myLists.Count) {
+            textMeshProUGUI.text = myLists[currentIndex].s;
+        }
     }
     private void NextIndex() {
         currentIndex++;
