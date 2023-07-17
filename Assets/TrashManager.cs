@@ -34,9 +34,8 @@ public class TrashManager : Grigios.Singleton<TrashManager> {
     public void SetActiveItems() {
         currentTrash = 0;
         activeItems = FindObjectsByType<ItemComponent>(FindObjectsSortMode.None);
-
+        if (clientOrderMGR.CurrentPhaseIndex >= clientOrderMGR.NPhases) return;
         for (int i = 0; i < activeItems.Length; i++) {
-            //TODO sono cloni non posso confrontare così
             foreach (ItemComponent possibleTrash in trashPhases[clientOrderMGR.CurrentPhaseIndex].possibleTrash) {
                 if (possibleTrash.ingredientScriptable == activeItems[i].ingredientScriptable) 
                     currentTrash++;

@@ -54,6 +54,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
     //private
     int currentPhaseIndex = -1;
     public int CurrentPhaseIndex => currentPhaseIndex;
+    public int NPhases => myPhases.Length;
     List<Recepie> recepiesToRemove = new List<Recepie>();
     float partialTime;
     int nRecepiesArrived = 0;
