@@ -95,10 +95,12 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 
         if (nextPhase) {
             nextPhase = false;
-            foreach (Recepie rec in activeRecepies) {
-                DeliverARecepie(rec);
 
+            int n = activeRecepies.Count;
+            for (int i = 0; i < n; i++) {
+                DeliverARecepie(activeRecepies[0]);
             }
+
             GoToNextPhase();
         }
 
