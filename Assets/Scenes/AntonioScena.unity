@@ -983,7 +983,7 @@ PrefabInstance:
     - target: {fileID: 465942861572273293, guid: 9a661b99d1b952949b8e2dd6a12c99fb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -399.99997
+      value: -400
       objectReference: {fileID: 0}
     - target: {fileID: 465942861572273293, guid: 9a661b99d1b952949b8e2dd6a12c99fb,
         type: 3}
@@ -1108,7 +1108,7 @@ PrefabInstance:
     - target: {fileID: 7617232344289363377, guid: 9a661b99d1b952949b8e2dd6a12c99fb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.023590088
+      value: -0.009063721
       objectReference: {fileID: 0}
     - target: {fileID: 7617232344289363377, guid: 9a661b99d1b952949b8e2dd6a12c99fb,
         type: 3}
@@ -14167,11 +14167,11 @@ MonoBehaviour:
     Path: event:/Ambiance/IndustrialAmbiance
   <musicMenu>k__BackingField:
     Guid:
-      Data1: -543859324
-      Data2: 1095458169
-      Data3: -906434627
-      Data4: -1203006908
-    Path: event:/MusicEvents/MusicaBellaMaNonAbbastanza
+      Data1: 690139820
+      Data2: 1085815235
+      Data3: -16881784
+      Data4: -352075400
+    Path: event:/MusicEvents/MainMenu
   <speechEvent>k__BackingField:
     Guid:
       Data1: -1323273917
