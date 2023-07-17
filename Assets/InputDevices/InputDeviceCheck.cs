@@ -66,7 +66,7 @@ public class InputDeviceCheck : MonoBehaviour
 
         if (IsController)
         {
-            if (Input.GetJoystickNames()[0].Contains("Xbox"))
+            if (Input.GetJoystickNames()[0].Contains("Xbox") || Input.GetJoystickNames()[1].Contains("Xbox") || Input.GetJoystickNames()[2].Contains("Xbox"))
             {
                 NewInput = Devices.Xbox;
             }

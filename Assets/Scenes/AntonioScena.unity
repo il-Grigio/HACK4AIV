@@ -842,7 +842,7 @@ PrefabInstance:
     - target: {fileID: 465942861572273293, guid: 9a661b99d1b952949b8e2dd6a12c99fb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -399.99994
+      value: -399.99997
       objectReference: {fileID: 0}
     - target: {fileID: 465942861572273293, guid: 9a661b99d1b952949b8e2dd6a12c99fb,
         type: 3}
@@ -967,7 +967,7 @@ PrefabInstance:
     - target: {fileID: 7617232344289363377, guid: 9a661b99d1b952949b8e2dd6a12c99fb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.013122559
+      value: -0.016906738
       objectReference: {fileID: 0}
     - target: {fileID: 7772841331093161512, guid: 9a661b99d1b952949b8e2dd6a12c99fb,
         type: 3}
@@ -2401,9 +2401,9 @@ MonoBehaviour:
   DeviceScript: {fileID: 1552371159}
   CurrentDevice: 0
   InputSprite:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 5ead403d706a50046a41934771f517a5, type: 3}
+  - {fileID: 21300000, guid: e571f04764545b44e810616436a9a5dc, type: 3}
+  - {fileID: 21300000, guid: d6a1f1fadfd43494fb576cd607950ec8, type: 3}
   DisplayImage: {fileID: 580640472}
   StartOff: 0
 --- !u!1 &591018892
@@ -3001,6 +3001,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689388078913109400, guid: 158b5a46315c2d046b6111bc0f0ec3ff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0029296875
       objectReference: {fileID: 0}
     - target: {fileID: 2689388078913109400, guid: 158b5a46315c2d046b6111bc0f0ec3ff,
         type: 3}
@@ -5779,7 +5784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.0028686523, y: 0}
+  m_AnchoredPosition: {x: 0.0029296875, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1246903165
@@ -6904,8 +6909,8 @@ MonoBehaviour:
   CurrentDevice: 0
   InputSprite:
   - {fileID: 21300000, guid: 2db7e48706ebdaf4ea4aeb3503544834, type: 3}
-  - {fileID: 21300000, guid: e571f04764545b44e810616436a9a5dc, type: 3}
-  - {fileID: 21300000, guid: d6a1f1fadfd43494fb576cd607950ec8, type: 3}
+  - {fileID: 21300000, guid: 2f2072ef94c8151469d42d100b5e8c54, type: 3}
+  - {fileID: 21300000, guid: de4cc81aa96eabc478c0d87b4ea18b1e, type: 3}
   DisplayImage: {fileID: 1363627948}
   StartOff: 0
 --- !u!224 &1386628984 stripped
@@ -7592,7 +7597,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552371155}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7d3ed6e6c8a8c04f9ddca2fce169aa9, type: 3}
   m_Name: 

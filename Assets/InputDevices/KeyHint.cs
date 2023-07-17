@@ -32,7 +32,7 @@ public class KeyHint : MonoBehaviour
     private void InputChanged(Devices Device)
     {
         DisplayImage.sprite = InputSprite[(int)Device];
-
+        Debug.Log(Device);
     }
 
     public void Enabled()
