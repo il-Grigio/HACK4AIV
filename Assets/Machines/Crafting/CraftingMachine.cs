@@ -21,6 +21,12 @@ public class CraftingMachine : MachineScript
     private ItemComponent craftedItem;
 
         List<IngredientScriptable> list2 = new List<IngredientScriptable> ();
+    Animator animator;
+
+    protected override void Awake() {
+        base.Awake();
+        animator = GetComponent<Animator> ();
+    }
     public override bool Interact() {
         if (itemToCraft) return false;
         bool areEqual = false;
@@ -79,6 +85,7 @@ public class CraftingMachine : MachineScript
         if(currentCraftingTime == craftingTime) {
             CraftNow();
         }
+        animator.SetBool("IsActive", itemToCraft);
     }
 
     private void CraftNow() {
