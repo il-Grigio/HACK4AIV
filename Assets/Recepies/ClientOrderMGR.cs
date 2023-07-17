@@ -76,6 +76,12 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
         nRecepiesArrived = 0;
         failedRecepies = 0;
         newPhase.Invoke();
+
+        if(currentPhaseIndex == myPhases.Length) {
+            win.Invoke();
+            return;
+        }
+
         for (int i = 0; i < myPhases[currentPhaseIndex].initialRecepiesInThisPhase; i++) {
             AddNewRecepie();
         }

@@ -88,12 +88,6 @@ public class DecraftingBurnMachine : DecraftingMachine
             isBurning = false;
             craftedItem = null;
         }
-
-        if (hasProgressBar)
-        {
-            progressBar.gameObject.SetActive(false);
-        }
-
         else {
             for (int i = 0; i < placedItems.Length; i++) {
                 if (placedItems[i] == item) {
@@ -101,6 +95,10 @@ public class DecraftingBurnMachine : DecraftingMachine
                     return;
                 }
             }
+        }
+        if (hasProgressBar)
+        {
+            progressBar.gameObject.SetActive(false);
         }
     }
 

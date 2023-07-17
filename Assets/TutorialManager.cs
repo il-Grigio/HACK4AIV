@@ -82,38 +82,37 @@ public class TutorialManager : Grigios.Singleton<TutorialManager>
     }
     private void Update() {
         currentTime += Time.deltaTime;
-        if(currentTime >= myLists[currentIndex].t) {
+        if(currentIndex < myLists.Count && currentTime >= myLists[currentIndex].t) {
             if (!myLists[currentIndex].shouldStop) {
-                currentIndex++;
-                currentTime = 0;
+                NextIndex();
             }
             else {
                 switch (myLists[currentIndex].tutorialTriggers) {
                     case TutorialTriggers.start:
                         if(ClientOrderMGR.Instance.CurrentTimePercentage < 1) {
-                            currentIndex++;
-                            currentTime = 0;
+                            AudioManager.instance.InizializeSpeechEvent(FMODEvents.instance.speechEvent);
+                            NextIndex();
                         }
                         break;
                     case TutorialTriggers.destructionRoom:
                         if (destructionRoom.isColliding) {
-                            currentIndex++;
-                            currentTime = 0;
+                            NextIndex();
                         }
                         break;
                     case TutorialTriggers.tab:
                         if (uIAnimationTrigger.status) {
-                            currentIndex++;
-                            currentTime = 0;
+                            NextIndex();
                         }
                         break;
                     case TutorialTriggers.craftingRoom:
-                        if (destructionRoom.isColliding) {
-                            currentIndex++;
-                            currentTime = 0;
+                        if (craftingRoom.isColliding) {
+                            NextIndex();
                         }
                         break;
                     case TutorialTriggers.deliver:
+                        if (deliverRecepie) {
+                            NextIndex();
+                        }
                         break;
                     case TutorialTriggers.none:
                         break;
@@ -122,7 +121,15 @@ public class TutorialManager : Grigios.Singleton<TutorialManager>
                 }
             }
         }
+        if(currentIndex >= myLists.Count) {
+            return;
+        }
         textMeshProUGUI.text = myLists[currentIndex].s;
+    }
+    private void NextIndex() {
+        currentIndex++;
+        currentTime = 0;
+        AudioManager.instance.SetSpeechParameter("Speech", currentIndex);
     }
 
     public void DeliverARecepie() {

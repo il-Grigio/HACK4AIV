@@ -32,6 +32,7 @@ public class DecraftingSpamMachine : DecraftingMachine
                 }
             }
         }
+        animator.SetTrigger("IsActive");
         return true;
     }
     protected override void Update() {
