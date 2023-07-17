@@ -21,6 +21,7 @@ public class LoseGame : MonoBehaviour
 
     public void EndLoseGame() 
     {
+        fade.gameObject.SetActive(true);
         fade.FadeIn();
         loseGameScreen.SetActive(true);
         thanksForPlayingObj.SetActive(true);
