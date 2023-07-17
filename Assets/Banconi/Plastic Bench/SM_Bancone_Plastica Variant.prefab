@@ -34496,6 +34496,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 932499537913469125}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27e6e4a594234614fa6369000ecb9ac8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9070539255485763974}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27e6e4a594234614fa6369000ecb9ac8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4259855133798033408}
   m_SourcePrefab: {fileID: 100100000, guid: 27e6e4a594234614fa6369000ecb9ac8, type: 3}
 --- !u!1 &8074324485542050935 stripped
 GameObject:
@@ -34577,6 +34585,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9070539255485763974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074324485542050935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2085905417
+      Data2: 1186669633
+      Data3: 1084056251
+      Data4: -1213308174
+    Path: event:/SFXEvents/PlasticTable
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 5
+--- !u!114 &4259855133798033408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074324485542050935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1663900a779f24d91e5cdb06061869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundToPlay:
+    Guid:
+      Data1: -2085905417
+      Data2: 1186669633
+      Data3: 1084056251
+      Data4: -1213308174
+    Path: event:/SFXEvents/PlasticTable
 --- !u!4 &8882809286263613133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27e6e4a594234614fa6369000ecb9ac8,
