@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ab8766a783922478dd93d0939fdea6, type: 3}
   m_Name: SnowGlobeRecipe
   m_EditorClassIdentifier: Assembly-CSharp::Recepie
-  timeToFinishRecepie: 170
+  timeToFinishRecepie: 230
   currentTime: 0
-  timeBonusOnComplete: 20
-  timeLostOnIncomplete: 40
+  timeBonusOnComplete: 50
+  timeLostOnIncomplete: 50
   recepie: {fileID: 11400000, guid: cef59f336f670bd478f8fffb98d9bf56, type: 2}
