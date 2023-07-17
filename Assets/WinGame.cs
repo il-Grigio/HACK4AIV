@@ -20,6 +20,7 @@ public class WinGame : MonoBehaviour
     }
     public void EndWinGame()
     {
+        fade.gameObject.SetActive(true);
         fade.FadeIn();
         winGameScreen.SetActive(true);
         thanksForPlayingObj.SetActive(true);
