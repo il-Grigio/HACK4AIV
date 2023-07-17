@@ -375,11 +375,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 614296949
-      Data2: 1159430201
-      Data3: -1702576486
-      Data4: -1051751384
-    Path: event:/SFXEvents/MetalTable
+      Data1: -552105683
+      Data2: 1146402407
+      Data3: -406390398
+      Data4: -1364088150
+    Path: event:/SFXEvents/CraftingTable
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -388,9 +388,9 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 1
+  OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 10
+  OverrideMaxDistance: 20
 --- !u!114 &5905730779433328197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,11 +405,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundToPlay:
     Guid:
-      Data1: 614296949
-      Data2: 1159430201
-      Data3: -1702576486
-      Data4: -1051751384
-    Path: event:/SFXEvents/MetalTable
+      Data1: -552105683
+      Data2: 1146402407
+      Data3: -406390398
+      Data4: -1364088150
+    Path: event:/SFXEvents/CraftingTable
 --- !u!95 &4086540941710020577
 Animator:
   serializedVersion: 5
