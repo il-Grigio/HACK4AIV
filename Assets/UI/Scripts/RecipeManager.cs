@@ -45,6 +45,7 @@ public class RecipeManager : Singleton<RecipeManager>
     private List<UIIngredient> items;
     [HideInInspector] public Dictionary<Workstation, IngredientScriptable> materialIcons;
     [HideInInspector] public Dictionary<Workstation, Sprite> benchSprites;
+    private float scrollSpeed = 5f;
 
     // Start is called before the first frame update
     void Awake()
@@ -69,6 +70,11 @@ public class RecipeManager : Singleton<RecipeManager>
         benchSprites.Add(Workstation.ClothStation, clothBench);
         benchSprites.Add(Workstation.CircuitsStation, circuitsBench);
 
+    }
+
+    private void Update()
+    {
+        recipeContainer.scroll.value += Input.GetAxis("Player1_Vertical") * Time.deltaTime * scrollSpeed;
     }
 
     private void AddItemToUI(UIIngredient item)

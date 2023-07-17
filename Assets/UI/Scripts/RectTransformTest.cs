@@ -13,7 +13,7 @@ public class RectTransformTest : MonoBehaviour
     [SerializeField]
     private RectTransform rectSizeArea;
     [SerializeField]
-    private Scrollbar scroll;
+    public Scrollbar scroll;
     [SerializeField]
     private bool updateContainer = false;
 
