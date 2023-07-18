@@ -28,7 +28,7 @@ public class CraftingMachine : MachineScript
         animator = GetComponent<Animator> ();
     }
     public override bool Interact() {
-        if (itemToCraft) return false;
+        if (itemToCraft || craftedItem) return false;
         bool areEqual = false;
         list2 = new List<IngredientScriptable>();
         for (int i = 0; i < placedItems.Length; i++) {

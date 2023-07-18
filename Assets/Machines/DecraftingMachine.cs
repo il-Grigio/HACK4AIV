@@ -41,7 +41,7 @@ public class DecraftingMachine : MachineScript
     protected virtual void Update() {
         if (isStarted) {
             currentDecraftingTime -= Time.deltaTime;
-            if(placedItems == null) {
+            if (placedItems[0] == null) {
                 isStarted = false;
             }
 
