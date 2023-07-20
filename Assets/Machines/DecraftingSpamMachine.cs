@@ -35,6 +35,11 @@ public class DecraftingSpamMachine : DecraftingMachine
         animator.SetTrigger("IsActive");
         return true;
     }
+    public override void RemoveItem(ItemComponent item) {
+        base.RemoveItem(item);
+        currentInteractions = 0;
+        progressBar.gameObject.SetActive(false);
+    }
     protected override void Update() {
         return;
     }

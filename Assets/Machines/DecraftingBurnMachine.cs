@@ -110,4 +110,8 @@ public class DecraftingBurnMachine : DecraftingMachine
         craftedItem.GetComponent<Rigidbody>().useGravity = false;
         finished.Invoke();
     }
+    public override bool CanPlaceItems() {
+        if(craftedItem) { return false; }
+        return base.CanPlaceItems();
+    }
 }

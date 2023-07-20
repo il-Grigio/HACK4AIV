@@ -5335,6 +5335,7 @@ MonoBehaviour:
   sphereCastRadius: 1
   PhysicsInteractionsRaycastLength: 2
   PhysicsInteractionsRaycastOffset: {x: 0, y: -0.3, z: -1}
+  SecondPhysicsInteractionsRaycastOffset: {x: 0, y: 0.9, z: -1}
   _itemComponent: {fileID: 0}
   hasItem: 0
   gizmoDebug: 0

@@ -122,12 +122,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
         }
 
         if(activeRecepies.Count == 0) {
-            if(failedRecepies < Mathf.CeilToInt(myPhases[currentPhaseIndex].totalRecepiesInThisPhase * 0.5f)) {
-                GoToNextPhase();
-            }
-            else {
-                lose.Invoke();
-            }
+            CheckIfGoToNextPhase();
         }
 
 
@@ -153,7 +148,14 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
 
         }
     }
-
+    private void CheckIfGoToNextPhase() {
+        if (failedRecepies < Mathf.CeilToInt(myPhases[currentPhaseIndex].totalRecepiesInThisPhase * 0.5f)) {
+            GoToNextPhase();
+        }
+        else {
+            lose.Invoke();
+        }
+    }
     public void DeliverAnItem(IngredientScriptable item) {
         
         foreach (Recepie recepie in activeRecepies) {
@@ -174,7 +176,7 @@ public class ClientOrderMGR : Grigios.Singleton<ClientOrderMGR>
             recepieFinished.Invoke();
 
             if(activeRecepies.Count == 0) {
-                GoToNextPhase();
+                CheckIfGoToNextPhase();
             }
         } else {
             deliveredWrongRecepy.Invoke();

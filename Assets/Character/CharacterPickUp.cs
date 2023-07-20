@@ -23,6 +23,7 @@ public class CharacterPickUp : CharacterAbility
     /// the offset to apply to the origin of the physics interaction raycast (by default, the character's collider's center
     [Tooltip("the offset to apply to the origin of the physics interaction raycast (by default, the character's collider's center")]
     public Vector3 PhysicsInteractionsRaycastOffset = Vector3.zero;
+    public Vector3 SecondPhysicsInteractionsRaycastOffset = Vector3.zero;
 
 
     protected RaycastHit _hit;
@@ -153,7 +154,7 @@ public class CharacterPickUp : CharacterAbility
         hasItem = (_hit.collider != null);
 
         if(!hasItem) {
-            origin = _controller3D.transform.position + _characterController.center - model.up * PhysicsInteractionsRaycastOffset.y + model.right * PhysicsInteractionsRaycastOffset.x + model.forward * PhysicsInteractionsRaycastOffset.z;
+            origin = _controller3D.transform.position + _characterController.center + model.up * SecondPhysicsInteractionsRaycastOffset.y + model.right * SecondPhysicsInteractionsRaycastOffset.x + model.forward * SecondPhysicsInteractionsRaycastOffset.z;
             Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
                 maxDistance, pickuppableLayerMask);
             hasItem = (_hit.collider != null);
@@ -258,8 +259,14 @@ public class CharacterPickUp : CharacterAbility
         Vector3 direction = model.forward;
         float maxDistance = _characterController.radius + _characterController.skinWidth + PhysicsInteractionsRaycastLength;
 
-        Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,   
-                maxDistance, workStationLayerMask);
+        DrawSphereCast(origin, direction, maxDistance, pickuppableLayerMask);
+        origin = _controller3D.transform.position + _characterController.center + model.up * SecondPhysicsInteractionsRaycastOffset.y + model.right * SecondPhysicsInteractionsRaycastOffset.x + model.forward * SecondPhysicsInteractionsRaycastOffset.z;
+        DrawSphereCast(origin, direction, maxDistance, pickuppableLayerMask);
+    }
+
+    private void DrawSphereCast(Vector3 origin, Vector3 direction, float maxDistance, LayerMask mask) {
+        Physics.SphereCast(origin, sphereCastRadius, direction, out _hit,
+                maxDistance, mask);
         hitDistance = (_hit.collider != null) ? _hit.distance : -1;
 
         // Visualize the spherecast shape in the Scene View

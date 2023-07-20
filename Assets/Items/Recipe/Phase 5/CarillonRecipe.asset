@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ab8766a783922478dd93d0939fdea6, type: 3}
   m_Name: CarillonRecipe
   m_EditorClassIdentifier: Assembly-CSharp::Recepie
-  timeToFinishRecepie: 230
+  timeToFinishRecepie: 200
   currentTime: 0
   timeBonusOnComplete: 50
-  timeLostOnIncomplete: 50
+  timeLostOnIncomplete: 30
   recepie: {fileID: 11400000, guid: 0700daeaa31b3a741bf55a2181aa0225, type: 2}

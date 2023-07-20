@@ -29,6 +29,7 @@ public class CraftingMachine : MachineScript
     }
     public override bool Interact() {
         if (itemToCraft || craftedItem) return false;
+        if (placedItems[0] == null && placedItems[1] == null && placedItems[2] == null) return false;
         bool areEqual = false;
         list2 = new List<IngredientScriptable>();
         for (int i = 0; i < placedItems.Length; i++) {
